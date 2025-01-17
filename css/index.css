@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+html , body {
+    overflow-x:hidden;
+}
+
 .main_visual {
     position: relative;
 }
@@ -147,18 +151,14 @@ header {
     margin-bottom: 150px;
 }
 
-
-/* ↓about_me_photoクラスにリレイティブをつけたら、about_me_morning_2が表示されなくなるのはなぜ？ */
-
 .about_me_photo {
     /* position: relative; */
 
 }
 
-/* !!写真配置がうまくできない!! */
 .about_me_morning_1 {
-    /* max-width: 215px; */
-    max-width: 15%;
+    max-width: 215px;
+    /* max-width: 15%; */
     height: auto;
     position: absolute;
     top: -15px;
@@ -168,8 +168,8 @@ header {
 }
 
 .about_me_morning_2 {
-    /* max-width: 250px; */
-    max-width: 18%;
+    max-width: 250px;
+    /* max-width: 18%; */
     height: auto;
     position: absolute;
     top: 60px;
@@ -180,8 +180,8 @@ header {
 }
 
 .about_me_morning_3 {
-    /* max-width: 230px; */
-    max-width: 16%;
+    max-width: 230px;
+    /* max-width: 16%; */
     height: auto;
     position: absolute;
     top: 300px;
@@ -218,7 +218,6 @@ header {
 }
 
 /* worksセクション */
-
 .works {
     margin-top: 300px;
 }
@@ -246,7 +245,6 @@ header {
     display: flex;
     justify-content: center; /* 画像を中央に配置 */
     align-items: center;
-
 }
 
 .works_slider_box {
@@ -295,3 +293,4 @@ header {
     margin-top: 50px;
     width: 200px;
 }
+
