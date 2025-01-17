@@ -1,11 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>iROASOBi</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
 </head>
+
 <body>
-    
+    <div class="main_visual">
+        <img src="./image/morning/昼_背景.svg" alt="昼の空">
+        <img src="./image/morning/太陽.svg" class="sun" alt="太陽">
+        <img src="./image/morning/昼_点線.svg" class="dotted_line" alt="点線">
+        <img src="./image/morning/雲_左.svg" class="cloud_left" alt="雲_左">
+        <img src="./image/morning/雲_右.svg" class="cloud_right" alt="雲_右">
+        <img src="./image/morning/雲_中央左.svg" class="cloud_center_left" alt="雲_中央左">
+        <img src="./image/morning/雲_中央右.svg" class="cloud_center_right" alt="雲_中央右">
+        <p class="main_visual_message">太陽が沈むと、夜が静かに訪れる</p>
+        <header>
+            <h1 class="header_logo">
+                <img src="./image/morning/昼_ロゴ.svg" alt="ロゴ">
+            </h1>
+            <div class="header_right">
+                <div class="hamburger_menu">
+                    <span></span>
+                </div>
+                <!-- <nav class="hamburger_menu_nav">
+                    <ul>
+                    <li><a href="#about_me">about me</a></li>
+                    <li><a href="#works">works</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    </ul>
+                    </nav> -->
+                <div class="mail_icon">
+                    <img src="./image/morning/メール_アイコン.svg">
+                </div>
+                <div class="header_logo_vertical">
+                    <img src="./image/morning/昼_ロゴ_縦.svg">
+                </div>
+            </div>
+        </header>
+        <div class="container_scroll_down">
+            <a href="#" class="scroll-down wavy-text">
+                <span style="--i:1">S</span>
+                <span style="--i:2">c</span>
+                <span style="--i:3">r</span>
+                <span style="--i:4">o</span>
+                <span style="--i:5">l</span>
+                <span style="--i:6">l</span>
+                <span style="--i:7"> </span>
+                <span style="--i:8">D</span>
+                <span style="--i:9">o</span>
+                <span style="--i:10">w</span>
+                <span style="--i:11">n</span>
+                <div class="wavy-text_arrow"></div>
+            </a>
+        </div>
+    </div>
+
+    <section class="about_me">
+        <p class="sub_title">- about me -</p>
+        <h2 class="title">「 はじめまして、さとうです 」</h2>
+        <div class="about_me_main">
+            <div class="about_me_photo">
+                <img src="./image/morning/photo/about_me_morning_1.JPG" alt="about_me_morning_1"
+                    class="about_me_morning_1">
+                <img src="./image/morning/photo/about_me_morning_2.JPG" alt="about_me_morning_2"
+                    class="about_me_morning_2">
+                <img src="./image/morning/photo/about_me_morning_3.jpg" alt="about_me_morning_3"
+                    class="about_me_morning_3">
+            </div>
+            <div class="about_me_sentence">
+                <p class="weight_bold blue_heading">デザインが生み出す小さな魔法</p>
+                <p class="about_me_sentence_1">大学3年の夏、私は就職活動でいくつもの新卒採用サイトを見て、頭を悩ませていました。
+                    その中で、とあるサイトを見たとき、「まるで魔法みたいだ」と感じた瞬間がありました。
+                    画面が動き出し、思わず笑顔になってしまう仕掛けに、ただ情報を得るだけの時間が、
+                    気がつけばわくわくする瞬間に変わっていました。<br>
+                    憂鬱だった就職活動の時間が、そのデザインによって、一瞬で心躍る体験に変わったのです。</p>
+                <p class="weight_bold about_me_sentence_2">デザインを通じて、日常に「ちょっとした魔法」をかけるような体験を届けたい。</p>
+                <p>それは、目の前の世界に新しい驚きや感動をプラスすること。
+                    私が感じた、あのささやかな魔法のような体験を、
+                    デザインを通じて多くの人に届けられるデザイナーになりたいと思っています。</p>
+                <a href="" class="button_morning about_me_button">もっと知る</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="works">
+        <p class="sub_title">- works -</p>
+        <h2 class="title">制作実績</h2>
+        <div class="works_slider">
+            <div class="works_slider_box_kara"></div>
+            <div class="works_slider_box"><img src="./image/morning/制作実績_png/デザインカフェ_コーポレートサイト.png"
+                    alt="デザインカフェ_コーポレートサイト"></div>
+            <div class="works_slider_box"><img src="./image/morning/制作実績_png/美容室LIFE_LP.png" alt="美容室LIFE_LP"></div>
+            <div class="works_slider_box"><img src="./image/morning/制作実績_png/デラックスバーガー_POP_バナー.png"
+                    alt="デラックスバーガー_POP_バナー"></div>
+            <div class="works_slider_box"><img src="./image/morning/制作実績_png/デラックスバーガー_高級感_バナー.png"
+                    alt="デラックスバーガー_高級感_バナー"></div>
+            <div class="works_slider_box"><img src="./image/morning/制作実績_png/デザスタmobile_バナー.png" alt="デザスタmobile_バナー">
+            </div>
+            <div class="works_slider_box"><img src="./image/morning/制作実績_png/TRRRRIP_バナー.png" alt="TRRRRIP_バナー"></div>
+            <!-- <img src="" alt="iROASOBi_ポートフォリオ"> -->
+        </div>
+        <a href="" class="button_morning works_button">もっと見る</a>
+    </section>
+
+    <section class="contact">
+        <div class="contact_main">
+            <p class="sub_title">- contact -</p>
+            <h2 class="title">お問い合わせ</h2>
+            <p class="contact_sentence">ポートフォリオをご覧いただきありがとうございます。<br>
+                WEBサイト制作を中心としたデザイン業務をお受けしています。<br>
+                業務に関するご依頼・ご相談、当サイトに対するご感想やメッセージを、
+                お気軽にお問い合わせください。</p>
+            <a href="" class="button_morning contact_button">お問い合わせする</a>
+        </div>
+        <div class="contact_photo">
+            <img src="./image/morning/photo/contact_morning.JPG" alt="contact_morning">
+        </div>
+    </section>
+
+    <footer>
+        <ul class="footer_menu">
+            <li>about me</li>
+            <li>works</li>
+            <li>contact</li>
+        </ul>
+        <div>pageUp</div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>

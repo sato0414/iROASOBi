@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcf2e5;
+      }
+    </style>
+  </defs>
+  <g id="_ベース" data-name="ベース">
+    <path class="cls-1" d="M0,12v-2h18v2H0ZM0,7v-2h18v2H0ZM0,2V0h18v2H0Z"/>
+  </g>
+</svg>

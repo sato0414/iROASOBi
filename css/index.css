@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+.main_visual {
+    position: relative;
+}
+
+/* 背景画像の上にヘッダーを重ねる */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main_visual_message {
+    position: absolute;
+    /* 「左上の角」をまず中央に寄せる */
+    top: 50%;
+    left: 50%;
+    /* 要素を中心に寄せる */
+    transform: translate(-50%, -50%);
+    /* 中央寄せ */
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    /* 折り返したときの中央寄せ */
+    line-height: 1.4;
+}
+
+.sun {
+    position: absolute;
+    width: 18%;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.dotted_line {
+    position: absolute;
+    width: 84%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cloud_left {
+    position: absolute;
+    width: 40%;
+    left: -11%;
+    top: 43%;
+}
+
+.cloud_right {
+    position: absolute;
+    width: 30%;
+    right: -10%;
+    top: 55%;
+}
+
+.cloud_center_left {
+    position: absolute;
+    width: 25%;
+    left: 10%;
+    top: 22%;
+}
+
+.cloud_center_right {
+    position: absolute;
+    width: 20%;
+    right: 10%;
+    top: 10%;
+}
+
+/* スクロールダウン */
+.scroll-down {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #83ccd4;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.wavy-text span {
+    position: relative;
+    display: inline-block;
+    animation: wave 2s infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.wavy-text_arrow {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid #83ccd4;
+    border-bottom: 1px solid #83ccd4;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    animation: float 2s infinite;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(-20%) rotate(-45deg);
+    }
+
+    50% {
+        transform: translateY(20%) rotate(-45deg);
+    }
+}
+
+/* about_meセクション */
+.about_me .sub_title,
+.about_me .title,
+.works .sub_title,
+.works .title {
+    text-align: center;
+}
+
+.about_me_main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+
+/* ↓about_me_photoクラスにリレイティブをつけたら、about_me_morning_2が表示されなくなるのはなぜ？ */
+
+.about_me_photo {
+    /* position: relative; */
+
+}
+
+/* !!写真配置がうまくできない!! */
+.about_me_morning_1 {
+    /* max-width: 215px; */
+    max-width: 15%;
+    height: auto;
+    position: absolute;
+    top: -15px;
+    left: 60px;
+    /* top: -12%;
+    left: 4%; */
+}
+
+.about_me_morning_2 {
+    /* max-width: 250px; */
+    max-width: 18%;
+    height: auto;
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    /* top: 12%;
+    left: 15%; */
+    z-index: 10;
+}
+
+.about_me_morning_3 {
+    /* max-width: 230px; */
+    max-width: 16%;
+    height: auto;
+    position: absolute;
+    top: 300px;
+    left: 110px;
+    /* top: 65%;
+    left: 6%; */
+}
+
+
+.about_me_sentence {
+    max-width: 45%;
+    margin-right: 7%;
+}
+
+.about_me_sentence p {
+    line-height: 2.8;
+}
+
+.about_me_sentence .blue_heading {
+    height: 20px;
+    padding: 0rem 0.5rem;
+    border-left: 8px solid #83ccd4;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.about_me_sentence_1,
+.about_me_sentence_2 {
+    margin-bottom: 20px;
+}
+
+.about_me_button {
+    margin-top: 50px;
+}
+
+/* worksセクション */
+
+.works {
+    margin-top: 300px;
+}
+
+.works_slider {
+    display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.works_slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.works_slider_box_kara {
+    flex-shrink: 0; /* 画像が縮まないように */
+    width: 300px; /* 画像の表示幅 */
+    height: 300px; /* 固定高さ */
+    background-color: #fcf2e5; /* 背景色 */
+    display: flex;
+    justify-content: center; /* 画像を中央に配置 */
+    align-items: center;
+
+}
+
+.works_slider_box {
+    flex-shrink: 0; /* 画像が縮まないように */
+    width: 300px; /* 画像の表示幅 */
+    height: 300px; /* 固定高さ */
+    background-color: rgba(212, 139, 131, 0.07); /* 背景色 */
+    display: flex;
+    justify-content: center; /* 画像を中央に配置 */
+    align-items: center;
+}
+
+.works_slider img {
+    width: 90%; /* 画像の幅を70%に縮小 */
+    height: auto; /* 高さは自動で調整 */
+    object-fit: contain; /* 画像の縦横比を保ちつつ、ボックス内に収める */
+    pointer-events: none; 
+}
+
+.works_button {
+    margin: 50px auto 150px auto;
+}
+
+/* contactセクション */
+.contact {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_photo img {
+    width: 590px;
+    height: auto;
+}
+
+.contact_main {
+    padding:70px 68px 234px 183px;
+}
+
+.contact_sentence{
+    max-width: 524px;
+    line-height: 2.8;
+    padding-top: 20px;
+}
+
+.contact_button {
+    margin-top: 50px;
+    width: 200px;
+}
