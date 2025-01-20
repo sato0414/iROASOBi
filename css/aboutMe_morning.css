@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* profileセクション */
+
+.sub_title,
+.title {
+    text-align: center;
+}
+
+.profile {
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.profile_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile_name_eng {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.profile_name_ja {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.profile_sentence_detail {
+    max-width: 475px;
+    line-height: 1.8;
+    padding-top: 20px;
+    border-top: 2px solid #83ccd4;
+}
+
+.profile_photo img {
+    max-width: 300px;
+    height: auto;
+}
+
+
+/* careerセクション */
+.career {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-bottom: 100px;
+    justify-content: flex-start;
+}
+
+.career_main img {
+    max-width: 500px;
+    height: auto;
+}
+
+.career_sentence {
+    max-width: 670px;
+    padding-left: 10%;
+    margin-right: 80px;
+
+}
+
+.career_sentence p {
+    line-height: 1.6;
+}
+
+.career_ym {
+    font-weight: bold;
+    margin: 25px auto;
+}
+
+/* importantセクション */
+.important {
+    margin-top: 200px;
+}
+
+.bubble_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bubble {
+    margin-top: 50px;
+    position: relative;
+}
+
+.bubble_image {
+    width: 300px;
+    height: auto;
+}
+
+.overlay_image {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: auto;
+}
+
+.bubble_text {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* skillセクション */
+.skill {
+    margin-top: 200px;
+}
+
+
+/* photo_galleryセクション */
+.photo_gallery {
+    margin-top: 200px;
+}

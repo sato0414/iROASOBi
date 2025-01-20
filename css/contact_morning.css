@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.sub_title,
+.title {
+    text-align: center;
+}
+
+.contact_main {
+    margin: 100px auto;
+    max-width: 680px;
+    padding: 0 10px;
+
+}
+
+.contact_main p {
+    text-align: center;
+}
+
+
+.progress_container {
+    margin: 50px auto;
+}
+
+.progress_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+    margin: 30px auto;
+    width: 85%;
+}
+
+.progress_circle {
+    width: 10px;
+    height: 10px;
+    border: 3px solid #A0A0A0;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #A0A0A0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+
+.progress_circle.active {
+    border-color: #83ccd4;
+    background-color: #83ccd4;
+    color: #fff;
+}
+
+.progress_circle_line {
+    flex: 1;
+    height: 2px;
+    background-color: #A0A0A0;
+    position: relative;
+}
+
+
+.progress_labels {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.progress_label {
+    font-size: 14px;
+    color: #A0A0A0;
+}
+
+.progress_label.active {
+    color: #83ccd4;
+}
+
+.form_group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 50px;
+}
+
+.contact_label {
+    flex: 0 0 25%;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+/* ラジオボタン */
+.radio_group {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.radio_group label {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #545454;
+    border-radius: 10px;
+    background-color: #fcf2e5;
+
+}
+
+textarea {
+    resize: vertical;
+    height: 200px;
+    background-color: #fcf2e5;
+}
+
+
+.contact_button {
+    margin: 0 auto;
+    height: 44px;
+}

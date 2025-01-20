@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iROASOBi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/contact_morning.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="header_left">
+            <h1 class="header_logo">
+                <a href="./index.html"><img src="./image/morning/昼_ロゴ.svg" alt="ロゴ"></a>
+            </h1>
+        </div>
+        <div class="header_right">
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="./aboutMe.html">about&nbsp;me</a></li>
+                            <li><a href="./works.html">works</a></li>
+                            <li><a href="./contact.html">contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+            <div class="mail_icon">
+                <a href="./contact.html"><img src="./image/morning/メール_アイコン.svg"></a>
+            </div>
+            <a href="./index.html"><img class="header_logo_vertical" src="./image/morning/昼_ロゴ_縦.svg"></a>
+        </div>
+
+    </header>
+
+    <div class="content">
+        <section class="contact_main">
+            <p class="sub_title">-contact-</p>
+            <h2 class="title">お問い合わせ</h2>
+            <p>以下のフォームに必要事項(*)をご入力のうえ、送信してください。</p>
+            <div class="progress_container">
+                <div class="progress_bar">
+                  <div class="progress_circle active"></div>
+                  <div class="progress_circle_line"></div>
+                  <div class="progress_circle"></div>
+                  <div class="progress_circle_line"></div>
+                  <div class="progress_circle"></div>
+                </div>
+                <div class="progress_labels">
+                  <span class="progress_label active">お問い合わせ入力</span>
+                  <span class="progress_label">お問い合わせ確認</span>
+                  <span class="progress_label">お問い合わせ完了</span>
+                </div>
+              </div>
+            <div class="form_group">
+                <label for="inquiry_type" class="contact_label">お問い合わせ種別</label>
+                <div class="radio_group">
+                    <input type="radio" id="request" name="inquiry_type" value="制作物のご依頼">
+                    <label for="request">制作物のご依頼について</label>
+                    <input type="radio" id="question" name="inquiry_type" value="サイトに関する質問">
+                    <label for="question">サイトに関する質問</label>
+                    <input type="radio" id="design" name="inquiry_type" value="デザインのご相談">
+                    <label for="design">デザインのご相談について</label>
+                    <input type="radio" id="other" name="inquiry_type" value="その他">
+                    <label for="other">その他</label>
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="name" class="contact_label">お名前</label>
+                <input type="text" id="name" name="name" placeholder="田中　太郎" required>
+            </div>
+            <div class="form_group">
+                <label for="email" class="contact_label">メールアドレス</label>
+                <input type="email" id="email" name="email" placeholder="example@example.com" required>
+            </div>
+            <div class="form_group">
+                <label for="phone" class="contact_label">電話番号(ハイフンなし)</label>
+                <input type="tel" id="phone" name="phone" placeholder="08011112222" pattern="\d{10,11}" required>
+            </div>
+            <div class="form_group">
+                <label for="message" class="contact_label">お問い合わせ内容</label>
+                <textarea id="message" name="message" rows="5" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button_morning contact_button">確認</button>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <ul class="footer_menu">
+            <li><a href="./aboutMe.html">about&nbsp;me</a></li>
+            <li><a href="./works.html">works</a></li>
+            <li><a href="./contact.html">contact</a></li>
+        </ul>
+        <a href="#header" class="page_up"></a>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

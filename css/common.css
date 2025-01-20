@@ -1,129 +1,210 @@
 @charset "utf-8";
+
 body {
     background-color: #fcf2e5;
-    /* width:1000px; */
 }
 
-header{
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .header_right {
-
-    margin-right: 20px;
+    margin-right: 80px;
 }
 
 .header_logo {
-    margin-top: 30px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
-.header_logo img{
+.header_logo img {
+    position: fixed;
     width: 100px;
     height: auto;
 }
 
 .mail_icon {
+    position: fixed;
     background-color: #83ccd4;
-    width:50px;
+    width: 50px;
     height: 50px;
     border-radius: 50px;
-    margin-top: 10px;
+    margin-top: 60px;
 }
 
-.mail_icon img{
-    width:20px;
+.mail_icon img {
+    width: 20px;
     margin-top: 16px;
     margin-left: 15px;
 }
 
-.header_logo_vertical img {
-  width:20px;
-  height: auto;
-  margin-top: 20px;
-  margin-left: 12px;
+.header_logo_vertical {
+    position: fixed;
+    width: 20px;
+    height: auto;
+    margin-top: 130px;
+    margin-left: 12px;
 }
 
-.hamburger_menu {
+/* ハンバーガーメニュー */
+/*============ 
+nav
+=============*/
+nav {
     display: block;
-    height: 50px;
-    cursor: pointer;
-    z-index: 200;
-    background-color: #83ccd4;
-    width: 50px;
-    border-radius: 50px;
-}
-
-.hamburger_menu span {
-    display: block;
-    width: 15px;
-    height: 2px;
-    background-color: #fff;
-    /* 位置の調整 */
-    position: relative;
-    top: 25px;
-    transition: 0.3s;
-    margin-top: 17px;
-    margin-left: 17px;
-}
-
-.hamburger_menu span::before,
-.hamburger_menu span::after {
-    content: "";
-    display: block;
-    width: 15px;
-    height: 2px;
-    background-color: #fff;
-    /* 位置の調整 */
-    position: absolute;
-    transition: 0.3s;
-}
-
-/* 位置の調整 */
-.hamburger_menu span::before {
-    bottom: 4px;
-}
-
-.hamburger_menu span::after {
-    top: 4px;
-}
-
-/* スクロール無効化 */
-.no-scroll {
-    /* overflow: hidden; */
-}
-
-/* バツ印 */
-/* 両方のクラス (hamburger_menu と open) が同時に指定された要素だけにスタイルを適用。 */
-.hamburger_menu.open span {
-    background: transparent;
-    /* 親要素である真ん中の線を透明にする */
-}
-
-.hamburger_menu.open span::before {
-    bottom: 0;
-    transform: rotate(45deg);
-    /* 回転させる */
-}
-
-.hamburger_menu.open span::after {
+    position: fixed;
     top: 0;
-    transform: rotate(-45deg);
-    /* 回転させる */
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    background: #83ccd4;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .5s;
+    z-index: 4;
+    /* メニューがマスクよりも前に表示されるようにz-indexを調整 */
+    opacity: 0;
+}
+
+.open nav {
+    left: 0;
+    opacity: 1;
+}
+
+nav .inner {
+    padding: 25px;
+}
+
+nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .inner ul li {
+    position: relative;
+    margin: 0;
+    border-bottom: 1px solid #fcf2e5;
+}
+
+nav .inner ul li a {
+    display: block;
+    color: #fcf2e5;
+    font-size: 14px;
+    padding: 4em 1em 1em 1em;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover {
+    background: #e4e4e4;
+}
+
+@media screen and (max-width: 767px) {
+    nav {
+        left: -220px;
+        width: 220px;
+    }
+}
+
+/*============ 
+  .toggle_btn
+  =============*/
+.toggle_btn {
+    display: block;
+    position: fixed;
+
+    width: 50px;
+    height: 50px;
+    background-color: #83ccd4;
+    border-radius: 50%;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 6;
+}
+
+.toggle_btn span {
+    display: block;
+    position: absolute;
+    left: 34%;
+    transform: translateX(-10%);
+    width: 18px;
+    height: 3px;
+    background-color: #fcf2e5;
+    border-radius: 4px;
+    transition: all .5s;
+}
+
+.toggle_btn span:nth-child(1) {
+    top: 17px;
+}
+
+.toggle_btn span:nth-child(2) {
+    top: 25px;
+}
+
+.toggle_btn span:nth-child(3) {
+    bottom: 15px;
+}
+
+/* ハンバーガーメニューの開いている状態 */
+.open .toggle_btn span {
+    background-color: #fcf2e5;
+}
+
+.open .toggle_btn span:nth-child(1) {
+    -webkit-transform: translateY(10px) rotate(-315deg);
+    transform: translateY(5px) rotate(-315deg);
+}
+
+.open .toggle_btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.open .toggle_btn span:nth-child(3) {
+    -webkit-transform: translateY(-10px) rotate(315deg);
+    transform: translateY(-10px) rotate(315deg);
+}
+
+/*============ 
+  #mask
+  =============*/
+#mask {
+    display: none;
+    transition: all .5s;
+    z-index: 3;
+}
+
+.open #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+    cursor: pointer;
 }
 
 /* セクションごとの見出し */
 .sub_title {
     font-size: 14px;
     color: #83ccd4;
-    letter-spacing:0.2em;
+    letter-spacing: 0.2em;
 }
 
 .title {
     font-size: 20px;
     font-weight: bold;
-    margin: 20px auto; 
+    margin: 20px auto;
 }
 
 .weight_bold {
@@ -132,9 +213,9 @@ header{
 
 /* 朝ver ボタン */
 .button_morning {
-    display: flex; /* Flexbox を適用 */
-    justify-content: space-evenly; /* 子要素を等間隔に配置 */
-    align-items: center; /* 垂直方向で中央揃え */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     text-decoration: none;
     position: relative;
     width: 120px;
@@ -149,31 +230,51 @@ header{
 
 /* 矢印の「くの字」を作成 */
 .button_morning::after {
-    content: ""; /* 表示する内容を空に設定 */
-    display: inline-block; /* Flexbox の子要素として扱う */
+    content: "";
+    display: inline-block;
     width: 8px;
     height: 8px;
-    border: 3px solid #545454; /* 矢印の色 */
-    border-width: 2px 2px 0 0; /* 上と右の枠線だけを表示 */
-    transform: rotate(45deg); /* 回転して「くの字」を形成 */
+    border: 3px solid #545454;
+    border-width: 2px 2px 0 0;
+    /* 上と右の枠線だけを表示 */
+    transform: rotate(45deg);
+    /* 回転して「くの字」を形成 */
 }
 
 footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;  /* フッター内の項目を縦方向中央に揃える */
     background-color: #83ccd4;
     color: #fcf2e5;
-    height: 150px;
-    
+    height: 100px;
+    padding: 0 20px;  /* 右左に余白を追加 */
 }
 
 .footer_menu {
     display: flex;
-    
-    
+    justify-content: flex-start;  /* リスト項目を左寄せ */
+    align-items: center;  /* 縦方向中央揃え */
+    max-width: 1000px;
 }
 
 .footer_menu li {
     color: #fcf2e5;
-    padding: 70px 40%;
+    margin-right: 13%;
+}
+
+.footer_menu li:first-child {
+    padding-left: 180px;  /* 最初の項目（about me）の左側に余白を追加 */
+}
+
+.page_up {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #fcf2e5;
+    border-width: 3px 3px 0 0;
+    transform: rotate(-45deg);
+    margin-left: auto;  /* 右寄せ */
+    margin-right: 13%;
 }
