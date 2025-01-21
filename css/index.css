@@ -402,54 +402,42 @@ header {
     gap: 20px;
     padding: 20px 0;
     scrollbar-width: none;
-    /* Firefox */
     -ms-overflow-style: none;
-    /* Internet Explorer 10+ */
 }
 
 .works_slider::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari, Opera */
-}
-
-.works_slider_box_kara {
-    flex-shrink: 0;
-    /* 画像が縮まないように */
-    width: 300px;
-    /* 画像の表示幅 */
-    height: 300px;
-    /* 固定高さ */
-    background-color: #fcf2e5;
-    /* 背景色 */
-    display: flex;
-    justify-content: center;
-    /* 画像を中央に配置 */
-    align-items: center;
 }
 
 .works_slider_box {
     flex-shrink: 0;
-    /* 画像が縮まないように */
     width: 300px;
-    /* 画像の表示幅 */
     height: 300px;
-    /* 固定高さ */
     background-color: rgba(212, 139, 131, 0.07);
-    /* 背景色 */
     display: flex;
     justify-content: center;
-    /* 画像を中央に配置 */
     align-items: center;
 }
 
 .works_slider img {
     width: 90%;
-    /* 画像の幅を70%に縮小 */
     height: auto;
-    /* 高さは自動で調整 */
     object-fit: contain;
-    /* 画像の縦横比を保ちつつ、ボックス内に収める */
     pointer-events: none;
+}
+
+.works_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.works_title {
+    font-size: 16px;
+    margin: 0;
+    align-self: flex-start;
 }
 
 .works_button {
