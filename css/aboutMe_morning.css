@@ -50,9 +50,8 @@ body {
 /* careerセクション */
 .career {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     margin-bottom: 100px;
-    justify-content: flex-start;
 }
 
 .career_main img {
@@ -61,20 +60,74 @@ body {
 }
 
 .career_sentence {
+    position: relative;
     max-width: 670px;
     padding-left: 10%;
     margin-right: 80px;
-
 }
 
-.career_sentence p {
-    line-height: 1.6;
+.career_sentence:before {
+    position: absolute;
+    display: block;
+    content: "";
+    background: #545454;
+    width: 1px;
+    height: 100%;
+    left: 50px;
+    z-index: -1;
 }
 
-.career_ym {
+.career_sentence .career_ym {
     font-weight: bold;
-    margin: 25px auto;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
 }
+
+.career_sentence dt {
+    position: relative;
+    line-height: 1;
+    box-sizing: border-box;
+    word-break: break-all;
+    text-align: left;
+    margin-left: 60px;
+}
+
+.career_sentence dt:before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 50%;
+    left: -10%;
+    width: 20px;
+    height: 20px;
+    background: #83ccd4;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.career_sentence dd {
+    line-height: 1.5;
+    flex: 1;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 1.6;   
+}
+
+@media only screen and (min-width: 769px),
+print {
+    .career_sentence:before {
+        left: 80px;
+    }
+
+    .career_sentence dt {
+        margin-left: 90px;
+    }
+}
+
+
+
 
 /* importantセクション */
 .important {
@@ -122,6 +175,55 @@ body {
     margin-top: 200px;
 }
 
+.main_skill {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.skill_type_coding,
+.skill_type_design {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #83ccd4;
+    color: #fcf2e5;
+    height: 26px;
+    font-weight: 500;
+}
+
+.skill_level {
+    display: flex;
+    gap: 5px;
+    padding-left: 40px;
+    align-items: center;
+}
+
+.skill_level span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #9AAAAD;
+    border-radius: 50%;
+}
+
+.skill_level span.color {
+    background-color: #9AAAAD;
+}
+
+table tr td {
+    height: 70px;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: normal;
+}
+
+.skill_padding {
+    padding-left: 80px;
+}
 
 /* photo_galleryセクション */
 .photo_gallery {

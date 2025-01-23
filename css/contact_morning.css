@@ -1,134 +1,176 @@
 @charset "utf-8";
 
-html,
-body {
-    overflow-x: hidden;
-}
-
 .sub_title,
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .contact_main {
-    margin: 100px auto;
-    max-width: 680px;
-    padding: 0 10px;
-
+  margin: 100px auto;
+  max-width: 680px;
+  padding: 0 10px;
 }
 
 .contact_main p {
-    text-align: center;
+  text-align: center;
 }
 
-
 .progress_container {
-    margin: 50px auto;
+  margin: 50px auto;
 }
 
 .progress_bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: 20px;
-    text-align: center;
-    margin: 30px auto;
-    width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+  margin: 30px auto;
+  width: 85%;
 }
 
 .progress_circle {
-    width: 10px;
-    height: 10px;
-    border: 3px solid #A0A0A0;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #A0A0A0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #a0a0a0;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
 }
 
 .progress_circle.active {
-    border-color: #83ccd4;
-    background-color: #83ccd4;
-    color: #fff;
+  border-color: #83ccd4;
+  background-color: #83ccd4;
+  color: #fff;
 }
 
-.progress_circle_line {
-    flex: 1;
-    height: 2px;
-    background-color: #A0A0A0;
-    position: relative;
+.progress_line {
+  flex: 1;
+  height: 2px;
+  background-color: #a0a0a0;
+  position: relative;
 }
-
 
 .progress_labels {
-    display: flex;
-    justify-content: space-between;
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .progress_label {
-    font-size: 14px;
-    color: #A0A0A0;
+  font-size: 14px;
+  color: #a0a0a0;
 }
 
 .progress_label.active {
-    color: #83ccd4;
+  color: #83ccd4;
 }
 
 .form_group {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 40px;
-    gap: 50px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 50px;
 }
 
 .contact_label {
-    flex: 0 0 25%;
-    font-weight: bold;
-    margin-top: 12px;
+  flex: 0 0 25%;
+  font-weight: bold;
+  margin-top: 12px;
 }
 
 /* ラジオボタン */
 .radio_group {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.radio_group input {
+  /* accent-color:#83ccd4 ; */
 }
 
 .radio_group label {
-    width: 45%;
-    display: flex;
-    align-items: center;
-    margin: 10px auto;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-    flex: 1;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #545454;
-    border-radius: 10px;
-    background-color: #fcf2e5;
-
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #545454;
+  border-radius: 10px;
+  background-color: #fcf2e5;
 }
 
 textarea {
-    resize: vertical;
-    height: 200px;
-    background-color: #fcf2e5;
+  resize: vertical;
+  height: 200px;
+  background-color: #fcf2e5;
+}
+
+.contact_button {
+  margin: 0 auto;
+  height: 44px;
 }
 
 
-.contact_button {
-    margin: 0 auto;
-    height: 44px;
+/* 確認画面 */
+.confirm_form {
+  display: none;
+  margin: 0 auto;
+}
+
+.confirm_form input,
+.confirm_form textarea {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+
+.confirm_form input:focus,
+.confirm_form textarea:focus {
+  outline: none;
+}
+
+.confirm_form .form_group:not(.message) {
+  align-items: center;
+}
+
+.confirm_form label {
+  margin: 0;
+}
+
+.confirm_form textarea {
+  resize: none;
+}
+
+.confirm_form .button_wrap {
+  display: flex;
+  margin-top: 10px;
+}
+
+.completed_form {
+  display: none;
+}
+
+.completed_form p {
+    line-height: 2;
+    margin: 80px auto;
+}
+
+.completed_button {
+    margin: 30px auto;
 }

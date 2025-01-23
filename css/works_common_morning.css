@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-html,
-body {
-    overflow-x: hidden;
-}
-
 .sub_title,
 .title {
     text-align: center;
@@ -13,7 +8,9 @@ body {
 .works_detail {
     margin: 100px auto;
     padding: 0 10px;
+    position: relative;
 }
+
 
 .works_detail_main {
     margin-top: 100px;
@@ -23,6 +20,10 @@ body {
 
 .works_detail_left {
     max-width: 400px;
+    height: 85vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding-right: 10px;
 }
 
 .works_title {
@@ -46,13 +47,16 @@ body {
     line-height: 2;
     max-width: 370px;
     padding-right: 10px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 .works_detail_right {
     max-width: 600px;
     padding-left: 40px;
     border-left: 1px solid #83ccd4;
+    height: 85vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .works_mock {
@@ -75,3 +79,9 @@ body {
     max-width: 146px;
     height: auto;
 }
+
+.button_works {
+    margin: 40px auto;
+    
+}
+
