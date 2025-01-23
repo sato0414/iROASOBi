@@ -23,7 +23,6 @@ body {
 
 .works_detail_left {
     max-width: 400px;
-    border-right: 1px solid #83ccd4;
 }
 
 .works_title {
@@ -53,6 +52,7 @@ body {
 .works_detail_right {
     max-width: 600px;
     padding-left: 40px;
+    border-left: 1px solid #83ccd4;
 }
 
 .works_mock {
@@ -63,6 +63,7 @@ body {
 .works_mock_PC_SP {
     display: flex;
     gap: 15px;
+    align-items: flex-start;
 }
 
 .works_mock_PC {
