@@ -69,7 +69,7 @@
             </div>
             <form class="input_form">
                 <div class="form_group">
-                    <label for="inquiry_type" class="contact_label">お問い合わせ種別</label>
+                    <label for="inquiry_type" class="contact_label">お問い合わせ種別*</label>
                     <div class="radio_group">
                         <input type="radio" id="request" name="inquiry_type" value="制作物のご依頼について" required>
                         <label for="request">制作物のご依頼について</label>
@@ -82,11 +82,11 @@
                     </div>
                 </div>
                 <div class="form_group">
-                    <label for="name" class="contact_label">お名前</label>
+                    <label for="name" class="contact_label">お名前*</label>
                     <input type="text" id="name" name="name" placeholder="田中　太郎" required>
                 </div>
                 <div class="form_group">
-                    <label for="email" class="contact_label">メールアドレス</label>
+                    <label for="email" class="contact_label">メールアドレス*</label>
                     <input type="email" id="email" name="email" placeholder="example@example.com" required>
                 </div>
                 <div class="form_group">
@@ -94,7 +94,7 @@
                     <input type="tel" id="phone" name="phone" placeholder="08011112222" pattern="\d{10,11}" required>
                 </div>
                 <div class="form_group">
-                    <label for="message" class="contact_label">お問い合わせ内容</label>
+                    <label for="message" class="contact_label">お問い合わせ内容*</label>
                     <textarea id="message" name="message" rows="5" placeholder="お問い合わせ内容をご記入ください" required></textarea>
                 </div>
                 <div class="form-group">
@@ -105,27 +105,27 @@
 
             <!-- 問い合わせ内容確認画面 -->
             <form class="confirm_form"
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd792Ymm05HcGJuqhnSlxTM9HPv_ZOWrpw7HJFpTFbyplvv1g/formResponse"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfPBupnsycEruAJDRZCiEExciVtK74tf1ST0shmDC6uY5a94g/formResponse"
                 method="post" target="hidden_iframe" onsubmit="submitted=true;">
                 <div class="form_group">
                     <label for="inquiry_type" class="contact_label">お問い合わせ種別</label>
-                    <input id="request" name="entry.1253059866" readonly>
+                    <input id="request" name="entry.1518278804" readonly>
                 </div>
                 <div class="form_group">
                     <label for="name" class="contact_label">お名前</label>
-                    <input type="text" id="name" name="entry.1137286494" readonly>
+                    <input type="text" id="name" name="entry.80091586" readonly>
                 </div>
                 <div class="form_group">
                     <label for="email" class="contact_label">メールアドレス</label>
-                    <input type="email" id="email" name="entry.2092419904" readonly>
+                    <input type="email" id="email" name="entry.1129869708" readonly>
                 </div>
                 <div class="form_group">
                     <label for="phone" class="contact_label">電話番号(ハイフンなし)</label>
-                    <input type="tel" id="phone" name="entry.1780397887" readonly>
+                    <input type="tel" id="phone" name="entry.582549043" readonly>
                 </div>
                 <div class="form_group message">
                     <label for="message" class="contact_label">お問い合わせ内容</label>
-                    <textarea id="message" name="entry.1905298872" readonly></textarea>
+                    <textarea id="message" name="entry.108470922" readonly></textarea>
                 </div>
                 <div class="form-group button_wrap">
                     <button type="button" class="button_morning_return contact_button fix_button">修正</button>
@@ -173,7 +173,7 @@
     <script>
         $(function () {
             $('.input_form').on('submit', function (event) {
-                event.preventDefault()   //ブラウザのデフォルト動作をキャンセル
+                event.preventDefault()
 
                 // 入力された内容を取得
                 let type = $('.input_form input[name="inquiry_type"]:checked').val()

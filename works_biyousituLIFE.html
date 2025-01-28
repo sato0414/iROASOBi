@@ -1,20 +1,101 @@
-<ul class="works_bar">
-    <li class="active">タブ１</li>
-    <li>タブ２</li>
-    <li>タブ３</li>
-  </ul>
-    
-  <div class="works_main">
-    <div class="works_wrapper active">
-      <p>タブ１の内容</p>
-      <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iROASOBi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/works_common_morning.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <header id="header">
+    <div class="header_left">
+      <h1 class="header_logo">
+        <a href="./index.html"><img src="./image/morning/logo_morning.svg" alt="ロゴ"></a>
+      </h1>
     </div>
-    <div class="works_wrapper">
-      <p>タブ２の内容</p>
-      <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）</p>
+    <div class="header_right">
+      <div id="navArea">
+        <nav>
+          <div class="inner">
+            <ul>
+              <li><a href="./aboutMe.html">about&nbsp;me</a></li>
+              <li><a href="./works.html">works</a></li>
+              <li><a href="./contact.html">contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="toggle_btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <div class="mail_icon">
+        <a href="./contact.html"><img src="./image/morning/mail_icon.svg"></a>
+      </div>
+      <a href="./index.html"><img class="header_logo_vertical" src="./image/morning/logo_morning_tate.svg"></a>
     </div>
-    <div class="works_wrapper">
-      <p>タブ３の内容</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam accusantium quos quis, qui in quae temporibus, vero eaque neque vel, quam eos nesciunt ad animi voluptatum ex placeat. Ratione, animi.</p>
-    </div>
+
+  </header>
+
+  <div class="content">
+    <section class="works_detail">
+      <p class="sub_title">-works-</p>
+      <h2 class="title">制作実績</h2>
+      <div class="works_detail_main">
+        <div class="works_detail_left">
+          <p class="works_title">美容室LIFE</p>
+          <div class="works_type_wrap">
+            <div class="works_type">
+              <p>カテゴリ</p>
+              <p>LP</p>
+            </div>
+            <div class="works_type">
+              <p>担当範囲</p>
+              <p>デザイン</p>
+            </div>
+            <div class="works_type">
+              <p>制作期間</p>
+              <p>2週間</p>
+            </div>
+            <div class="works_type">
+              <p>使用ツール</p>
+              <p>illustrator , Photoshop</p>
+            </div>
+          </div>
+          <p class="works_sentence">
+            美容室のコンセプト「日常にフィットし、再現性の高いヘアスタイル」を基に、デザイン全体で自然体の魅力と親しみやすさを表現しました。メインビジュアルには、リラックスした笑顔の写真を大きく配置し、背景には柔らかなベージュを採用して温かみを感じさせる空間を作り出しています。フォントは、エレガントさと視認性のバランスに配慮し、洗練された印象を与えています。
+          </p>
+        </div>
+        <div class="works_detail_right">
+          <img src="./image/morning/works/works_detail/beauty_salon_LIFE_mock.png" class="works_mock">
+          <div class="works_mock_PC_SP">
+            <img src="./image/morning/works/works_detail/beauty_salon_LIFE_PC.jpg" class="works_mock_PC">
+          </div>
+        </div>
+      </div>
+      <a href="./works.html" class="button_morning_return button_works">一覧に戻る</a>
+    </section>
   </div>
+  <footer>
+    <ul class="footer_menu">
+      <li><a href="./aboutMe.html">about&nbsp;me</a></li>
+      <li><a href="./works.html">works</a></li>
+      <li><a href="./contact.html">contact</a></li>
+    </ul>
+    <a href="#header" class="page_up"></a>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

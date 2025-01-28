@@ -91,10 +91,6 @@
   flex-wrap: wrap;
 }
 
-.radio_group input {
-  /* accent-color:#83ccd4 ; */
-}
-
 .radio_group label {
   width: 45%;
   display: flex;
@@ -138,6 +134,10 @@ textarea {
   border: none;
   padding: 0;
   width: 100%;
+  font-family: 'Zen Kaku Gothic Antique';
+  color: #545454;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .confirm_form input:focus,
