@@ -28,6 +28,7 @@ $(document).ready(function () {
   });
 })(jQuery);
 
+// フォトギャラリー
 $(".slider_photo_gallery").slick({
   autoplay: true, // 自動でスクロール
   autoplaySpeed: 0, // スライド切り替えの時間（3秒）
@@ -47,6 +48,7 @@ $(".slider_photo_gallery").slick({
     },
   ],
 });
+
 
 $(function () {
   // 変数に要素をセット

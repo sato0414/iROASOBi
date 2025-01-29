@@ -13,10 +13,8 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
 
-    <!-- slider -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- splide -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -110,59 +108,56 @@
             </div>
         </section>
 
-        <section class="works">
+        <section class="splide" aria-labelledby="carousel-heading">
             <p class="sub_title">-works-</p>
             <h2 class="title">制作実績</h2>
-            <div class="slider">
-                <div class="works_wrapper all">
-                    <a href="./works_designCafe.html">
-                        <div class="works_slider_box"><img src="./image/morning/works/design_cafe_PC_mainvisul.png"
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <a href="./works_designCafe.html">
+                            <img src="./image/morning/works/design_cafe_PC_mainvisul.png"
                                 alt="design_cafe_PC_mainvisul">
-                        </div>
-                        <p class="works_title">デザインカフェ</p>
-                    </a>
-                </div>
-                <div class="works_wrapper all">
-                    <a href="./works_biyousituLIFE.html">
-                        <div class="works_slider_box"><img src="./image/morning/works/beauty_salon_LIFE_LP.png"
-                                alt="beauty_salon_LIFE_LP">
-                        </div>
-                        <p class="works_title">美容室LIFE</p>
-                    </a>
-                </div>
-                <div class="works_wrapper all">
-                    <a href="works_deluxeBurger_POP.html">
-                        <div class="works_slider_box"><img src="./image/morning/works/deluxe_burger_POP_banner.png"
+                            <!-- <p class="works_title">デザインカフェ</p> -->
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="./works_biyousituLIFE.html">
+                            <img src="/image/morning/works/beauty_salon_LIFE_LP.png" alt="beauty_salon_LIFE_LP">
+                            <!-- <p class="works_title">美容室LIFE</p> -->
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="works_deluxeBurger_POP.html">
+                            <img src="./image/morning/works/deluxe_burger_POP_banner.png"
                                 alt="deluxe_burger_POP_banner">
-                        </div>
-                        <p class="works_title">デラックスバーガー_POP</p>
-                    </a>
-                </div>
-                <div class="works_wrapper all">
-                    <a href="works_deluxeBurger_luxury.html">
-                        <div class="works_slider_box"><img src="./image/morning/works/deluxe_burger_rich_banner.png"
+                            <!-- <p class="works_title">デラックスバーガー_POP</p> -->
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="works_deluxeBurger_luxury.html">
+                            <img src="./image/morning/works/deluxe_burger_rich_banner.png"
                                 alt="deluxe_burger_rich_banner">
-                        </div>
-                        <p class="works_title">デラックスバーガー_高級感</p>
-                    </a>
-                </div>
-                <div class="works_wrapper all">
-                    <a href="works_dezasuta_mobile.html">
-                        <div class="works_slider_box"><img src="./image/morning/works/dezasuta_mobile_banner.png"
-                                alt="dezasuta_mobile_banner">
-                        </div>
-                        <p class="works_title">デザスタmobile</p>
-                    </a>
-                </div>
-                <div class="works_wrapper all">
-                    <a href="works_TRRRRIP.html">
-                        <div class="works_slider_box"><img src="./image/morning/works/TRRRRIP_banner.png"
-                                alt="TRRRRIP_banner">
-                        </div>
-                        <p class="works_title">TRRRRIP.</p>
-                    </a>
-                </div>
-                <!-- <img src="" alt="iROASOBi_ポートフォリオ"> -->
+                            <!-- <p class="works_title">デラックスバーガー_高級感</p> -->
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="works_dezasuta_mobile.html">
+                            <img src="./image/morning/works/dezasuta_mobile_banner.png" alt="dezasuta_mobile_banner">
+                            <!-- <p class="works_title">デザスタmobile</p> -->
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="works_TRRRRIP.html">
+                            <img src="./image/morning/works/TRRRRIP_banner.png" alt="TRRRRIP_banner">
+                            <!-- <p class="works_title">TRRRRIP.</p> -->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 矢印を追加 -->
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev button prev"></button>
+                <button class="splide__arrow splide__arrow--next button next"></button>
             </div>
             <a href="./works.html" class="button_morning works_button">もっと見る</a>
         </section>
@@ -192,7 +187,18 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+        var splide = new Splide('.splide', {
+            type: 'loop',
+            perPage: 3,
+            focus: 'center',
+            pagination: false, // ページネーションを非表示
+            arrows: false, // 矢印ボタンを非表示
+        }).mount();
+    </script>
 </body>
 
 </html>

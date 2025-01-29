@@ -17,6 +17,10 @@ body {
     margin-bottom: 150px;
 }
 
+.hobby {
+    margin-top: 30px;
+}
+
 .profile_main {
     display: flex;
     justify-content: space-between;
@@ -62,7 +66,7 @@ body {
 .career_sentence {
     position: relative;
     max-width: 670px;
-    padding-left: 10%;
+    margin-left: 10%;
     margin-right: 80px;
 }
 
@@ -70,10 +74,12 @@ body {
     position: absolute;
     display: block;
     content: "";
-    background: #545454;
+    background: linear-gradient(to bottom, #545454 0%, #7B8C8E 35%, #9AAAAD 60%, #83CCD4 100%);
     width: 1px;
     height: 100%;
-    left: 50px;
+    left: -30px;
+    top: 30px;
+    height: 93%;
     z-index: -1;
 }
 
@@ -99,12 +105,12 @@ body {
     display: block;
     content: "";
     top: 50%;
-    left: -12%;
+    left: -30px;
     width: 20px;
     height: 20px;
     background: #83ccd4;
     border-radius: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 }
 
 .career_sentence dd {
@@ -114,20 +120,6 @@ body {
     font-size: 16px;
     line-height: 1.6;
 }
-
-@media only screen and (min-width: 769px),
-print {
-    .career_sentence:before {
-        left: 80px;
-    }
-
-    .career_sentence dt {
-        margin-left: 90px;
-    }
-}
-
-
-
 
 /* importantセクション */
 .important {
@@ -143,6 +135,35 @@ print {
 .bubble {
     margin-top: 50px;
     position: relative;
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+
+/* 各バブルに異なる遅延を設定 */
+.bubble:nth-child(1) {
+    animation-delay: 0s;
+    /* 最初のバブル */
+}
+
+.bubble:nth-child(2) {
+    animation-delay: 0.6s;
+    /* 2番目のバブル */
+}
+
+.bubble:nth-child(3) {
+    animation-delay: 1.2s;
+    /* 3番目のバブル */
+}
+
+@keyframes floating-y {
+    0% {
+        transform: translateY(-5%);
+        /* 上に少し浮かぶ */
+    }
+
+    100% {
+        transform: translateY(1%);
+        /* 下に少し浮かぶ */
+    }
 }
 
 .bubble_image {
@@ -230,7 +251,6 @@ table tr td {
     margin-top: 200px;
 }
 
-
 .slider_photo_gallery {
     display: flex;
     align-items: center;
@@ -242,3 +262,16 @@ table tr td {
     height: auto;
 }
 
+@media screen and (max-width: 1350px) {
+    .photo_detail {
+        max-width: 220px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .photo_detail {
+        max-width: 150px;
+        height: auto;
+    }
+}
