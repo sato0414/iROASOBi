@@ -112,7 +112,7 @@ body {
     flex: 1;
     padding-left: 10px;
     font-size: 16px;
-    line-height: 1.6;   
+    line-height: 1.6;
 }
 
 @media only screen and (min-width: 769px),
@@ -229,3 +229,16 @@ table tr td {
 .photo_gallery {
     margin-top: 200px;
 }
+
+
+.slider_photo_gallery {
+    display: flex;
+    align-items: center;
+    margin: 100px auto;
+}
+
+.photo_detail {
+    max-width: 300px;
+    height: auto;
+}
+
