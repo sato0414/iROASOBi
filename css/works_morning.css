@@ -59,7 +59,18 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    cursor: pointer;
+    max-width: 500px;
+    overflow: hidden;
 }
+
+.works_box img {
+    height: auto;
+    transition: transform .5s ease;
+  }
+  .works_box:hover img {
+    transform: scale(1.03); /* 拡大 */
+  }
 
 /* タイトル */
 .works_title {

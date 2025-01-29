@@ -269,9 +269,15 @@ table tr td {
     }
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 1060px) {
     .photo_detail {
-        max-width: 150px;
+        max-width: 170px;
+        height: auto;
+    }
+}
+@media screen and (max-width: 800) {
+    .photo_detail {
+        max-width: 120px;
         height: auto;
     }
 }

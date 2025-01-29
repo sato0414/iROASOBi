@@ -159,10 +159,8 @@ header {
 
 .about_me_main {
     display: flex;
-    justify-content: space-between;
     margin-top: 100px;
     position: relative;
-    height: 700px;
 }
 
 .about_me_morning_1 {
@@ -337,13 +335,11 @@ header {
     }
 }
 
-
 .about_me_sentence {
-    max-width: 640px;
+    max-width: 1000px;
     width: 100%;
-    position: absolute;
-    left: 50%;
-    padding-right: 10%;
+    margin-left: 50%;
+    padding-right: 5px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -452,10 +448,24 @@ header {
     width: 200px;
 }
 
-
-
 .splide__slide img {
     height: auto;
     width: 85%;
     object-fit: cover;
+    cursor: pointer;
+    max-width: 500px;
+    overflow: hidden;
+    width: 100%;
   }
+
+  .splide__slide img {
+    height: auto;
+    transition: transform .5s ease;
+  }
+  .splide__slide:hover img {
+    transform: scale(1.03); /* 拡大 */
+  }
+
+
+
+  
