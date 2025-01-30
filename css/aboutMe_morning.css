@@ -198,9 +198,10 @@ body {
 
 .main_skill {
     display: flex;
-    gap: 100px;
+    gap: 10%;
     justify-content: center;
     margin-top: 90px;
+    padding: 10px;
 }
 
 .skill_type_coding,
@@ -280,4 +281,27 @@ table tr td {
         max-width: 120px;
         height: auto;
     }
+}
+
+.slick-track {
+    display: flex;
+}
+
+.slick-track .slick-slide {
+    height:auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.slick-slide.photo_center {
+    align-items: center;
+}
+
+.photo_big .photo_detail {
+    max-width: 350px;
+}
+
+.photo_small .photo_detail {
+    max-width: 250px;
 }

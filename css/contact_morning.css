@@ -126,6 +126,7 @@ textarea {
 .confirm_form {
   display: none;
   margin: 0 auto;
+  /* max-width: 600px; */
 }
 
 .confirm_form input,
@@ -155,13 +156,27 @@ textarea {
 
 .confirm_form textarea {
   resize: none;
+  height: 150px;
 }
 
 .confirm_form .button_wrap {
   display: flex;
   margin-top: 10px;
+  justify-content: center;
+  gap:70px;
 }
 
+.confirm_form .contact_label {
+  flex: 0 0 30%;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* .confirm_form.contact_button {
+  height: 44px;
+} */
+
+/* 完了画面 */
 .completed_form {
   display: none;
 }
@@ -174,3 +189,4 @@ textarea {
 .completed_button {
     margin: 30px auto;
 }
+
