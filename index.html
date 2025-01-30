@@ -122,9 +122,11 @@
                 <ul class="splide__list">
                     <li class="splide__slide">
                         <a href="./works_designCafe.html">
-                            <img src="./image/morning/works/design_cafe_PC_mainvisul.png"
-                                alt="design_cafe_PC_mainvisul">
-                            <!-- <p class="works_title">デザインカフェ</p> -->
+                            <div class="works_back">
+                                <img src="./image/morning/works/design_cafe_PC_mainvisul.png"
+                                    alt="design_cafe_PC_mainvisul">
+                            </div>
+                            <p class="works_title">デザインカフェ</p>
                         </a>
                     </li>
                     <li class="splide__slide">
@@ -161,6 +163,12 @@
                     </li>
                 </ul>
             </div>
+            <!-- ページネーション -->
+            <div class="pagination">
+                <span id="current-slide"></span>
+                <span>/</span>
+                <span id="slide-length"></span>
+              </div>
             <!-- 矢印を追加 -->
             <div class="splide__arrows">
                 <button class="splide__arrow splide__arrow--prev button prev"></button>
@@ -202,9 +210,22 @@
             type: 'loop',
             perPage: 3,
             focus: 'center',
-            pagination: false, // ページネーションを非表示
-            arrows: false, // 矢印ボタンを非表示
+            // pagination: false, // ページネーションを非表示
+            // arrows: false, // 矢印ボタンを非表示
         }).mount();
+
+        // 次のスライドが表示されるタイミングで発生
+        splide.on("active", function () {
+            slideIndex();
+        });
+        function slideIndex() {
+            // 現在のスライドが何枚目かを取得
+            document.getElementById("slide-current").textContent = splide.index + 1;
+            // スライドの総数を取得
+            document.getElementById("slide-length").textContent = splide.length;
+        }
+        slideIndex();
+
     </script>
 </body>
 
