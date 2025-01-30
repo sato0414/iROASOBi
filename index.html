@@ -210,8 +210,7 @@
             type: 'loop',
             perPage: 3,
             focus: 'center',
-            // pagination: false, // ページネーションを非表示
-            // arrows: false, // 矢印ボタンを非表示
+            pagination: false, // ページネーションを非表示
         }).mount();
 
         // 次のスライドが表示されるタイミングで発生
@@ -220,7 +219,7 @@
         });
         function slideIndex() {
             // 現在のスライドが何枚目かを取得
-            document.getElementById("slide-current").textContent = splide.index + 1;
+            document.getElementById("current-slide").textContent = splide.index + 1;
             // スライドの総数を取得
             document.getElementById("slide-length").textContent = splide.length;
         }
