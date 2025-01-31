@@ -132,12 +132,6 @@ body {
     gap: 20px;
 }
 
-.bubble {
-    margin-top: 50px;
-    position: relative;
-    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
-}
-
 /* 各バブルに異なる遅延を設定 */
 .bubble:nth-child(1) {
     animation-delay: 0s;
@@ -166,30 +160,72 @@ body {
     }
 }
 
-.bubble_image {
-    width: 300px;
-    height: auto;
+.bubble {
+    margin-top: 50px;
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s;
 }
 
+/* アイコン（シャボン玉上に重ねる） */
 .overlay_image {
     position: absolute;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70px;
-    height: auto;
 }
 
 .bubble_text {
     position: absolute;
-    top: 70%;
+    bottom: 27%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    font-size: 14px;
     font-weight: bold;
+    color: #545454;
     text-align: center;
-    font-size: 16px;
-    width: 100%;
 }
+
+.bubble_text_back {
+    position: absolute;
+    bottom: 23%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #545454;
+    line-height: 1.5;
+}
+
+.back,
+.front {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+}
+
+/* 初期状態 */
+.card .back {
+    transform: rotateY(-180deg);
+}
+
+/* クリックしたらフロントを裏返す */
+.flip-checkbox:checked+label .front {
+    transform: rotateY(180deg);
+}
+
+/* クリックしたらバックを裏返す */
+.flip-checkbox:checked+label .back {
+    transform: rotateY(0);
+}
+
 
 /* skillセクション */
 .skill {
@@ -268,7 +304,7 @@ table tr td {
 }
 
 .slick-track .slick-slide {
-    height:auto;
+    height: auto;
     display: flex;
     align-items: flex-start;
     justify-content: center;

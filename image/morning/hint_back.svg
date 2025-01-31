@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 309 418">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .01em;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #1c4268;
+        stroke-dasharray: 5;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #83ccd4;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        letter-spacing: -.49em;
+      }
+
+      .cls-8 {
+        fill: #8691a3;
+      }
+
+      .cls-5 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-6 {
+        font-family: TA-koigokoro-90ms-RKSJ-H, TA-koigokoro;
+        font-size: 18px;
+      }
+
+      .cls-9 {
+        fill: #fcc268;
+      }
+
+      .cls-10 {
+        letter-spacing: -.49em;
+      }
+    </style>
+    <filter id="drop-shadow-1" x="0" y="0" width="309" height="418" filterUnits="userSpaceOnUse">
+      <feOffset dx="-7" dy="7"/>
+      <feGaussianBlur result="blur" stdDeviation="5"/>
+      <feFlood flood-color="#999595" flood-opacity=".75"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="PC">
+    <g>
+      <rect class="cls-5" x="22" y="8.73" width="279" height="387"/>
+      <rect class="cls-3" x="39.5" y="31.22" width="244" height="305"/>
+      <text class="cls-6" transform="translate(75.19 97.27)"><tspan class="cls-1" x="0" y="0">日常の裏側に隠れた</tspan><tspan class="cls-7" x="163.62" y="0">、</tspan><tspan class="cls-1"><tspan x="-13.59" y="40">あたなの気づいていない</tspan></tspan><tspan class="cls-1" x="-18.18" y="80">魔法を見つけてください</tspan><tspan class="cls-10" x="181.8" y="80">。</tspan></text>
+      <g>
+        <path class="cls-2" d="M192.12,273.62c5.41-14.83,19.63-25.42,36.33-25.42s31.29,10.86,36.53,25.99"/>
+        <g>
+          <path class="cls-2" d="M58.11,273.62c5.41-14.83,19.63-25.42,36.33-25.42s31.29,10.86,36.53,25.99"/>
+          <circle class="cls-9" cx="94.54" cy="248.52" r="11.01"/>
+        </g>
+        <path class="cls-8" d="M225.05,244.58c0-2.64.93-5.05,2.47-6.95-4.99,1.04-8.74,5.47-8.74,10.77,0,6.08,4.93,11.01,11.01,11.01,3.44,0,6.51-1.58,8.53-4.06-.73.15-1.49.24-2.26.24-6.08,0-11.01-4.93-11.01-11.01Z"/>
+      </g>
+      <polyline class="cls-4" points="158.5 248.61 164.5 254.61 158.5 260.61"/>
+    </g>
+  </g>
+</svg>

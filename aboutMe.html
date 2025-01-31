@@ -12,7 +12,7 @@
         rel="stylesheet">
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
-    
+
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/aboutMe_morning.css">
     <!-- slick -->
@@ -48,7 +48,8 @@
             <div class="mail_icon">
                 <a href="./contact.html"><img src="./image/morning/mail_icon.svg" ale="mail"></a>
             </div>
-            <a href="./index.html"><img class="header_logo_vertical" src="./image/morning/logo_morning_tate.svg" alt="iROASOBi"></a>
+            <a href="./index.html"><img class="header_logo_vertical" src="./image/morning/logo_morning_tate.svg"
+                    alt="iROASOBi"></a>
         </div>
     </header>
 
@@ -104,9 +105,23 @@
             <h2 class="title">大切にしていること</h2>
             <div class="bubble_container">
                 <div class="bubble">
-                    <img src="./image/morning/syabondama.svg" alt="syabondama" class="bubble_image">
-                    <img src="./image/morning/search_morning.svg" alt="search" class="overlay_image">
-                    <p class="bubble_text">制作前の調査</p>
+                    <!-- チェックボックスを用意 -->
+                    <input type="checkbox" id="flip" class="flip-checkbox"hidden>
+
+                    <!-- ラベルをクリックするとチェックが切り替わる -->
+                    <label for="flip" class="card">
+                        <!-- 裏面のコンテンツ -->
+                        <div class="front">
+                            <img src="./image/morning/syabondama.svg" alt="syabondama" class="bubble_image">
+                            <img src="./image/morning/search_morning.svg" alt="search" class="overlay_image">
+                            <p class="bubble_text">制作前の調査</p>
+                        </div>
+                        <!-- 表面のコンテンツ -->
+                        <div class="back">
+                            <img src="./image/morning/syabondama.svg" alt="syabondama" class="bubble_image">
+                            <p class="bubble_text_back">課題解決のためのデザインを提供するためには、まず「何が問題なのか」を正確に把握することが欠かせません。制作前の調査にたっぷりと時間をかけています。</p>
+                        </div>
+                    </label>
                 </div>
                 <div class="bubble">
                     <img src="./image/morning/syabondama.svg" alt="syabondama" class="bubble_image">
@@ -120,6 +135,10 @@
                 </div>
             </div>
         </section>
+
+
+
+
 
         <section class="skill">
             <p class="sub_title">-skill-</p>
@@ -227,23 +246,31 @@
         <p class="sub_title">-photo&nbsp;gallery-</p>
         <h2 class="title">フォトギャラリー</h2>
         <div class="slider_photo_gallery">
-            <div class="photo_small photo_center"><img src="./image/morning/photoGallery_morning/IMG_6642.JPG" alt="photo_01" class="photo_detail">
+            <div class="photo_small photo_center"><img src="./image/morning/photoGallery_morning/IMG_6642.JPG"
+                    alt="photo_01" class="photo_detail">
             </div>
-            <div class="photo_center photo_big"><img src="./image/morning/photoGallery_morning/IMG_6640.JPG" alt="photo_02" class="photo_detail">
+            <div class="photo_center photo_big"><img src="./image/morning/photoGallery_morning/IMG_6640.JPG"
+                    alt="photo_02" class="photo_detail">
             </div>
             <div><img src="./image/morning/photoGallery_morning/IMG_6704.JPG" alt="photo_03" class="photo_detail">
             </div>
-            <div class="photo_big"><img src="./image/morning/photoGallery_morning/IMG_6789.JPG" alt="photo_04" class="photo_detail">
+            <div class="photo_big"><img src="./image/morning/photoGallery_morning/IMG_6789.JPG" alt="photo_04"
+                    class="photo_detail">
             </div>
-            <div class="photo_center"><img src="./image/morning/photoGallery_morning/IMG_6792.JPG" alt="photo_05" class="photo_detail">
+            <div class="photo_center"><img src="./image/morning/photoGallery_morning/IMG_6792.JPG" alt="photo_05"
+                    class="photo_detail">
             </div>
-            <div class="photo_big"><img src="./image/morning/photoGallery_morning/IMG_7247.JPG" alt="photo_06" class="photo_detail">
+            <div class="photo_big"><img src="./image/morning/photoGallery_morning/IMG_7247.JPG" alt="photo_06"
+                    class="photo_detail">
             </div>
-            <div class="photo_center"><img src="./image/morning/photoGallery_morning/IMG_6665.JPG" alt="photo_07" class="photo_detail">
+            <div class="photo_center"><img src="./image/morning/photoGallery_morning/IMG_6665.JPG" alt="photo_07"
+                    class="photo_detail">
             </div>
-            <div class="photo_small"><img src="./image/morning/photoGallery_morning/IMG_6753.JPG" alt="photo_08" class="photo_detail">
+            <div class="photo_small"><img src="./image/morning/photoGallery_morning/IMG_6753.JPG" alt="photo_08"
+                    class="photo_detail">
             </div>
-            <div class="photo_big photo_center"><img src="./image/morning/photoGallery_morning/IMG_6684.JPG" alt="photo_09" class="photo_detail">
+            <div class="photo_big photo_center"><img src="./image/morning/photoGallery_morning/IMG_6684.JPG"
+                    alt="photo_09" class="photo_detail">
             </div>
             <div><img src="./image/morning/photoGallery_morning/IMG_6706.JPG" alt="photo_10" class="photo_detail">
             </div>
