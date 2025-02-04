@@ -308,7 +308,6 @@ nav .inner ul li a:hover {
     border-color: white;
 }
 
-
 .button_morning_return {
     display: flex;
     justify-content: space-evenly;
@@ -371,8 +370,6 @@ nav .inner ul li a:hover {
 }
 
 
-
-
 footer {
     display: flex;
     justify-content: space-between;
@@ -410,3 +407,19 @@ footer {
     margin-left: auto;  /* 右寄せ */
     margin-right: 13%;
 }
+
+@media screen and (max-width: 767px) {
+    .header_logo {
+        margin-left: 10px;
+    }
+    .header_logo img {
+        width:80px;
+    }
+    .header_logo_vertical {
+        display: none;
+    }
+    .header_right {
+        margin-right: 60px;
+    }
+}
+

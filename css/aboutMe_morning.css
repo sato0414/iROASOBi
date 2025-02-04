@@ -10,6 +10,7 @@ body {
 .sub_title,
 .title {
     text-align: center;
+    margin-top: 20px;
 }
 
 .profile {
@@ -132,44 +133,45 @@ body {
     gap: 20px;
 }
 
-/* 各バブルに異なる遅延を設定 */
-.bubble:nth-child(1) {
-    animation-delay: 0s;
-    /* 最初のバブル */
-}
-
-.bubble:nth-child(2) {
-    animation-delay: 0.6s;
-    /* 2番目のバブル */
-}
-
-.bubble:nth-child(3) {
-    animation-delay: 1.2s;
-    /* 3番目のバブル */
-}
-
-@keyframes floating-y {
-    0% {
-        transform: translateY(-5%);
-        /* 上に少し浮かぶ */
-    }
-
-    100% {
-        transform: translateY(1%);
-        /* 下に少し浮かぶ */
-    }
-}
-
 .bubble {
     margin-top: 50px;
-    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
     position: relative;
     width: 100%;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.6s;
+    transition: transform 0.3s;
+    animation: floating-y 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floating-y {
+    0% {
+        transform: translateY(-10px);
+        /* 下に動く */
+    }
+
+    50% {
+        transform: translateY(10px);
+        /* 上に動く */
+    }
+
+    100% {
+        transform: translateY(-10px);
+        /* 下に戻る */
+    }
+}
+
+.bubble:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.bubble:nth-child(3) {
+    animation-delay: 1.2s;
 }
 
 /* アイコン（シャボン玉上に重ねる） */
@@ -194,11 +196,12 @@ body {
 
 .bubble_text_back {
     position: absolute;
-    bottom: 23%;
+    bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
     color: #545454;
     line-height: 1.5;
+    width: 220px;
 }
 
 .back,
@@ -209,27 +212,44 @@ body {
     width: 100%;
     height: auto;
     backface-visibility: hidden;
+    transition: 0.3s;
 }
 
 /* 初期状態 */
 .card .back {
-    transform: rotateY(-180deg);
+    transform: translateX(-50%) rotateY(-180deg);
 }
 
 /* クリックしたらフロントを裏返す */
-.flip-checkbox:checked+label .front {
-    transform: rotateY(180deg);
+.flip-checkbox_1:checked+label .front {
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.flip-checkbox_2:checked+label .front {
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.flip-checkbox_3:checked+label .front {
+    transform: translateX(-50%) rotateY(180deg);
 }
 
 /* クリックしたらバックを裏返す */
-.flip-checkbox:checked+label .back {
-    transform: rotateY(0);
+.flip-checkbox_1:checked+label .back {
+    transform: translateX(-50%) rotateY(0);
+}
+
+.flip-checkbox_2:checked+label .back {
+    transform: translateX(-50%) rotateY(0);
+}
+
+.flip-checkbox_3:checked+label .back {
+    transform: translateX(-50%) rotateY(0);
 }
 
 
 /* skillセクション */
 .skill {
-    margin-top: 200px;
+    margin-top: 500px;
 }
 
 .main_skill {
