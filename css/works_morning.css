@@ -25,6 +25,11 @@ body {
 
 .works_bar li {
     cursor: pointer;
+    font-weight: 500;
+}
+
+.works_bar li:hover {
+    opacity: 0.6;
 }
 
 .works_bar li.active {
@@ -67,10 +72,12 @@ body {
 .works_box img {
     height: auto;
     transition: transform .5s ease;
-  }
-  .works_box:hover img {
-    transform: scale(1.03); /* 拡大 */
-  }
+}
+
+.works_box:hover img {
+    transform: scale(1.03);
+    /* 拡大 */
+}
 
 /* タイトル */
 .works_title {
@@ -79,6 +86,22 @@ body {
     align-self: flex-start;
 }
 
+.works_wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    /* 初期状態で少し下に表示 */
+    animation: fadeInUp 0.8s forwards;
+    /* 初期状態ではanimationを付けないようにして、後でjQueryで適用する */
+}
 
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

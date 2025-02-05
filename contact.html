@@ -54,7 +54,7 @@
         <section class="contact_main">
             <p class="sub_title">-contact-</p>
             <h2 class="title">お問い合わせ</h2>
-            <p>以下のフォームに必要事項(*)をご入力のうえ、送信してください。</p>
+            <p id="contact_text" class="contact_text">以下のフォームに必要事項(*)をご入力のうえ、送信してください。</p>
             <div class="progress_container">
                 <div class="progress_bar">
                     <div class="progress_circle input active"></div>
@@ -137,7 +137,7 @@
 
             <!-- サンクスページ -->
             <div class="completed_form">
-                <p>
+                <p class="competed_text">
                     この度はご連絡いただき誠にありがとうございます。<br>
                     送信内容を確認させていただき、追ってご返信いたします。
                 </p>
@@ -204,6 +204,9 @@
                     $('.confirm_form #phone').val(tell)
                     $('.confirm_form #message').val(message)
 
+                    // メッセージの変更
+                    $('.contact_text').text('お問い合わせ内容をご確認ください。')
+
                     // 修正ボタンが押された時
                     $('.fix_button').on('click', function () {
                         // 入力画面を表示
@@ -216,11 +219,35 @@
                         $('.progress_label.input').addClass('active')
                         $('.progress_circle.confirm').removeClass('active')
                         $('.progress_label.confirm').removeClass('active')
+
+                        // メッセージの変更
+                        $('.contact_text').text('以下のフォームに必要事項(*)をご入力のうえ、送信してください。')
                     })
                 }
             })
         })
+
+        // 送信完了時の処理
+        $('iframe').on('load', function () {
+            if (submitted) {
+                // 完了画面を表示
+                $('.completed_form').show()
+                // 入力画面や確認画面を非表示
+                $('.input_form').hide()
+                $('.confirm_form').hide()
+
+                // プログレスバーの更新
+                $('.progress_circle.confirm').removeClass('active')
+                $('.progress_label.confirm').removeClass('active')
+                $('.progress_circle.complete').addClass('active')
+                $('.progress_label.complete').addClass('active')
+
+                // メッセージの非表示
+                $('.contact_text').hide()
+            }
+        })
     </script>
+
 </body>
 
 </html>

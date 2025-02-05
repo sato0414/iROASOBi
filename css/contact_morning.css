@@ -92,7 +92,7 @@
 }
 
 .radio_group label {
-  width: 45%;
+  width: 50%;
   display: flex;
   align-items: center;
   margin: 10px auto;
@@ -121,6 +121,34 @@ textarea {
   height: 44px;
 }
 
+.radio_group input[type="radio"] {
+  display: none;
+  /* デフォルトのラジオボタンを非表示 */
+}
+
+.radio_group label::before {
+  content: "〇";
+  /* カスタムのラジオボタン（未選択） */
+  font-size: 16px;
+  margin-right: 8px;
+  color: #333;
+}
+
+.radio_group label::before {
+  content: "〇";
+  /* カスタムのラジオボタン（未選択） */
+  font-size: 16px;
+  margin-right: 8px;
+  color: #333;
+}
+
+.radio_group input[type="radio"]:checked+label::before {
+  content: "●";
+  /* 選択時のマークを変更 */
+  color: #83ccd4;
+  /* 選択時の色を変更（好みに応じて） */
+}
+
 
 /* 確認画面 */
 .confirm_form {
@@ -146,9 +174,9 @@ textarea {
   outline: none;
 }
 
-.confirm_form .form_group:not(.message) {
+/* .confirm_form .form_group:not(.message) {
   align-items: center;
-}
+} */
 
 .confirm_form label {
   margin: 0;
@@ -163,7 +191,7 @@ textarea {
   display: flex;
   margin-top: 10px;
   justify-content: center;
-  gap:70px;
+  gap: 70px;
 }
 
 .confirm_form .contact_label {
@@ -172,21 +200,80 @@ textarea {
   margin-top: 12px;
 }
 
-/* .confirm_form.contact_button {
-  height: 44px;
-} */
-
 /* 完了画面 */
 .completed_form {
   display: none;
 }
 
 .completed_form p {
-    line-height: 2;
-    margin: 80px auto;
+  line-height: 2;
+  margin: 80px auto;
 }
 
 .completed_button {
-    margin: 30px auto;
+  margin: 30px auto;
 }
 
+@media screen and (max-width: 767px) {
+  .progress_label.input::after {
+    content: "入力";
+  }
+
+  .progress_label.confirm::after {
+    content: "確認";
+  }
+
+  .progress_label.complete::after {
+    content: "完了";
+  }
+
+  .progress_label {
+    visibility: hidden;
+    position: relative;
+  }
+
+  .progress_label::after {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  #contact_text , .competed_text {
+    max-width: 280px;
+    margin: 50px auto;
+    text-align: start !important;
+  }
+
+  .form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 280px;
+    margin: 30px auto;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    max-width: 280px;
+    /* フォームの最大幅を指定 */
+  }
+
+  .radio_group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 各項目の間隔を調整 */
+  }
+
+  .radio_group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    width: 100%;
+  }
+}

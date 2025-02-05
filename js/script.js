@@ -134,7 +134,6 @@ $(".slider_photo_gallery").slick({
     },
   ],
 });
-
 // 制作実績一覧の絞り込み機能
 $(function () {
   // 変数に要素をセット
@@ -167,5 +166,20 @@ $(function () {
     } else if (index === 3) {
       bannerWorks.show(); // バナーを表示
     }
+
+    // 時間差で表示する処理
+    // アニメーションの遅延をリセット
+    $(".works_wrapper").css({
+      "opacity": 0,
+      "transform": "translateY(20px)",
+    }).each(function (index) {
+      $(this).css("animation-delay", (index * 0.2) + "s");
+    });
+
+    // 再度、アニメーションを適用
+    $(".works_wrapper").each(function () {
+      $(this).addClass("fadeInUp");
+    });
   });
 });
+
