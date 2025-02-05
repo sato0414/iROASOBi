@@ -243,6 +243,7 @@ textarea {
     max-width: 280px;
     margin: 50px auto;
     text-align: start !important;
+    line-height: 1.5;
   }
 
   .form_group {
