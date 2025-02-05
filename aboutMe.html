@@ -46,10 +46,13 @@
                 <div id="mask"></div>
             </div>
             <div class="mail_icon">
-                <a href="./contact.html"><img src="./image/morning/mail_icon.svg" ale="mail"></a>
+                <a href="./contact.html"><img src="./image/morning/mail_icon.svg" alt="mail"></a>
             </div>
             <a href="./index.html"><img class="header_logo_vertical" src="./image/morning/logo_morning_tate.svg"
                     alt="iROASOBi"></a>
+            <a href="#header" class="page_up">
+                <span class="arrow"></span>
+            </a>
         </div>
     </header>
 
@@ -79,7 +82,11 @@
     <div class="page_width">
         <section class="career">
             <div class="career_main">
-                <img src="./image/morning/photo/career_morning.JPG" alt="career_morning">
+                <picture>
+                    <source srcset="./image/morning/photo/IMG_6605.JPG" media="(max-width:767px)">
+                    <img src="./image/morning/photo/career_morning.JPG" alt="career_morning">
+                    </source>
+                </picture>
             </div>
             <dl class="career_sentence">
                 <dt class="career_ym">1999年4月</dt>
@@ -160,97 +167,108 @@
             <div class="main_skill">
                 <div class="design_skill">
                     <div class="skill_type_design">デザインスキル</div>
-                    <table>
-                        <tr>
-                            <td>illustrator</td>
-                            <td class="skill_level">
+                    <div class="skill_flex">
+                        <div class="skill_item">
+                            <span class="skill_name">Illustrator</span>
+                            <span class="skill_level">
                                 <span class="color"></span>
                                 <span class="color"></span>
                                 <span class="color"></span>
                                 <span></span>
                                 <span></span>
-                            </td>
-                        </tr>
-                        <tr class="skill_detail">
-                            <td>Photoshop</td>
-                            <td class="skill_level">
+                            </span>
+                        </div>
+                        <div class="skill_item">
+                            <span class="skill_name">Photoshop</span>
+                            <span class="skill_level">
                                 <span class="color"></span>
                                 <span class="color"></span>
                                 <span></span>
                                 <span></span>
                                 <span></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Figma</td>
-                            <td class="skill_level">
+                            </span>
+                        </div>
+                        <div class="skill_item">
+                            <span class="skill_name">Figma</span>
+                            <span class="skill_level">
                                 <span class="color"></span>
                                 <span class="color"></span>
                                 <span class="color"></span>
                                 <span></span>
                                 <span></span>
-                            </td>
-                        </tr>
-                    </table>
+                            </span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="coding_skill">
                     <div class="skill_type_coding">コーディングスキル</div>
-                    <table>
-                        <tr>
-                            <td>html</td>
-                            <td class="skill_level">
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span></span>
-                            </td>
-                            <td class="skill_padding">Java</td>
-                            <td class="skill_level">
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span></span>
-                                <span></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>{css}</td>
-                            <td class="skill_level">
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span></span>
-                            </td>
-                            <td class="skill_padding">spring boot</td>
-                            <td class="skill_level">
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span></span>
-                                <span></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>JavaScript</td>
-                            <td class="skill_level">
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span></span>
-                                <span></span>
-                            </td>
-                            <td class="skill_padding">MySQL</td>
-                            <td class="skill_level">
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span class="color"></span>
-                                <span></span>
-                                <span></span>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="skill_list">
+                        <div class="skill_flex">
+                            <div class="skill_item">
+                                <span class="skill_name">HTML</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">CSS</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">JavaScript</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skill_flex">
+                            <div class="skill_item">
+                                <span class="skill_name">Java</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">Spring Boot</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">MySQL</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -292,12 +310,13 @@
     </section>
 
     <footer>
-        <ul class="footer_menu">
-            <li><a href="./aboutMe.html">about&nbsp;me</a></li>
-            <li>works</li>
-            <li><a href="./contact.html">contact</a></li>
-        </ul>
-        <a href="#header" class="page_up"></a>
+        <div class="content">
+            <ul class="footer_menu">
+                <li><a href="./aboutMe.html">about&nbsp;me</a></li>
+                <li><a href="./works.html">works</a></li>
+                <li><a href="./contact.html">contact</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>

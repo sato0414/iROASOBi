@@ -39,6 +39,10 @@ body {
     margin-bottom: 20px;
 }
 
+.profile_sentence {
+    padding: 10px;
+}
+
 .profile_sentence_detail {
     max-width: 475px;
     line-height: 1.8;
@@ -68,7 +72,7 @@ body {
     position: relative;
     max-width: 670px;
     margin-left: 10%;
-    margin-right: 80px;
+    margin-right: 10%;
 }
 
 .career_sentence:before {
@@ -192,6 +196,7 @@ body {
     font-weight: bold;
     color: #545454;
     text-align: center;
+    transform: translate(-50%, -50%);
 }
 
 .bubble_text_back {
@@ -202,6 +207,14 @@ body {
     color: #545454;
     line-height: 1.5;
     width: 220px;
+}
+
+@media screen and (max-width: 980px) {
+
+    .bubble_text_back {
+        width: 160px;
+        bottom: 20%;
+    }
 }
 
 .back,
@@ -249,12 +262,12 @@ body {
 
 /* skillセクション */
 .skill {
-    margin-top: 500px;
+    margin-top: 450px;
 }
 
 .main_skill {
     display: flex;
-    gap: 10%;
+    gap: 7%;
     justify-content: center;
     margin-top: 90px;
     padding: 10px;
@@ -272,10 +285,14 @@ body {
     font-weight: 500;
 }
 
+.skill_list {
+    display: flex;
+    justify-content: space-between;
+}
+
 .skill_level {
     display: flex;
     gap: 5px;
-    padding-left: 40px;
     align-items: center;
 }
 
@@ -291,17 +308,27 @@ body {
     background-color: #9AAAAD;
 }
 
-table tr td {
-    height: 70px;
-    vertical-align: middle;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: normal;
-}
-
 .skill_padding {
     padding-left: 80px;
 }
+
+.design_skill, 
+.coding_skill {
+    flex-grow: 1;
+}
+
+.skill_item {
+    display: flex;
+    margin: 30px auto;
+}
+
+.skill_name {
+    width: 150px;
+    text-align: left;
+    font-size: 20px;
+    font-weight:500;
+}
+
 
 /* photo_galleryセクション */
 .photo_gallery {
@@ -340,4 +367,48 @@ table tr td {
 
 .photo_small .photo_detail {
     max-width: 250px;
+}
+
+@media screen and (max-width: 1100px) {
+    .main_skill {
+        display: flex;
+        text-align: center;
+    }
+
+    .design_skill,
+    .coding_skill {
+        margin-bottom: 50px;
+        max-width: 260px;
+    }
+    .skill_list {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .profile_main {
+        flex-direction: column-reverse;
+    }
+
+    .profile_photo img {
+        max-width: 210px;
+        padding: 50px;
+    }
+
+    .career {
+        flex-direction: column;
+    }
+
+    .bubble_container {
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+        gap: 220px;
+    }
+    .main_skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

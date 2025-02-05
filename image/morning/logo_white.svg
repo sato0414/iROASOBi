@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 50.74">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: #fcf2e5;
+      }
+
+      .cls-2 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 23.55px;
+      }
+
+      .cls-3 {
+        font-family: ZenKakuGothicAntique-Medium, 'Zen Kaku Gothic Antique';
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="PC">
+    <g>
+      <text class="cls-3" transform="translate(7.26 45.86)"><tspan x="0" y="0">R</tspan></text>
+      <text class="cls-3" transform="translate(26.8 45.86)"><tspan x="0" y="0">O</tspan></text>
+      <text class="cls-2" transform="translate(48.43 44.85)"><tspan x="0" y="0">Λ</tspan></text>
+      <text class="cls-3" transform="translate(67.21 45.86)"><tspan x="0" y="0">S</tspan></text>
+      <text class="cls-3" transform="translate(86.17 45.86)"><tspan x="0" y="0">O</tspan></text>
+      <text class="cls-3" transform="translate(107.8 45.86)"><tspan x="0" y="0">B</tspan></text>
+      <circle class="cls-4" cx="128.59" cy="30.38" r="1.41"/>
+      <rect class="cls-4" x="127.53" y="33.91" width="2.12" height="12.01"/>
+      <circle class="cls-4" cx="1.41" cy="30.38" r="1.41"/>
+      <rect class="cls-4" x=".35" y="33.91" width="2.12" height="12.01"/>
+      <circle class="cls-1" cx="34.15" cy="10.13" r="4.71"/>
+      <circle class="cls-4" cx="67.47" cy="9.54" r="9.54"/>
+      <circle class="cls-4" cx="48.4" cy="18.37" r="3.53"/>
+    </g>
+  </g>
+</svg>

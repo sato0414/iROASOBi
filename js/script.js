@@ -80,20 +80,56 @@ addActiveClassRandomly(); // アニメーション処理の開始
 
 // フォトギャラリー
 $(".slider_photo_gallery").slick({
-  autoplay: true, // 自動でスクロール
-  autoplaySpeed: 0, // スライド切り替えの時間（3秒）
-  speed: 8000, // スライドが流れる速度
-  cssEase: "linear", // 等速スクロール
-  slidesToShow: 4.3, // 表示するスライドの数
-  swipe: false, // スワイプ禁止
-  arrows: false, // 矢印非表示
-  pauseOnFocus: false, // フォーカス時の停止を無効化
-  pauseOnHover: false, // ホバー時の停止を無効化
+  autoplay: true,
+  autoplaySpeed: 0,
+  speed: 8000,
+  cssEase: "linear",
+  slidesToShow: 4.3,
+  swipe: false,
+  arrows: false,
+  pauseOnFocus: false,
+  pauseOnHover: false,
   responsive: [
     {
-      breakpoint: 750,
+      breakpoint: 1400,
       settings: {
-        slidesToShow: 3, // 画面幅750px以下でスライド3枚表示
+        slidesToShow: 3.5,
+      },
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2.4,
+      },
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1.6,
+      },
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1.3,
+      },
+    },
+    {
+      breakpoint: 420,
+      settings: {
+        slidesToShow: 1.1,
+      },
+    },
+    {
+      breakpoint: 370,
+      settings: {
+        slidesToShow: 1,
       },
     },
   ],

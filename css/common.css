@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+/* ゆっくり遷移する */
+html {
+    scroll-behavior: smooth;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -234,12 +239,14 @@ nav .inner ul li a:hover {
     font-size: 14px;
     color: #83ccd4;
     letter-spacing: 0.2em;
+    padding: 0 10px;
 }
 
 .title {
     font-size: 20px;
     font-weight: bold;
     margin: 20px auto;
+    padding: 0 10px;
 }
 
 .weight_bold {
@@ -263,6 +270,7 @@ nav .inner ul li a:hover {
     transition: 0.3s ease-in-out;
     background-color: transparent;
     overflow: hidden; /* 背景がはみ出さないように */
+    margin: auto 10px;
 }
 
 /* 矢印の「くの字」を作成 */
@@ -369,46 +377,73 @@ nav .inner ul li a:hover {
     border-color: white;
 }
 
-
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  /* フッター内の項目を縦方向中央に揃える */
     background-color: #83ccd4;
     color: #fcf2e5;
     height: 100px;
-    padding: 0 20px;  /* 右左に余白を追加 */
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+footer .content {
+    width: 100%;
 }
 
 .footer_menu {
     display: flex;
-    justify-content: flex-start;  /* リスト項目を左寄せ */
-    align-items: center;  /* 縦方向中央揃え */
-    max-width: 1000px;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .footer_menu li {
-    color: #fcf2e5;
-    margin-right: 13%;
+    margin-right: 50px;
 }
 
-.footer_menu li:first-child {
-    padding-left: 180px;  /* 最初の項目（about me）の左側に余白を追加 */
+.footer_menu a {
+    color: #fcf2e5;
+    text-decoration: none;
 }
 
 .page_up {
-    content: "";
+    position: fixed;
+    bottom: 3%;
+    width: 50px; 
+    height: 50px;
+    background-color: #fcf2e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.page_up:hover {
+    opacity: 0.7; /* 透過度を70%に */
+    transform: scale(1.1); /* ホバー時に少し拡大 */
+}
+
+.arrow {
     display: inline-block;
     width: 16px;
     height: 16px;
-    border: 3px solid #fcf2e5;
+    border: 3px solid #83ccd4;
     border-width: 3px 3px 0 0;
     transform: rotate(-45deg);
-    margin-left: auto;  /* 右寄せ */
-    margin-right: 13%;
+    position: relative;
+    top: 3px;
 }
 
+
 @media screen and (max-width: 767px) {
+    /* ハンバーガーメニュー */
+
+    /* ヘッダー */
     .header_logo {
         margin-left: 10px;
     }
@@ -420,6 +455,17 @@ footer {
     }
     .header_right {
         margin-right: 60px;
+    }
+
+    /* フッター */
+    footer {
+        height: 220px;
+    }
+    .footer_menu {
+        display: block;
+    }
+    .footer_menu li {
+        margin:40px auto;
     }
 }
 

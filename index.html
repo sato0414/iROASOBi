@@ -60,9 +60,13 @@
                 </div>
                 <a href="./index.html"><img class="header_logo_vertical" src="./image/morning/logo_morning_tate.svg"
                         alt="iROASOBi"></a>
+                <a href="#header" class="page_up">
+                    <span class="arrow"></span>
+                </a>
             </div>
-
         </header>
+
+
         <div class="container_scroll_down">
             <a href="#" class="scroll-down wavy-text">
                 <span style="--i:1">S</span>
@@ -99,20 +103,17 @@
                                         class="about_me_morning_2">
                                 </div>
                                 <div class="back">
-                                    <img src="./image/morning/hint_back.svg" alt="about_me_morning_2"
+                                    <img src="./image/morning/photo/hint_back.png" alt="about_me_morning_2"
                                         class="about_me_morning_2">
                                 </div>
+                                <!-- 青い円をクリックしたら画像が回転するように修正 -->
+                                <label for="flip_1" class="click_area">
+                                    <span>click</span>
+                                </label>
                             </div>
                         </label>
-                        <!-- 青い円をクリックしたら画像が回転するように修正 -->
-                        <label for="flip_1" class="click_area">
-                            <span>click</span>
-                        </label>
+
                     </div>
-
-
-
-                    <!-- <div class="circle"></div> -->
 
                     <img src="./image/morning/photo/about_me_morning_3.JPG" alt="about_me_morning_3"
                         class="about_me_morning_3">
@@ -275,13 +276,16 @@
         </section>
     </div>
     <footer>
-        <ul class="footer_menu">
-            <li><a href="./aboutMe.html">about&nbsp;me</a></li>
-            <li><a href="./works.html">works</a></li>
-            <li><a href="./contact.html">contact</a></li>
-        </ul>
-        <a href="#header" class="page_up"></a>
+        <div class="content">
+            <ul class="footer_menu">
+                <li><a href="./aboutMe.html">about&nbsp;me</a></li>
+                <li><a href="./works.html">works</a></li>
+                <li><a href="./contact.html">contact</a></li>
+            </ul>
+        </div>
     </footer>
+
+
 
     <script src="js/script.js"></script>
 
@@ -290,8 +294,26 @@
             type: 'loop',
             perPage: 3,
             focus: 'center',
-            pagination: false, // ページネーションを非表示
+            pagination: false,
+            breakpoints: {
+                920: {
+                    perPage: 1, // 1つのスライドを中央に表示
+                    focus: 'center', // 常に中央に配置
+                    padding: '30%', // 左右にスライドを少し見切れさせる
+                },
+                767: {
+                    perPage: 1,
+                    focus: 'center',
+                    padding: '25%',
+                },
+                630: {
+                    perPage: 1,
+                    focus: 'center',
+                    padding: '5%',
+                }
+            }
         }).mount();
+
 
         // 次のスライドが表示されるタイミングで発生
         splide.on("active", function () {
