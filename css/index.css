@@ -218,6 +218,19 @@ header {
     position: relative;
 }
 
+.about_me_hint {
+    position: relative;
+}
+
+.tape {
+    max-width: 36px;
+    height: auto;
+    position: absolute;
+    top: 40px;
+    left: 240px;
+    z-index: 1;
+}
+
 .back,
 .front {
     position: absolute;
@@ -316,6 +329,10 @@ header {
         top: -15px;
         left: 5px;
     }
+    .tape {
+        top: 34px;
+        left: 220px;
+    }
     .about_me_morning_2 {
         max-width: 250px;
         height: auto;
@@ -340,6 +357,10 @@ header {
         height: auto;
         top: -15px;
         left: 5px;
+    }
+    .tape {
+        top: 60px;
+        left: 155px;
     }
     .about_me_morning_2 {
         max-width: 250px;
@@ -550,7 +571,6 @@ header {
 }
 
 
-
 /* レスポンシブ対応 */
 @media screen and (max-width: 767px) {
     .about_me_main {
@@ -634,3 +654,35 @@ header {
         margin-bottom: 100px;
     }
 }
+
+.container {
+    padding: 40px;
+  }
+  
+  .block {
+    width: 160px;
+    height: 160px;
+    margin: auto;
+  }
+  
+  .circleText {
+    overflow: visible;
+    animation: rotation 18s linear infinite;
+  }
+  .circleText__circle {
+    fill: none;
+  }
+  .circleText__text {
+    fill: #83ccd4;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
