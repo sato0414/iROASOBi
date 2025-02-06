@@ -98,3 +98,34 @@
 .deluxeBurger_banner {
     width: 549px;
 }
+
+@media screen and (max-width: 767px) {
+    .works_detail {
+        max-width: 375px;
+    }
+    .works_detail_main {
+        display: flex;
+        flex-direction: column;
+    }
+    .works_title {
+        text-align: center;
+    }
+    .works_detail_right {
+        border: none;
+        height: auto;
+        overflow-y: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .works_mock_PC_SP {
+        display: block;
+        text-align: center;
+    }
+    .works_mock_PC {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+}
+

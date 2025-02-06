@@ -170,7 +170,6 @@ nav .inner ul li a:hover {
     transition: all 0.5s ease;
 }
 
-/* ホバー時にボタン全体を透過 */
 .toggle_btn:hover {
     opacity: 0.7; /* 透過度を70%に */
 }
