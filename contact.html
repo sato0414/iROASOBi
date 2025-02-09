@@ -57,16 +57,20 @@
             <p id="contact_text" class="contact_text">以下のフォームに必要事項(*)をご入力のうえ、送信してください。</p>
             <div class="progress_container">
                 <div class="progress_bar">
-                    <div class="progress_circle input active"></div>
+                    <div class="progress_wrap">
+                        <div class="progress_circle input active"></div>
+                        <span class="progress_label input active">お問い合わせ入力</span>
+                    </div>
                     <div class="progress_line"></div>
-                    <div class="progress_circle confirm"></div>
+                    <div class="progress_wrap">
+                        <div class="progress_circle confirm"></div>
+                        <span class="progress_label confirm">お問い合わせ確認</span>
+                    </div>
                     <div class="progress_line"></div>
-                    <div class="progress_circle complete"></div>
-                </div>
-                <div class="progress_labels">
-                    <span class="progress_label input active">お問い合わせ入力</span>
-                    <span class="progress_label confirm">お問い合わせ確認</span>
-                    <span class="progress_label complete">お問い合わせ完了</span>
+                    <div class="progress_wrap">
+                        <div class="progress_circle complete"></div>
+                        <span class="progress_label complete">お問い合わせ完了</span>
+                    </div>
                 </div>
             </div>
             <form class="input_form">

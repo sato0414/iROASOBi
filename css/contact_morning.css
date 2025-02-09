@@ -19,6 +19,10 @@
   margin: 50px auto;
 }
 
+.progress_wrap {
+  position: relative;
+}
+
 .progress_bar {
   display: flex;
   align-items: center;
@@ -58,14 +62,19 @@
   position: relative;
 }
 
-.progress_labels {
+/* .progress_labels {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .progress_label {
   font-size: 14px;
   color: #a0a0a0;
+  position: absolute;
+  white-space:nowrap;
+  top:30px;
+  left:50%;
+  transform: translate(-50%, -50%);
 }
 
 .progress_label.active {
@@ -123,12 +132,10 @@ textarea {
 
 .radio_group input[type="radio"] {
   display: none;
-  /* デフォルトのラジオボタンを非表示 */
 }
 
 .radio_group label::before {
   content: "〇";
-  /* カスタムのラジオボタン（未選択） */
   font-size: 16px;
   margin-right: 8px;
   color: #333;
@@ -136,7 +143,6 @@ textarea {
 
 .radio_group label::before {
   content: "〇";
-  /* カスタムのラジオボタン（未選択） */
   font-size: 16px;
   margin-right: 8px;
   color: #333;
@@ -144,9 +150,7 @@ textarea {
 
 .radio_group input[type="radio"]:checked+label::before {
   content: "●";
-  /* 選択時のマークを変更 */
   color: #83ccd4;
-  /* 選択時の色を変更（好みに応じて） */
 }
 
 
@@ -154,7 +158,6 @@ textarea {
 .confirm_form {
   display: none;
   margin: 0 auto;
-  /* max-width: 600px; */
 }
 
 .confirm_form input,
@@ -173,10 +176,6 @@ textarea {
 .confirm_form textarea:focus {
   outline: none;
 }
-
-/* .confirm_form .form_group:not(.message) {
-  align-items: center;
-} */
 
 .confirm_form label {
   margin: 0;
@@ -215,6 +214,9 @@ textarea {
 }
 
 @media screen and (max-width: 767px) {
+  .progress_bar {
+    max-width: 280px;
+  }
   .progress_label.input::after {
     content: "入力";
   }
@@ -229,7 +231,7 @@ textarea {
 
   .progress_label {
     visibility: hidden;
-    position: relative;
+    position: absolute;
   }
 
   .progress_label::after {
@@ -237,6 +239,8 @@ textarea {
     position: absolute;
     left: 0;
     top: 0;
+    display: block;
+    width: 100%;
   }
   
   #contact_text , .competed_text {
@@ -260,14 +264,12 @@ textarea {
   textarea {
     width: 100%;
     max-width: 280px;
-    /* フォームの最大幅を指定 */
   }
 
   .radio_group {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    /* 各項目の間隔を調整 */
   }
 
   .radio_group label {
@@ -276,5 +278,9 @@ textarea {
     cursor: pointer;
     margin: 0;
     width: 100%;
+  }
+  .confirm_form .button_wrap {
+    max-width: 280px;
+    margin: 0 auto;
   }
 }

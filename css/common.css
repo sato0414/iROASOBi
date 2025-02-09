@@ -9,9 +9,12 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-    font-family: "Zen Kaku Gothic Antique", sans-serif; /* 入力されたテキストのフォント変更 */
-    font-size: 14px; /* フォントサイズの変更 */
-    color: #545454; /* テキスト色 */
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    /* 入力されたテキストのフォント変更 */
+    font-size: 14px;
+    /* フォントサイズの変更 */
+    color: #545454;
+    /* テキスト色 */
     letter-spacing: 0.1em;
 }
 
@@ -20,9 +23,12 @@ input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder,
 textarea::placeholder {
-    font-family: "Zen Kaku Gothic Antique", sans-serif; /* フォントの変更 */
-    font-size: 14px; /* フォントサイズの変更 */
-    color: #a0a0a0; /* プレースホルダーのテキスト色 */
+    font-family: "Zen Kaku Gothic Antique", sans-serif;
+    /* フォントの変更 */
+    font-size: 14px;
+    /* フォントサイズの変更 */
+    color: #a0a0a0;
+    /* プレースホルダーのテキスト色 */
     letter-spacing: 0.1em;
 }
 
@@ -48,7 +54,7 @@ header {
 
 .header_right {
     margin-right: 80px;
-    z-index:20;
+    z-index: 20;
 }
 
 .header_logo {
@@ -73,8 +79,11 @@ header {
 }
 
 /* ホバー時にボタン全体を透過 */
-.mail_icon:hover ,.header_logo:hover , .header_logo_vertical:hover{
-    opacity: 0.7; /* 透過度を70%に */
+.mail_icon:hover,
+.header_logo:hover,
+.header_logo_vertical:hover {
+    opacity: 0.7;
+    /* 透過度を70%に */
 }
 
 .mail_icon img {
@@ -171,13 +180,14 @@ nav .inner ul li a:hover {
 }
 
 .toggle_btn:hover {
-    opacity: 0.7; /* 透過度を70%に */
+    opacity: 0.7;
+    /* 透過度を70%に */
 }
 
 .toggle_btn span {
     display: block;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 18px;
@@ -188,11 +198,11 @@ nav .inner ul li a:hover {
 }
 
 .toggle_btn span:nth-child(1) {
-    transform: translate(-50%, calc(-50%  + -6px));
+    transform: translate(-50%, calc(-50% + -6px));
 }
 
 .toggle_btn span:nth-child(3) {
-    transform: translate(-50%, calc(-50%  + 6px));
+    transform: translate(-50%, calc(-50% + 6px));
 }
 
 /* ハンバーガーメニューの開いている状態 */
@@ -268,7 +278,7 @@ nav .inner ul li a:hover {
     box-shadow: 0px 3px #83ccd4;
     transition: 0.3s ease-in-out;
     background-color: transparent;
-    overflow: hidden; /* 背景がはみ出さないように */
+    overflow: hidden;
     margin: auto 10px;
 }
 
@@ -292,22 +302,22 @@ nav .inner ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #83ccd4; /* ホバー時の背景色 */
-    transform: scaleX(0); /* 初期状態では隠す */
+    background: #83ccd4;
+    transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-in-out;
-    z-index: -1; /* 文字より背面に */
+    z-index: -1;
 }
 
 /* ホバー時のスタイル */
 .button_morning:hover {
-    color: white; /* 文字色を白に */
-    box-shadow: 0px 3px #545454; /* 影の色を変更 */
+    color: white;
+    box-shadow: 0px 3px #545454;
 }
 
 /* ホバー時に背景を左から右へ表示 */
 .button_morning:hover::before {
-    transform: scaleX(1); /* 横幅100%に広げる */
+    transform: scaleX(1);
 }
 
 /* ホバー時に矢印の色を白に */
@@ -330,8 +340,8 @@ nav .inner ul li a:hover {
     box-shadow: 0px 3px #83ccd4;
     transition: 0.3s ease-in-out;
     background-color: transparent;
-    flex-direction:row-reverse;
-    overflow: hidden; /* 背景がはみ出さないように */
+    flex-direction: row-reverse;
+    overflow: hidden;
 }
 
 .button_morning_return::after {
@@ -353,22 +363,22 @@ nav .inner ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #83ccd4; /* ホバー時の背景色 */
-    transform: scaleX(0); /* 初期状態では隠す */
+    background: #83ccd4;
+    transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-in-out;
-    z-index: -1; /* 文字より背面に */
+    z-index: -1;
 }
 
 /* ホバー時のスタイル */
 .button_morning_return:hover {
-    color: white; /* 文字色を白に */
-    box-shadow: 0px 3px #545454; /* 影の色を変更 */
+    color: white;
+    box-shadow: 0px 3px #545454;
 }
 
 /* ホバー時に背景を左から右へ表示 */
 .button_morning_return:hover::before {
-    transform: scaleX(1); /* 横幅100%に広げる */
+    transform: scaleX(1);
 }
 
 /* ホバー時に矢印の色を白に */
@@ -409,7 +419,7 @@ footer .content {
 .page_up {
     position: fixed;
     bottom: 3%;
-    width: 50px; 
+    width: 50px;
     height: 50px;
     background-color: #fcf2e5;
     border-radius: 50%;
@@ -423,8 +433,10 @@ footer .content {
 }
 
 .page_up:hover {
-    opacity: 0.7; /* 透過度を70%に */
-    transform: scale(1.1); /* ホバー時に少し拡大 */
+    opacity: 0.7;
+    /* 透過度を70%に */
+    transform: scale(1.1);
+    /* ホバー時に少し拡大 */
 }
 
 .arrow {
@@ -448,18 +460,22 @@ footer .content {
     .sub_title {
         font-size: 12px;
     }
+
     /* ハンバーガーメニュー */
 
     /* ヘッダー */
     .header_logo {
         margin-left: 10px;
     }
+
     .header_logo img {
-        width:80px;
+        width: 80px;
     }
+
     .header_logo_vertical {
         display: none;
     }
+
     .header_right {
         margin-right: 60px;
     }
@@ -468,11 +484,40 @@ footer .content {
     footer {
         height: 220px;
     }
+
     .footer_menu {
         display: block;
     }
+
     .footer_menu li {
-        margin:40px auto;
+        margin: 40px auto;
     }
 }
 
+/* nightモード */
+body.night {
+    background-color: #1C4268;
+
+    p,
+    h2,
+    .slash {
+        color: #fcf2e5;
+    }
+
+    footer,
+    .mail_icon,
+    .toggle_btn,
+    .page_up {
+        background-color: #061F4B;
+    }
+
+    .arrow {
+        border: 3px solid #fcf2e5;
+        border-width: 2px 2px 0 0;
+    }
+
+    .button_morning  {
+        box-shadow: none;
+    }
+
+}

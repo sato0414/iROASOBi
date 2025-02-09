@@ -9,6 +9,10 @@ body {
     position: relative;
 }
 
+.main_visual_morning_sp {
+    display: none;
+}
+
 .wrapper {
     --_base-height: 95svh;
     --_note-height: 1lh;
@@ -139,12 +143,10 @@ header {
 @keyframes floating-y {
     0% {
         transform: translateY(-2%);
-        /* 上に少し浮かぶ */
     }
 
     100% {
         transform: translateY(3%);
-        /* 下に少し浮かぶ */
     }
 }
 
@@ -215,20 +217,37 @@ header {
 
 .about_me_main {
     margin-top: 100px;
+    display: flex;
+}
+
+.about_me_photo {
+    width: 50%;
     position: relative;
 }
 
+.about_me_sentence {
+    max-width: 1000px;
+    /* width: 50%; */
+    padding-right: 5px;
+}
+
 .about_me_hint {
-    position: relative;
+    position: absolute;
+    top: 60px;
+    right: 20%;
+    max-width: 300px;
+    height: auto;
+    width: 100%;
 }
 
 .tape {
     max-width: 36px;
     height: auto;
     position: absolute;
-    top: 40px;
-    left: 240px;
+    top: -10px;
+    left: 50%;
     z-index: 1;
+    transform: translateX(-50%);
 }
 
 .back,
@@ -240,6 +259,15 @@ header {
     height: auto;
     backface-visibility: hidden;
     transition: 0.3s;
+    left: 50%;
+}
+
+.front {
+    position: relative;
+}
+
+.card-content {
+    position: relative;
 }
 
 /* 初期状態 */
@@ -258,10 +286,17 @@ header {
 }
 
 /* 青い円 */
-.click_area {
+.click_circle {
     position: absolute;
-    top:400px;
-    left: 35%;
+    bottom: 0;
+    right: 0;
+}
+
+.click_circle>div {
+    position: relative;
+}
+
+.click_area {
     width: 80px;
     height: 80px;
     display: flex;
@@ -288,6 +323,7 @@ header {
     z-index: -1;
 }
 
+
 /* 「click」文字のスタイル */
 .click_area span {
     text-align: center;
@@ -295,6 +331,28 @@ header {
     display: block;
     position: relative;
     z-index: 2;
+}
+
+/* 回転するテキスト */
+.circleText {
+    overflow: visible;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    animation: rotation 18s linear infinite;
+}
+
+.circleText__text {
+    fill: #83ccd4;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+}
+
+.circleText__circle {
+    fill: none;
 }
 
 .about_me_morning_1 {
@@ -306,11 +364,7 @@ header {
 }
 
 .about_me_morning_2 {
-    max-width: 300px;
-    height: auto;
-    position: absolute;
-    top: 60px;
-    left: 610px;
+    width: 100%;
 }
 
 .about_me_morning_3 {
@@ -329,62 +383,17 @@ header {
         top: -15px;
         left: 5px;
     }
-    .tape {
-        top: 34px;
-        left: 220px;
-    }
-    .about_me_morning_2 {
+
+    .about_me_hint {
         max-width: 250px;
-        height: auto;
-        top: 60px;
-        left: 610px;
     }
-    .click_area {
-        top:350px;
-        left: 30%;
-    }
+
     .about_me_morning_3 {
         max-width: 180px;
         height: auto;
         top: 300px;
         left: 30px;
     }
-}
-
-@media screen and (max-width: 900px) {
-    .about_me_morning_1 {
-        max-width: 145px;
-        height: auto;
-        top: -15px;
-        left: 5px;
-    }
-    .tape {
-        top: 60px;
-        left: 155px;
-    }
-    .about_me_morning_2 {
-        max-width: 250px;
-        height: auto;
-        top: 90px;
-        left: 500px;
-    }
-    .click_area {
-        top:360px;
-        left: 300px;
-    }
-    .about_me_morning_3 {
-        max-width: 160px;
-        height: auto;
-        top: 300px;
-        left: 30px;
-    }
-}
-
-.about_me_sentence {
-    max-width: 1000px;
-    width: 100%;
-    margin-left: 50%;
-    padding-right: 5px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -467,9 +476,7 @@ header {
 
 .splide__arrow {
     width: 40px;
-    /* ボタンの幅 */
     height: 40px;
-    /* ボタンの高さ */
     background-color: #fcf2e5;
 }
 
@@ -537,7 +544,6 @@ header {
     max-width: 560px;
     margin-bottom: 200px;
     position: relative;
-
 }
 
 .contact_sentence {
@@ -570,17 +576,132 @@ header {
     transform: scale(1.03);
 }
 
-
 /* レスポンシブ対応 */
 @media screen and (max-width: 767px) {
-    .about_me_main {
+    .main_visual_morning_pc {
+        display: none;
+    }
+
+    .main_visual_morning_sp {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    .window_morning {
+        margin: 50px auto 250px auto;
+        padding: 0px 10px;
+    }
+
+    .shadow_morning {
+        position: absolute;
+        top: 66%;
+        transform: translateX(18%);
+        width: 355px;
+        min-width: 355px;
+    }
+
+    .cloud_left_sp,
+    .cloud_right_sp_1,
+    .cloud_right_sp_2 {
+        position: absolute;
+    }
+
+    .cloud_left_sp {
+        width: 150px;
+        top: 40%;
+        transform: translateX(-30%);
+        animation: floating-left 1.8s ease-in-out infinite alternate-reverse;
+    }
+
+    .cloud_right_sp_1 {
+        width: 138px;
+        top: 20%;
+        transform: translateX(43%);
+        animation: floating-right-1 1.9s ease-in-out infinite alternate-reverse;
+        animation-delay: 0.3s;
+    }
+
+    .cloud_right_sp_2 {
+        width: 100px;
+        top: 50%;
+        transform: translateX(63%);
+        animation: floating-right-2 2s ease-in-out infinite alternate-reverse;
+        animation-delay: 0.7s;
+    }
+
+    /* cloud_left_sp のアニメーション */
+    @keyframes floating-left {
+        0% {
+            transform: translateX(-30%) translateY(0);
+        }
+
+        100% {
+            transform: translateX(-30%) translateY(-10px);
+        }
+
+    }
+
+    /* cloud_right_sp_1 のアニメーション */
+    @keyframes floating-right-1 {
+        0% {
+            transform: translateX(43%) translateY(0);
+        }
+
+        100% {
+            transform: translateX(43%) translateY(-10px);
+        }
+
+    }
+
+    /* cloud_right_sp_2 のアニメーション */
+    @keyframes floating-right-2 {
+        0% {
+            transform: translateX(63%) translateY(0);
+        }
+
+        100% {
+            transform: translateX(63%) translateY(-10px);
+        }
+
+    }
+
+
+    .main_visual_message {
+        top: 75%;
+    }
+
+    .scroll-down {
+        top: 85%;
+        letter-spacing: 2px;
+    }
+
+    .about_me_main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about_me_hint {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        width: 300px;
+    }
+
+    .about_me_photo {
+        width: 400px;
+    }
+
+    .about_me_morning_1 {
+        left: auto;
+    }
+
+    .about_me_morning_3 {
+        left: 220px;
+    }
+
     .about_me_sentence {
-        max-width: 80%;
+        max-width: 85%;
         margin: 0;
         padding: 0 10px;
         margin-top: 600px;
@@ -588,7 +709,6 @@ header {
 
     .about_me_sentence p {
         line-height: 1.8;
-
     }
 
     .about_me_button {
@@ -601,27 +721,26 @@ header {
 
     .splide__slide {
         display: flex;
-        flex-direction: column; /* 縦方向に並べる */
-        align-items: center; /* 中央寄せ */
-        text-decoration: none; /* リンクの下線を消す */
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
     }
-    
+
     .works_back {
-        display: flex; /* 画像を中央に配置 */
+        display: flex;
         justify-content: center;
         align-items: center;
     }
-    
+
     .works_back img {
-        max-width: 100%; /* 画像の最大幅を親要素に合わせる */
-        height: auto; /* アスペクト比を維持 */
+        max-width: 100%;
+        height: auto;
     }
-    
+
     .works_title {
-        text-align: center; /* テキストの中央寄せ */
-        margin-top: 10px; /* 画像との間隔 */
+        text-align: center;
+        margin-top: 10px;
     }
-    
 
     .contact {
         flex-direction: column;
@@ -657,32 +776,72 @@ header {
 
 .container {
     padding: 40px;
-  }
-  
-  .block {
+}
+
+.block {
     width: 160px;
     height: 160px;
     margin: auto;
-  }
-  
-  .circleText {
-    overflow: visible;
-    animation: rotation 18s linear infinite;
-  }
-  .circleText__circle {
-    fill: none;
-  }
-  .circleText__text {
-    fill: #83ccd4;
-    font-size: 12px;
-    letter-spacing: 0.05em;
-  }
-  
-  @keyframes rotation {
+}
+
+@keyframes rotation {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
+
+
+/* nightモード */
+body.night {
+
+
+
+
+    .scroll-down,
+    .pagination {
+        color: #fcf2e5;
+    }
+
+    .wavy-text_arrow {
+        border-left: 1px solid #fcf2e5;
+        border-bottom: 1px solid #fcf2e5;
+    }
+
+    .tape {
+        fill: #F9F5AC
+    }
+
+    .about_me_sentence {
+        .blue_heading {
+            border-left: 8px solid #F9F5AC;
+        }
+    }
+
+    .splide__arrow {
+        background-color: #1C4268;
+    }
+
+    .splide__arrow svg,
+    .cls-1 {
+        stroke: #fcf2e5;
+    }
+
+    .splide__arrow:hover svg .cls-1 {
+        stroke: #F9F5AC;
+        transition: fill 0.5s ease, stroke 0.3s ease;
+    }
+
+    .splide__arrow:hover svg .cls-2 {
+        fill: #F9F5AC;
+        transition: fill 0.5s ease, stroke 0.3s ease;
+    }
+
+    .works_back {
+        background-color: rgba(97, 123, 145, 0.5);
+    }
+
+}

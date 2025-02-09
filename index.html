@@ -12,7 +12,7 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link id="theme-css" rel="stylesheet" href="./css/index.css">
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <!-- slick -->
@@ -21,15 +21,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 </head>
 
-<body>
+<body class="night">
+    <button id="toggleTheme" style="position: fixed;">ナイトモード切替</button>
     <div class="main_visual" id="header">
-        <img src="./image/morning/background_morning.svg" alt="昼の空">
-        <img src="./image/morning/sun.svg" class="sun" alt="太陽">
-        <img src="./image/morning/tensen_morning.svg" class="dotted_line" alt="点線">
-        <img src="./image/morning/cloud_left.svg" class="cloud_left" alt="雲_左">
-        <img src="./image/morning/cloud_center_right.svg" class="cloud_right" alt="雲_右">
-        <img src="./image/morning/cloud_center_left.svg" class="cloud_center_left" alt="雲_中央左">
-        <img src="./image/morning/cloud_center_right.svg" class="cloud_center_right" alt="雲_中央右">
+        <div class="main_visual_morning_pc">
+            <img src="./image/morning/background_morning.svg" alt="昼の空">
+            <img src="./image/morning/sun.svg" class="sun" alt="太陽">
+            <img src="./image/morning/tensen_morning.svg" class="dotted_line" alt="点線">
+            <img src="./image/morning/cloud_left.svg" class="cloud_left" alt="雲_左">
+            <img src="./image/morning/cloud_center_right.svg" class="cloud_right" alt="雲_右">
+            <img src="./image/morning/cloud_center_left.svg" class="cloud_center_left" alt="雲_中央左">
+            <img src="./image/morning/cloud_center_right.svg" class="cloud_center_right" alt="雲_中央右">
+        </div>
+        <div class="main_visual_morning_sp">
+            <img src="./image/morning/photo/window_morning.png" alt="window_morning" class="window_morning">
+            <img src="./image/morning/photo/shadow_morning.png" alt="shadow_morning" class="shadow_morning">
+            <img src="./image/morning/cloud_left_sp.svg" alt="cloud_left_sp" class="cloud_left_sp">
+            <img src="./image/morning/cloud_right_sp_1.svg" alt="cloud_right_sp_1" class="cloud_right_sp_1">
+            <img src="./image/morning/cloud_right_sp_2.svg" alt="cloud_right_sp_2" class="cloud_right_sp_2">
+        </div>
+
         <p class="main_visual_message text" data-char-span data-text-animation="fadeIn">太陽が沈むと、夜が静かに訪れる</p>
         <header>
             <div class="header_left">
@@ -95,10 +106,10 @@
                         class="about_me_morning_1">
 
                     <div class="about_me_hint">
-                        <img src="./image/morning/tape.svg" alt="マスキングテープ" class="tape">
                         <input type="checkbox" id="flip_1" class="flip-checkbox_1" hidden>
                         <label class="card">
                             <div class="card-content">
+                                <img src="./image/morning/tape.svg" alt="マスキングテープ" class="tape">
                                 <div class="front">
                                     <img src="./image/morning/hint_front.svg" alt="about_me_morning_2"
                                         class="about_me_morning_2">
@@ -107,10 +118,22 @@
                                     <img src="./image/morning/photo/hint_back.png" alt="about_me_morning_2"
                                         class="about_me_morning_2">
                                 </div>
-                                <!-- 青い円をクリックしたら画像が回転するように修正 -->
-                                <label for="flip_1" class="click_area">
-                                    <span>click</span>
-                                </label>
+                                <div class="click_circle">
+                                    <div>
+                                        <label for="flip_1" class="click_area">
+                                            <span>click</span>
+                                        </label>
+                                        <svg class="circleText" viewBox="0 0 100 100">
+                                            <path id="circle" class="circleText__circle"
+                                                d="M 0 50 A 50 50 0 1 1 0 51 z" />
+                                            <text class="circleText__text">
+                                                <textPath xlink:href="#circle">
+                                                    Click here! Click here! Click here!
+                                                </textPath>
+                                            </text>
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         </label>
 
@@ -223,7 +246,7 @@
                     <li class="splide__slide">
                         <a href="works_deluxeBurger_POP.html">
                             <div class="works_back">
-                                <img src="./image/morning/works/deluxe_burger_POP_banner.png"
+                                <img src="./image/morning/works/deluxe_burger_POP_banner.jpg"
                                     alt="deluxe_burger_POP_banner">
                             </div>
                             <p class="works_title">デラックスバーガー_POP</p>
@@ -232,7 +255,7 @@
                     <li class="splide__slide">
                         <a href="works_deluxeBurger_luxury.html">
                             <div class="works_back">
-                                <img src="./image/morning/works/deluxe_burger_rich_banner.png"
+                                <img src="./image/morning/works/deluxe_burger_rich_banner.jpg"
                                     alt="deluxe_burger_rich_banner">
                             </div>
                             <p class="works_title">デラックスバーガー_高級感</p>
@@ -241,7 +264,7 @@
                     <li class="splide__slide">
                         <a href="works_dezasuta_mobile.html">
                             <div class="works_back">
-                                <img src="./image/morning/works/dezasuta_mobile_banner.png"
+                                <img src="./image/morning/works/dezasuta_mobile_banner.jpg"
                                     alt="dezasuta_mobile_banner">
                             </div>
                             <p class="works_title">デザスタmobile</p>
@@ -250,7 +273,7 @@
                     <li class="splide__slide">
                         <a href="works_TRRRRIP.html">
                             <div class="works_back">
-                                <img src="./image/morning/works/TRRRRIP_banner.png" alt="TRRRRIP_banner">
+                                <img src="./image/morning/works/TRRRRIP_banner.jpg" alt="TRRRRIP_banner">
                             </div>
                             <p class="works_title">TRRRRIP.</p>
                         </a>
@@ -327,7 +350,11 @@
             document.getElementById("slide-length").textContent = splide.length;
         }
         slideIndex();
-
+    </script>
+    <script>
+        document.getElementById("toggleTheme").addEventListener("click", function () {
+            document.body.classList.toggle("night");
+        });
     </script>
 </body>
 
