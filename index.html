@@ -22,7 +22,7 @@
 </head>
 
 <body class="night">
-    <button id="toggleTheme" style="position: fixed;">ナイトモード切替</button>
+    <!-- <button id="toggleTheme" style="position: fixed;">ナイトモード切替</button> -->
     <div class="main_visual" id="header">
         <div class="main_visual_morning_pc">
             <img src="./image/morning/background_morning.svg" alt="昼の空">
@@ -308,11 +308,7 @@
             </ul>
         </div>
     </footer>
-
-
-
     <script src="js/script.js"></script>
-
     <script>
         var splide = new Splide('.splide', {
             type: 'loop',
@@ -354,6 +350,15 @@
     <script>
         document.getElementById("toggleTheme").addEventListener("click", function () {
             document.body.classList.toggle("night");
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const message = document.querySelector(".main_visual_message");
+
+            if (document.body.classList.contains("night")) {
+                message.textContent = "夜が明けると、世界が色づく";
+            }
         });
     </script>
 </body>

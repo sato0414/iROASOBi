@@ -798,8 +798,11 @@ header {
 /* nightモード */
 body.night {
 
-
-
+    .main_visual_morning_pc {
+        content: url("../image/night/photo/main_visual_night.png");
+        width: 115%;
+        height: auto;
+    }
 
     .scroll-down,
     .pagination {
@@ -809,6 +812,10 @@ body.night {
     .wavy-text_arrow {
         border-left: 1px solid #fcf2e5;
         border-bottom: 1px solid #fcf2e5;
+    }
+
+    .about_me {
+        margin-top: 100px;
     }
 
     .tape {
