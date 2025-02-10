@@ -161,11 +161,16 @@ nav .inner ul li a:hover {
 
 @media screen and (max-width: 767px) {
     nav {
-        right: -220px;
-        /* 小さい画面のときも右側 */
-        width: 220px;
+        right: -100%;
+        width: 100%;
+    }
+
+    .open nav {
+        right: 0;
+        width: 100%;
     }
 }
+
 
 /*============ 
   .toggle_btn
@@ -495,9 +500,6 @@ footer .content {
     /* ハンバーガーメニュー */
     .open .toggle_btn {
         transform: translateX(0px);
-    }
-    nav {
-        width: 100%;
     }
 
     /* ヘッダー */
