@@ -22,7 +22,7 @@
 </head>
 
 <body class="night">
-    <!-- <button id="toggleTheme" style="position: fixed;">ナイトモード切替</button> -->
+    <button id="toggleTheme" style="position: fixed;">ナイトモード切替</button>
     <div class="main_visual" id="header">
         <div class="main_visual_morning_pc">
             <img src="./image/morning/background_morning.svg" alt="昼の空">
@@ -109,7 +109,21 @@
                         <input type="checkbox" id="flip_1" class="flip-checkbox_1" hidden>
                         <label class="card">
                             <div class="card-content">
-                                <img src="./image/morning/tape.svg" alt="マスキングテープ" class="tape">
+                                <!-- <img src="./image/morning/tape.svg" alt="マスキングテープ" class="tape"> -->
+                                <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 36.13 53.89" class="tape">
+                                    <!-- <defs>
+                                        <style>
+                                            .cls-1 {
+                                                fill: currentColor;
+                                            }
+                                        </style>
+                                    </defs> -->
+                                    <g id="PC">
+                                        <polygon class="cls-3"
+                                            points="36.13 52.87 9.42 53.89 0 .47 26.71 0 36.13 52.87" />
+                                    </g>
+                                </svg>
                                 <div class="front">
                                     <img src="./image/morning/hint_front.svg" alt="about_me_morning_2"
                                         class="about_me_morning_2">
@@ -153,7 +167,7 @@
                     <p>それは、目の前の世界に新しい驚きや感動をプラスすること。
                         私が感じた、あのささやかな魔法のような体験を、
                         デザインを通じて多くの人に届けられるデザイナーになりたいと思っています。</p>
-                    <a href="./aboutMe.html" class="button_morning about_me_button">もっと知る</a>
+                    <a href="./aboutMe.html" class="button_morning about_me_button"><span></span>もっと知る</a>
                 </div>
             </div>
         </section>
@@ -352,7 +366,7 @@
             document.body.classList.toggle("night");
         });
     </script>
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const message = document.querySelector(".main_visual_message");
 
@@ -360,7 +374,7 @@
                 message.textContent = "夜が明けると、世界が色づく";
             }
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

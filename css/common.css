@@ -511,13 +511,28 @@ body.night {
         background-color: #061F4B;
     }
 
+    .header_logo img {
+        background-image: url("../image/night/SVG/logo_night.svg");
+    }
+
     .arrow {
         border: 3px solid #fcf2e5;
         border-width: 2px 2px 0 0;
     }
 
-    .button_morning  {
+    .button_morning {
         box-shadow: none;
+        border: none;
     }
 
+    .button_morning span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        background-color: #fcf2e5;
+        z-index: -1;
+    }
 }

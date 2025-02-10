@@ -250,6 +250,10 @@ header {
     transform: translateX(-50%);
 }
 
+.tape .cls-3 {
+    fill: #83ccd4;
+}
+
 .back,
 .front {
     position: absolute;
@@ -818,9 +822,10 @@ body.night {
         margin-top: 100px;
     }
 
-    .tape {
-        fill: #F9F5AC
+    .tape .cls-3 {
+        fill: #F9F5AC;
     }
+
 
     .about_me_sentence {
         .blue_heading {
