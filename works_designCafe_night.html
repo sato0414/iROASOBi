@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iROASOBi</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/works_common.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+
+<body class="night">
+    <header>
+        <div class="header_left">
+            <h1 class="header_logo">
+                <a href="./index_night.html"><img src="./image/night/SVG/logo_night.svg" alt="iROASOBi"></a>
+            </h1>
+        </div>
+        <div class="header_right">
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="./aboutMe_night.html ">about&nbsp;me</a></li>
+                            <li><a href="./works_night.html">works</a></li>
+                            <li><a href="./contact_night.html">contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+            <div class="mail_icon">
+                <a href="./contact_night.html"><img src="./image/morning/mail_icon.svg" alt="mail"></a>
+            </div>
+            <a href="./index_night.html"><img class="header_logo_vertical" src="./image/night/SVG/logo_night_tate.svg"
+                    alt="iROASOBi"></a>
+            <a href="#header" class="page_up">
+                <span class="arrow"></span>
+            </a>
+        </div>
+    </header>
+    <div class="content">
+        <section class="works_detail">
+            <p class="sub_title">-works-</p>
+            <h2 class="title">制作実績</h2>
+            <div class="works_detail_main">
+                <div class="works_detail_left">
+                    <p class="works_title">デザインカフェ</p>
+                    <div class="works_type_wrap">
+                        <div class="works_type">
+                            <p>カテゴリ</p>
+                            <p>コーポレートサイト</p>
+                        </div>
+                        <div class="works_type">
+                            <p>担当範囲</p>
+                            <p>コーディング</p>
+                        </div>
+                        <div class="works_type">
+                            <p>制作期間</p>
+                            <p>2週間</p>
+                        </div>
+                        <div class="works_type">
+                            <p>使用ツール</p>
+                            <p>Visual Studio Code , Git Hub</p>
+                        </div>
+                    </div>
+                    <p class="works_sentence">デザインカンプをもとにHTMLとCSSを用いてコーディングを行い、PCおよびスマートフォンでの表示に対応するレスポンシブデザインを実現しました。
+                        また、メインビジュアルとギャラリーにはjQueryを使用してスライダー機能を実装しています。</p>
+                </div>
+                <div class="works_detail_right">
+                    <img src="./image/morning/works/works_detail/design_cafe_mock.png" alt="works_mock"
+                        class="works_mock">
+                    <div class="works_mock_PC_SP">
+                        <img src="./image/morning/works/works_detail/design_cafe_PC.png" alt="works_mock_PC"
+                            class="works_mock_PC design_cage_PC">
+                        <img src="./image/morning/works/works_detail/design_cafe_SP.png" alt="works_mock_SP"
+                            class="works_mock_SP">
+                    </div>
+                </div>
+
+                <div class="modal">
+                    <div class="modal-open">スマホ版はコチラ</div>
+                    <div class="modal-container">
+                        <div class="modal-body">
+                            <div class="modal-close">&times;</div>
+                            <div class="modal-content">
+                                <img src="./image/morning/works/works_detail/design_cafe_SP.png" alt="works_mock_SP">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a href="./works_night.html" class="button_morning_return button_works"><span></span>一覧に戻る</a>
+        </section>
+    </div>
+    <footer>
+        <div class="content">
+            <ul class="footer_menu">
+                <li><a href="./aboutMe_night.html">about&nbsp;me</a></li>
+                <li><a href="./works_night.html">works</a></li>
+                <li><a href="./contact_night.html">contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+    <script>
+        // モーダルウィンドウ
+        $(function () {
+            // 変数に要素を入れる
+            var open = $('.modal-open'),
+                close = $('.modal-close'),
+                container = $('.modal-container');
+
+            //開くボタンをクリックしたらモーダルを表示する
+            open.on('click', function () {
+                container.addClass('active');
+                return false;
+            });
+
+            //閉じるボタンをクリックしたらモーダルを閉じる
+            close.on('click', function () {
+                container.removeClass('active');
+            });
+
+            //モーダルの外側をクリックしたらモーダルを閉じる
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.modal-body').length) {
+                    container.removeClass('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="PC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1205.2 541.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #1c3880;
+        stroke-dasharray: 30;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M22.14,468.57C108.26,232.29,334.93,63.57,601,63.57s498.47,173.01,582.06,414"/>
+</svg>

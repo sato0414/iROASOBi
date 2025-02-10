@@ -11,8 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/works_common_morning.css">
+  <link rel="stylesheet" href="./css/works_common.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- inview.jsの読み込み -->
+  <script src="./js/jquery.inview.min.js"></script>
 </head>
 
 <body>
@@ -45,17 +47,17 @@
       </div>
       <a href="./index.html"><img class="header_logo_vertical" src="./image/morning/logo_morning_tate.svg"
           alt="iROASOBi"></a>
-          <a href="#header" class="page_up">
-            <span class="arrow"></span>
-          </a>
+      <a href="#header" class="page_up">
+        <span class="arrow"></span>
+      </a>
     </div>
   </header>
 
   <div class="content">
     <section class="works_detail">
-      <p class="sub_title">-works-</p>
-      <h2 class="title">制作実績</h2>
-      <div class="works_detail_main">
+      <p class="sub_title js-fadeUp">-works-</p>
+      <h2 class="title js-fadeUp">制作実績</h2>
+      <div class="works_detail_main js-fadeUp">
         <div class="works_detail_left">
           <p class="works_title">デラックスバーガー_高級感</p>
           <div class="works_type_wrap">
@@ -88,7 +90,7 @@
           </div>
         </div>
       </div>
-      <a href="./works.html" class="button_morning_return button_works">一覧に戻る</a>
+      <a href="./works.html" class="button_morning_return button_works js-fadeUp"><span></span>一覧に戻る</a>
     </section>
   </div>
   <footer>

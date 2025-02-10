@@ -78,6 +78,12 @@ const addActiveClassRandomly = () => {
 
 addActiveClassRandomly(); // アニメーション処理の開始
 
+// スクロールして表示領域に入ったらclass付与
+  $(".js-fadeUp").on("inview", function () {
+    $(this).addClass("is-inview");
+  });
+
+
 // フォトギャラリー
 $(".slider_photo_gallery").slick({
   autoplay: true,
@@ -169,12 +175,14 @@ $(function () {
 
     // 時間差で表示する処理
     // アニメーションの遅延をリセット
-    $(".works_wrapper").css({
-      "opacity": 0,
-      "transform": "translateY(20px)",
-    }).each(function (index) {
-      $(this).css("animation-delay", (index * 0.2) + "s");
-    });
+    $(".works_wrapper")
+      .css({
+        opacity: 0,
+        transform: "translateY(20px)",
+      })
+      .each(function (index) {
+        $(this).css("animation-delay", index * 0.2 + "s");
+      });
 
     // 再度、アニメーションを適用
     $(".works_wrapper").each(function () {
@@ -182,4 +190,3 @@ $(function () {
     });
   });
 });
-

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iROASOBi</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/aboutMe.css">
+    <!-- slick -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- inview.jsの読み込み -->
+    <script src="./js/jquery.inview.min.js"></script>
+</head>
+
+<body class="night">
+    <header>
+        <div class="header_left">
+            <h1 class="header_logo">
+                <a href="./index_night.html"><img src="./image/night/SVG/logo_night.svg" alt="iROASOBi"></a>
+            </h1>
+        </div>
+        <div class="header_right">
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="./aboutMe_night.html ">about&nbsp;me</a></li>
+                            <li><a href="./works_night.html">works</a></li>
+                            <li><a href="./contact_night.html">contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+            <div class="mail_icon">
+                <a href="./contact_night.html"><img src="./image/morning/mail_icon.svg" alt="mail"></a>
+            </div>
+            <a href="./index_night.html"><img class="header_logo_vertical" src="./image/night/SVG/logo_night_tate.svg"
+                    alt="iROASOBi"></a>
+            <a href="#header" class="page_up">
+                <span class="arrow"></span>
+            </a>
+        </div>
+    </header>
+
+    <div class="content">
+        <section class="profile js-fadeUp">
+            <p class="sub_title">-profile-</p>
+            <h2 class="title">プロフィール</h2>
+            <div class="profile_main">
+                <div class="profile_sentence">
+                    <p class="profile_name_eng">Sato&nbsp;Aki</p>
+                    <p class="profile_name_ja">佐藤&nbsp;亜紀</p>
+                    <p class="profile_sentence_detail">
+                        1999年4月生まれ。<br>
+                        北海道の函館市で育ち、札幌の大学を卒業。<br>
+                        東京のＩＴ企業に就職し、約2年間システムエンジニアとして勤務。<br>
+                        現在は、デザインマネジメント業務を担当している。<br>
+                    </p>
+                    <p class="hobby">趣味：旅行、フィルムカメラ、カフェ巡り</p>
+                </div>
+                <div class="profile_photo">
+                    <img src="./image/night/photo/about_me_night.png" alt="about_me_night">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="page_width">
+        <section class="career">
+            <div class="career_main js-fadeUp">
+                <picture>
+                    <source srcset="./image/night/photo/IMG_6919.jpg" media="(max-width:767px)">
+                    <img src="./image/night/photo/IMG_7068.JPG" alt="career_night">
+                    </source>
+                </picture>
+            </div>
+            <dl class="career_sentence js-fadeUp">
+                <dt class="career_ym">1999年4月</dt>
+                <dd>自然と歴史が共存するこの街で育った経験は、私の感性や価値観に大きな影響を与えています。函館山から眺めた雄大な景色や、五稜郭公園の桜のような四季折々の風景は、「何気ない瞬間の美しさを見つける感性」を磨いてくれました。また、歴史的建造物を通じて、「時間を超えて人々の心に残る価値」を大切にしたいという想いが芽生えました。
+                </dd>
+                <dt class="career_ym">2018年4月</dt>
+                <dd>大学時代には、熊本地震の復興ボランティアに挑戦し、地域の人々と関わりながら課題解決に取り組む貴重な経験を得ました。また、パスタ屋での4年間のアルバイトを通じて、接客の楽しさやチームワークの大切さを学びました。
+                </dd>
+                <dt class="career_ym">2022年4月</dt>
+                <dd>大学卒業後は、東京のIT企業でシステムエンジニアとして約2年間勤務。
+                    ITの力で多くの人の役に立てることに魅力を感じ、システムエンジニアの道を選びました。
+                </dd>
+                <dt class="career_ym">現在</dt>
+                <dd>デザインマネジメントに転向し、現在は会社資料のデザインや公式ウェブサイトのデザイン刷新を担当しています。社内外向けの資料やプレゼンテーションのデザインも手掛け、情報の伝達と同時に企業のメッセージをより効果的に表現することを目指しています。
+                </dd>
+            </dl>
+        </section>
+    </div>
+
+    <div class="content">
+        <section class="important">
+            <p class="sub_title js-fadeUp">-important-</p>
+            <h2 class="title js-fadeUp">大切にしていること</h2>
+            <div class="bubble_container js-fadeUp">
+                <div class="bubble">
+                    <input type="checkbox" id="flip_1" class="flip-checkbox_1" hidden>
+
+                    <label for="flip_1" class="card">
+                        <div class="front">
+                            <img src="./image/night/SVG/about_me_moon.svg" alt="moon" class="bubble_image">
+                            <img src="./image/night/SVG/search_night.svg" alt="search" class="overlay_image">
+                            <p class="bubble_text">制作前の調査</p>
+                        </div>
+                        <div class="back">
+                            <img src="./image/night/SVG/about_me_moon.svg" alt="moon" class="bubble_image">
+                            <p class="bubble_text_back">
+                                課題解決のためのデザインを提供するためには、まず「何が問題なのか」を正確に把握することが欠かせません。制作前の調査にたっぷりと時間をかけています。</p>
+                        </div>
+                    </label>
+                </div>
+                <div class="bubble">
+                    <input type="checkbox" id="flip_2" class="flip-checkbox_2" hidden>
+                    <label for="flip_2" class="card">
+                        <div class="front">
+                            <img src="./image/night/SVG/about_me_moon.svg" alt="moon" class="bubble_image">
+                            <img src="./image/night/SVG/hearing_night.svg" alt="hearing" class="overlay_image">
+                            <p class="bubble_text">ヒアリング</p>
+                        </div>
+                        <div class="back">
+                            <img src="./image/night/SVG/about_me_moon.svg" alt="moon" class="bubble_image">
+                            <p class="bubble_text_back">
+                                まずはそのコンテンツを深く理解することを重視しています。クライアントが伝えたいメッセージや価値を把握し、それを効果的に表現するデザインを提供します。</p>
+                        </div>
+                    </label>
+                </div>
+                <div class="bubble">
+                    <input type="checkbox" id="flip_3" class="flip-checkbox_3" hidden>
+
+                    <label for="flip_3" class="card">
+                        <div class="front">
+                            <img src="./image/night/SVG/about_me_moon.svg" alt="moon" class="bubble_image">
+                            <img src="./image/night/SVG/idea_night.svg" alt="idea" class="overlay_image">
+                            <p class="bubble_text">アイディア探し</p>
+                        </div>
+                        <div class="back">
+                            <img src="./image/night/SVG/about_me_moon.svg" alt="moon" class="bubble_image">
+                            <p class="bubble_text_back">
+                                日常の何気ない瞬間にこそ、新しいアイディアが潜んでいます。電車の中の広告やインスタグラムなど、日々さまざまな場所からアイディアを収集しています。</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section class="skill">
+            <p class="sub_title js-fadeUp">-skill-</p>
+            <h2 class="title js-fadeUp">スキル</h2>
+            <div class="main_skill">
+                <div class="design_skill js-fadeUp">
+                    <div class="skill_type_design">デザインスキル</div>
+                    <div class="skill_flex">
+                        <div class="skill_item">
+                            <span class="skill_name">Illustrator</span>
+                            <span class="skill_level">
+                                <span class="color"></span>
+                                <span class="color"></span>
+                                <span class="color"></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div class="skill_item">
+                            <span class="skill_name">Photoshop</span>
+                            <span class="skill_level">
+                                <span class="color"></span>
+                                <span class="color"></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div class="skill_item">
+                            <span class="skill_name">Figma</span>
+                            <span class="skill_level">
+                                <span class="color"></span>
+                                <span class="color"></span>
+                                <span class="color"></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coding_skill js-fadeUp">
+                    <div class="skill_type_coding">コーディングスキル</div>
+                    <div class="skill_list">
+                        <div class="skill_flex">
+                            <div class="skill_item">
+                                <span class="skill_name">HTML</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">CSS</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">JavaScript</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skill_flex">
+                            <div class="skill_item">
+                                <span class="skill_name">Java</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">Spring Boot</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="skill_item">
+                                <span class="skill_name">MySQL</span>
+                                <span class="skill_level">
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span class="color"></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="photo_gallery js-fadeUp">
+        <p class="sub_title">-photo&nbsp;gallery-</p>
+        <h2 class="title">フォトギャラリー</h2>
+        <div class="slider_photo_gallery">
+            <div class="photo_small photo_center"><img src="./image/night/photoGallery_night/IMG_6740.JPG"
+                    alt="photo_01" class="photo_detail">
+            </div>
+            <div class="photo_center photo_big"><img src="./image/night/photoGallery_night/IMG_6803.JPG" alt="photo_02"
+                    class="photo_detail">
+            </div>
+            <div><img src="./image/night/photoGallery_night/IMG_7232.jpg" alt="photo_03" class="photo_detail">
+            </div>
+            <div class="photo_big"><img src="./image/night/photoGallery_night/IMG_6805.JPG" alt="photo_04"
+                    class="photo_detail">
+            </div>
+            <div class="photo_center"><img src="./image/night/photoGallery_night/IMG_7240.jpg" alt="photo_05"
+                    class="photo_detail">
+            </div>
+            <div class="photo_big"><img src="./image/night/photoGallery_night/IMG_7067.JPG" alt="photo_06"
+                    class="photo_detail">
+            </div>
+            <div class="photo_center"><img src="./image/night/photoGallery_night/IMG_6917.JPG" alt="photo_07"
+                    class="photo_detail">
+            </div>
+            <div class="photo_small"><img src="./image/night/photoGallery_night/IMG_7124.JPG" alt="photo_08"
+                    class="photo_detail">
+            </div>
+            <div class="photo_big photo_center"><img src="./image/night/photoGallery_night/IMG_6895.JPG" alt="photo_09"
+                    class="photo_detail">
+            </div>
+            <div><img src="./image/night/photoGallery_night/IMG_7239.jpg" alt="photo_10" class="photo_detail">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content">
+            <ul class="footer_menu">
+                <li><a href="./aboutMe_night.html">about&nbsp;me</a></li>
+                <li><a href="./works_night.html">works</a></li>
+                <li><a href="./contact_night.html">contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

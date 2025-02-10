@@ -14,10 +14,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
 
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/aboutMe_morning.css">
+    <link rel="stylesheet" href="./css/aboutMe.css">
     <!-- slick -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- inview.jsの読み込み -->
+    <script src="./js/jquery.inview.min.js"></script>
 </head>
 
 <body>
@@ -57,7 +59,7 @@
     </header>
 
     <div class="content">
-        <section class="profile">
+        <section class="profile js-fadeUp">
             <p class="sub_title">-profile-</p>
             <h2 class="title">プロフィール</h2>
             <div class="profile_main">
@@ -81,14 +83,14 @@
 
     <div class="page_width">
         <section class="career">
-            <div class="career_main">
+            <div class="career_main js-fadeUp">
                 <picture>
                     <source srcset="./image/morning/photo/IMG_6605.JPG" media="(max-width:767px)">
                     <img src="./image/morning/photo/career_morning.JPG" alt="career_morning">
                     </source>
                 </picture>
             </div>
-            <dl class="career_sentence">
+            <dl class="career_sentence js-fadeUp">
                 <dt class="career_ym">1999年4月</dt>
                 <dd>自然と歴史が共存するこの街で育った経験は、私の感性や価値観に大きな影響を与えています。函館山から眺めた雄大な景色や、五稜郭公園の桜のような四季折々の風景は、「何気ない瞬間の美しさを見つける感性」を磨いてくれました。また、歴史的建造物を通じて、「時間を超えて人々の心に残る価値」を大切にしたいという想いが芽生えました。
                 </dd>
@@ -108,9 +110,9 @@
 
     <div class="content">
         <section class="important">
-            <p class="sub_title">-important-</p>
-            <h2 class="title">大切にしていること</h2>
-            <div class="bubble_container">
+            <p class="sub_title js-fadeUp">-important-</p>
+            <h2 class="title js-fadeUp">大切にしていること</h2>
+            <div class="bubble_container js-fadeUp">
                 <div class="bubble">
                     <input type="checkbox" id="flip_1" class="flip-checkbox_1" hidden>
 
@@ -162,10 +164,10 @@
         </section>
 
         <section class="skill">
-            <p class="sub_title">-skill-</p>
-            <h2 class="title">スキル</h2>
+            <p class="sub_title js-fadeUp">-skill-</p>
+            <h2 class="title js-fadeUp">スキル</h2>
             <div class="main_skill">
-                <div class="design_skill">
+                <div class="design_skill js-fadeUp">
                     <div class="skill_type_design">デザインスキル</div>
                     <div class="skill_flex">
                         <div class="skill_item">
@@ -201,7 +203,7 @@
                     </div>
                 </div>
 
-                <div class="coding_skill">
+                <div class="coding_skill js-fadeUp">
                     <div class="skill_type_coding">コーディングスキル</div>
                     <div class="skill_list">
                         <div class="skill_flex">
@@ -274,7 +276,7 @@
         </section>
     </div>
 
-    <section class="photo_gallery">
+    <section class="photo_gallery js-fadeUp">
         <p class="sub_title">-photo&nbsp;gallery-</p>
         <h2 class="title">フォトギャラリー</h2>
         <div class="slider_photo_gallery">

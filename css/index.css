@@ -103,6 +103,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 .cloud_left {
@@ -365,6 +366,7 @@ header {
     position: absolute;
     top: -15px;
     left: -70px;
+    z-index: -1;
 }
 
 .about_me_morning_2 {
@@ -515,6 +517,7 @@ header {
     aspect-ratio: 1;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .works_title {
@@ -801,16 +804,30 @@ header {
 
 /* nightモード */
 body.night {
-
-    .main_visual_morning_pc {
-        content: url("../image/night/photo/main_visual_night.png");
-        width: 115%;
+    .night_back {
+        width: 100%;
         height: auto;
+    }
+
+    .moon {
+        position: absolute;
+        width: 18%;
+        top: 22%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .dotted_line {
+        top: 60%;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     }
 
     .scroll-down,
     .pagination {
         color: #fcf2e5;
+        top: 105%;
     }
 
     .wavy-text_arrow {
@@ -819,18 +836,39 @@ body.night {
     }
 
     .about_me {
-        margin-top: 100px;
+        margin-top: 150px;
+    }
+
+    @media screen and (max-width: 767px) {
+        .scroll-down {
+            top: 85%;
+        }
+
+        .about_me {
+            margin-top: 10px;
+        }
     }
 
     .tape .cls-3 {
-        fill: #F9F5AC;
+        fill: #061F4B;
     }
-
 
     .about_me_sentence {
         .blue_heading {
             border-left: 8px solid #F9F5AC;
         }
+    }
+
+    .click_area {
+        background-color: #F9F5AC;
+    }
+
+    .click_area span {
+        color: #061F4B;
+    }
+
+    .circleText__text {
+        fill: #F9F5AC;
     }
 
     .splide__arrow {
@@ -855,5 +893,4 @@ body.night {
     .works_back {
         background-color: rgba(97, 123, 145, 0.5);
     }
-
 }

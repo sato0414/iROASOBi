@@ -13,16 +13,18 @@
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
     <link id="theme-css" rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./icon.ico">
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <!-- slick -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- splide -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- inview.jsの読み込み -->
+    <script src="./js/jquery.inview.min.js"></script>
 </head>
 
-<body class="night">
-    <button id="toggleTheme" style="position: fixed;">ナイトモード切替</button>
+<body>
     <div class="main_visual" id="header">
         <div class="main_visual_morning_pc">
             <img src="./image/morning/background_morning.svg" alt="昼の空">
@@ -98,10 +100,10 @@
 
     <div class="content">
         <section class="about_me">
-            <p class="sub_title">-about&nbsp;me-</p>
-            <h2 class="title">「 はじめまして、さとうです 」</h2>
+            <p class="sub_title js-fadeUp">-about&nbsp;me-</p>
+            <h2 class="title js-fadeUp">「 はじめまして、さとうです 」</h2>
             <div class="about_me_main">
-                <div class="about_me_photo">
+                <div class="about_me_photo js-fadeUp">
                     <img src="./image/morning/photo/about_me_morning_1.JPG" alt="about_me_morning_1"
                         class="about_me_morning_1">
 
@@ -109,7 +111,6 @@
                         <input type="checkbox" id="flip_1" class="flip-checkbox_1" hidden>
                         <label class="card">
                             <div class="card-content">
-                                <!-- <img src="./image/morning/tape.svg" alt="マスキングテープ" class="tape"> -->
                                 <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 36.13 53.89" class="tape">
                                     <!-- <defs>
@@ -157,24 +158,24 @@
                         class="about_me_morning_3">
                 </div>
                 <div class="about_me_sentence">
-                    <p class="weight_bold blue_heading">デザインが生み出す小さな魔法</p>
-                    <p class="about_me_sentence_1">大学3年の夏、私は就職活動でいくつもの新卒採用サイトを見て、頭を悩ませていました。
+                    <p class="weight_bold blue_heading js-fadeUp">デザインが生み出す小さな魔法</p>
+                    <p class="about_me_sentence_1 js-fadeUp">大学3年の夏、私は就職活動でいくつもの新卒採用サイトを見て、頭を悩ませていました。
                         その中で、とあるサイトを見たとき、「まるで魔法みたいだ」と感じた瞬間がありました。
                         画面が動き出し、思わず笑顔になってしまう仕掛けに、ただ情報を得るだけの時間が、
                         気がつけばわくわくする瞬間に変わっていました。
                         憂鬱だった就職活動の時間が、そのデザインによって、一瞬で心躍る体験に変わったのです。</p>
-                    <p class="weight_bold about_me_sentence_2">デザインを通じて、日常に「ちょっとした魔法」をかけるような体験を届けたい。</p>
-                    <p>それは、目の前の世界に新しい驚きや感動をプラスすること。
+                    <p class="weight_bold about_me_sentence_2 js-fadeUp">デザインを通じて、日常に「ちょっとした魔法」をかけるような体験を届けたい。</p>
+                    <p class="js-fadeUp">それは、目の前の世界に新しい驚きや感動をプラスすること。
                         私が感じた、あのささやかな魔法のような体験を、
                         デザインを通じて多くの人に届けられるデザイナーになりたいと思っています。</p>
-                    <a href="./aboutMe.html" class="button_morning about_me_button"><span></span>もっと知る</a>
+                    <a href="./aboutMe.html" class="button_morning about_me_button js-fadeUp"><span></span>もっと知る</a>
                 </div>
             </div>
         </section>
 
         <section class="splide" aria-labelledby="carousel-heading">
-            <p class="sub_title">-works-</p>
-            <h2 class="title">制作実績</h2>
+            <p class="sub_title js-fadeUp">-works-</p>
+            <h2 class="title js-fadeUp">制作実績</h2>
 
             <!-- 矢印を追加 -->
             <div class="splide__arrows">
@@ -238,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="splide__track">
+            <div class="splide__track js-fadeUp">
                 <ul class="splide__list">
                     <li class="splide__slide">
                         <a href="./works_designCafe.html">
@@ -295,20 +296,20 @@
                 </ul>
             </div>
 
-            <a href="./works.html" class="button_morning works_button">もっと見る</a>
+            <a href="./works.html" class="button_morning works_button js-fadeUp"><span></span>もっと見る</a>
         </section>
 
         <section class="contact">
             <div class="contact_main">
-                <p class="sub_title">-contact-</p>
-                <h2 class="title">お問い合わせ</h2>
-                <p class="contact_sentence">ポートフォリオをご覧いただきありがとうございます。<br>
+                <p class="sub_title js-fadeUp">-contact-</p>
+                <h2 class="title js-fadeUp">お問い合わせ</h2>
+                <p class="contact_sentence js-fadeUp">ポートフォリオをご覧いただきありがとうございます。<br>
                     WEBサイト制作を中心としたデザイン業務をお受けしています。<br>
                     業務に関するご依頼・ご相談、当サイトに対するご感想やメッセージを、
                     お気軽にお問い合わせください。</p>
-                <a href="./contact.html" class="button_morning contact_button">お問い合わせする</a>
+                <a href="./contact.html" class="button_morning contact_button js-fadeUp"><span></span>お問い合わせする</a>
             </div>
-            <div class="contact_photo">
+            <div class="contact_photo js-fadeUp">
                 <img src="./image/morning/photo/contact_morning.JPG" alt="contact_morning">
             </div>
         </section>
@@ -329,6 +330,8 @@
             perPage: 3,
             focus: 'center',
             pagination: false,
+            autoWidth: true,
+            gap: 20,
             breakpoints: {
                 920: {
                     perPage: 1, // 1つのスライドを中央に表示
@@ -366,15 +369,6 @@
             document.body.classList.toggle("night");
         });
     </script>
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const message = document.querySelector(".main_visual_message");
-
-            if (document.body.classList.contains("night")) {
-                message.textContent = "夜が明けると、世界が色づく";
-            }
-        });
-    </script> -->
 </body>
 
 </html>

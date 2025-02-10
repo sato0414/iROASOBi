@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iROASOBi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body class="night">
+    <header>
+        <div class="header_left">
+            <h1 class="header_logo">
+                <a href="./index_night.html"><img src="./image/night/SVG/logo_night.svg" alt="iROASOBi"></a>
+            </h1>
+        </div>
+        <div class="header_right">
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="./aboutMe_night.html ">about&nbsp;me</a></li>
+                            <li><a href="./works_night.html">works</a></li>
+                            <li><a href="./contact_night.html">contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+            <div class="mail_icon">
+                <a href="./contact_night.html"><img src="./image/morning/mail_icon.svg" alt="mail"></a>
+            </div>
+            <a href="./index_night.html"><img class="header_logo_vertical" src="./image/night/SVG/logo_night_tate.svg"
+                    alt="iROASOBi"></a>
+            <a href="#header" class="page_up">
+                <span class="arrow"></span>
+            </a>
+        </div>
+    </header>
+    <div class="content">
+        <section class="contact_main">
+            <p class="sub_title">-contact-</p>
+            <h2 class="title">お問い合わせ</h2>
+            <p id="contact_text" class="contact_text">以下のフォームに必要事項(*)をご入力のうえ、送信してください。</p>
+            <div class="progress_container">
+                <div class="progress_bar">
+                    <div class="progress_wrap">
+                        <div class="progress_circle input active"></div>
+                        <span class="progress_label input active">お問い合わせ入力</span>
+                    </div>
+                    <div class="progress_line"></div>
+                    <div class="progress_wrap">
+                        <div class="progress_circle confirm"></div>
+                        <span class="progress_label confirm">お問い合わせ確認</span>
+                    </div>
+                    <div class="progress_line"></div>
+                    <div class="progress_wrap">
+                        <div class="progress_circle complete"></div>
+                        <span class="progress_label complete">お問い合わせ完了</span>
+                    </div>
+                </div>
+            </div>
+            <form class="input_form">
+                <div class="form_group">
+                    <label for="inquiry_type" class="contact_label">お問い合わせ種別*</label>
+                    <div class="radio_group">
+                        <input type="radio" id="request" name="inquiry_type" value="制作物のご依頼について" required>
+                        <label for="request">制作物のご依頼について</label>
+                        <input type="radio" id="question" name="inquiry_type" value="サイトに関する質問">
+                        <label for="question">サイトに関する質問</label>
+                        <input type="radio" id="design" name="inquiry_type" value="デザインのご相談について">
+                        <label for="design">デザインのご相談について</label>
+                        <input type="radio" id="other" name="inquiry_type" value="その他">
+                        <label for="other">その他</label>
+                    </div>
+                </div>
+                <div class="form_group">
+                    <label for="name" class="contact_label">お名前*</label>
+                    <input type="text" id="name" name="name" placeholder="田中　太郎" required>
+                </div>
+                <div class="form_group">
+                    <label for="email" class="contact_label">メールアドレス*</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                </div>
+                <div class="form_group">
+                    <label for="phone" class="contact_label">電話番号(ハイフンなし)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="08011112222" pattern="\d{10,11}">
+                </div>
+                <div class="form_group">
+                    <label for="message" class="contact_label">お問い合わせ内容*</label>
+                    <textarea id="message" name="message" rows="5" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="button_morning contact_button"><span></span>確認</button>
+                </div>
+            </form>
+
+
+            <!-- 問い合わせ内容確認画面 -->
+            <form class="confirm_form"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfPBupnsycEruAJDRZCiEExciVtK74tf1ST0shmDC6uY5a94g/formResponse"
+                method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                <div class="form_group">
+                    <label for="inquiry_type" class="contact_label">お問い合わせ種別</label>
+                    <input id="request" name="entry.1518278804" readonly>
+                </div>
+                <div class="form_group">
+                    <label for="name" class="contact_label">お名前</label>
+                    <input type="text" id="name" name="entry.80091586" readonly>
+                </div>
+                <div class="form_group">
+                    <label for="email" class="contact_label">メールアドレス</label>
+                    <input type="email" id="email" name="entry.1129869708" readonly>
+                </div>
+                <div class="form_group">
+                    <label for="phone" class="contact_label">電話番号(ハイフンなし)</label>
+                    <input type="tel" id="phone" name="entry.582549043" readonly>
+                </div>
+                <div class="form_group message">
+                    <label for="message" class="contact_label">お問い合わせ内容</label>
+                    <textarea id="message" name="entry.108470922" readonly></textarea>
+                </div>
+                <div class="form-group button_wrap">
+                    <button type="button"
+                        class="button_morning_return contact_button fix_button"><span></span>修正</button>
+                    <button type="submit" class="button_morning contact_button"><span></span>送信</button>
+                </div>
+            </form>
+
+            <!-- サンクスページ -->
+            <div class="completed_form">
+                <p class="competed_text">
+                    この度はご連絡いただき誠にありがとうございます。<br>
+                    送信内容を確認させていただき、追ってご返信いたします。
+                </p>
+                <a href="./index_night.html" class="button_morning completed_button"><span></span>TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="content">
+            <ul class="footer_menu">
+                <li><a href="./aboutMe_night.html">about&nbsp;me</a></li>
+                <li><a href="./works_night.html">works</a></li>
+                <li><a href="./contact_night.html">contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+        let submitted = false;
+    </script>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="
+        if(submitted){
+          $('.confirm_form').hide()
+          $('.completed_form').show()
+    
+          $('.progress_circle.confirm').removeClass('active')
+          $('.progress_label.confirm').removeClass('active')
+          $('.progress_circle.complete').addClass('active')
+          $('.progress_label.complete').addClass('active')
+        }
+      "></iframe>
+
+    <script>
+        $(function () {
+            $('.input_form').on('submit', function (event) {
+                event.preventDefault()
+
+                // 入力された内容を取得
+                let type = $('.input_form input[name="inquiry_type"]:checked').val()
+                let name = $('.input_form input[name="name"]').val()
+                let mail = $('.input_form input[name="email"]').val()
+                let tell = $('.input_form input[name="phone"]').val()
+                let message = $('.input_form textarea[name="message"]').val()
+
+                if (type && name && mail && message) {
+                    // 入力フォームを非表示
+                    $('.input_form').hide()
+                    // 確認画面を表示
+                    $('.confirm_form').show()
+
+                    // プログレスバー
+                    $('.progress_circle.input').removeClass('active')
+                    $('.progress_label.input').removeClass('active')
+                    $('.progress_circle.confirm').addClass('active')
+                    $('.progress_label.confirm').addClass('active')
+
+                    // 入力された内容を挿入
+                    $('.confirm_form #request').val(type)
+                    $('.confirm_form #name').val(name)
+                    $('.confirm_form #email').val(mail)
+                    $('.confirm_form #phone').val(tell)
+                    $('.confirm_form #message').val(message)
+
+                    // メッセージの変更
+                    $('.contact_text').text('お問い合わせ内容をご確認ください。')
+
+                    // 修正ボタンが押された時
+                    $('.fix_button').on('click', function () {
+                        // 入力画面を表示
+                        $('.input_form').show()
+                        // 確認画面を非表示
+                        $('.confirm_form').hide()
+
+                        // プログレスバー
+                        $('.progress_circle.input').addClass('active')
+                        $('.progress_label.input').addClass('active')
+                        $('.progress_circle.confirm').removeClass('active')
+                        $('.progress_label.confirm').removeClass('active')
+
+                        // メッセージの変更
+                        $('.contact_text').text('以下のフォームに必要事項(*)をご入力のうえ、送信してください。')
+                    })
+                }
+            })
+        })
+
+        // 送信完了時の処理
+        $('iframe').on('load', function () {
+            if (submitted) {
+                // 完了画面を表示
+                $('.completed_form').show()
+                // 入力画面や確認画面を非表示
+                $('.input_form').hide()
+                $('.confirm_form').hide()
+
+                // プログレスバーの更新
+                $('.progress_circle.confirm').removeClass('active')
+                $('.progress_label.confirm').removeClass('active')
+                $('.progress_circle.complete').addClass('active')
+                $('.progress_label.complete').addClass('active')
+
+                // メッセージの非表示
+                $('.contact_text').hide()
+            }
+        })
+    </script>
+
+</body>
+
+</html>

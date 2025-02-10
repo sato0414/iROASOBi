@@ -11,13 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/works_morning.css">
+    <link rel="stylesheet" href="./css/works.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- inview.jsの読み込み -->
+    <script src="./js/jquery.inview.min.js"></script>
 </head>
 
-<body class="night">
+<body>
     <header id="header">
         <div class="header_left">
             <h1 class="header_logo">
@@ -54,15 +56,15 @@
     </header>
     <div class="content">
         <section class="works">
-            <p class="sub_title">-works-</p>
-            <h2 class="title">制作実績</h2>
-            <ul class="works_bar">
+            <p class="sub_title js-fadeUp">-works-</p>
+            <h2 class="title js-fadeUp">制作実績</h2>
+            <ul class="works_bar js-fadeUp">
                 <li class="active">ALL</li>
                 <li>LP</li>
                 <li>WEBサイト</li>
                 <li>バナー</li>
             </ul>
-            <div class="works_main">
+            <div class="works_main js-fadeUp">
                 <div class="works_wrapper web all">
                     <a href="./works_designCafe.html">
                         <div class="works_box">

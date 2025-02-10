@@ -43,4 +43,5 @@ img {
   max-width: 100%;
   vertical-align: bottom;
   border: none;
+  z-index: 2;
 }

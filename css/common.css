@@ -99,6 +99,7 @@ header {
     margin-top: 130px;
     margin-left: 12px;
     transition: all 0.5s ease;
+    z-index: -1;
 }
 
 /* ハンバーガーメニュー */
@@ -109,7 +110,8 @@ nav {
     display: block;
     position: fixed;
     top: 0;
-    left: -300px;
+    right: -300px;
+    /* 左からではなく、右から出現 */
     bottom: 0;
     width: 300px;
     background: #83ccd4;
@@ -122,7 +124,8 @@ nav {
 }
 
 .open nav {
-    left: 0;
+    right: 0;
+    /* 右側に表示 */
     opacity: 1;
 }
 
@@ -158,7 +161,8 @@ nav .inner ul li a:hover {
 
 @media screen and (max-width: 767px) {
     nav {
-        left: -220px;
+        right: -220px;
+        /* 小さい画面のときも右側 */
         width: 220px;
     }
 }
@@ -176,12 +180,10 @@ nav .inner ul li a:hover {
     transition: all .5s;
     cursor: pointer;
     z-index: 6;
-    transition: all 0.5s ease;
 }
 
 .toggle_btn:hover {
     opacity: 0.7;
-    /* 透過度を70%に */
 }
 
 .toggle_btn span {
@@ -206,6 +208,10 @@ nav .inner ul li a:hover {
 }
 
 /* ハンバーガーメニューの開いている状態 */
+.open .toggle_btn {
+    transform: translateX(-300px);
+}
+
 .open .toggle_btn span {
     background-color: #fcf2e5;
 }
@@ -311,7 +317,7 @@ nav .inner ul li a:hover {
 
 /* ホバー時のスタイル */
 .button_morning:hover {
-    color: white;
+    color: #fcf2e5;
     box-shadow: 0px 3px #545454;
 }
 
@@ -322,7 +328,7 @@ nav .inner ul li a:hover {
 
 /* ホバー時に矢印の色を白に */
 .button_morning:hover::after {
-    border-color: white;
+    border-color: #fcf2e5;
 }
 
 .button_morning_return {
@@ -416,6 +422,11 @@ footer .content {
     text-decoration: none;
 }
 
+.footer_menu a:hover {
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+}
+
 .page_up {
     position: fixed;
     bottom: 3%;
@@ -426,7 +437,7 @@ footer .content {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 1;
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.2s;
@@ -437,6 +448,7 @@ footer .content {
     /* 透過度を70%に */
     transform: scale(1.1);
     /* ホバー時に少し拡大 */
+    transition: 0.3s ease-in-out;
 }
 
 .arrow {
@@ -450,6 +462,25 @@ footer .content {
     top: 3px;
 }
 
+/* フェードイン(初期値) */
+.js-fadeUp {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateY(20px);
+    /* 下に20pxの位置から */
+    transition: opacity .6s, transform .6s;
+    /* 透過率と縦方向の移動を0.8秒 */
+}
+
+/* フェードイン(スクロールした後) */
+.js-fadeUp.is-inview {
+    opacity: 1;
+    /* 表示領域に入ったら表示 */
+    transform: translateY(0);
+    /* 30px上に移動する */
+    transition-delay: .3s;
+    /* フェード開始を0.5秒遅らせる */
+}
 
 @media screen and (max-width: 767px) {
 
@@ -462,6 +493,12 @@ footer .content {
     }
 
     /* ハンバーガーメニュー */
+    .open .toggle_btn {
+        transform: translateX(0px);
+    }
+    nav {
+        width: 100%;
+    }
 
     /* ヘッダー */
     .header_logo {
@@ -470,10 +507,12 @@ footer .content {
 
     .header_logo img {
         width: 80px;
+        z-index: 1;
     }
 
     .header_logo_vertical {
         display: none;
+        z-index: 1;
     }
 
     .header_right {
@@ -511,8 +550,13 @@ body.night {
         background-color: #061F4B;
     }
 
-    .header_logo img {
-        background-image: url("../image/night/SVG/logo_night.svg");
+    nav {
+        background-color: #061F4B;
+    }
+
+    nav .inner ul li a:hover {
+        background: #fcf2e5;
+        color: #061F4B;
     }
 
     .arrow {
@@ -530,9 +574,33 @@ body.night {
         width: 100%;
         height: 100%;
         position: absolute;
-        top:0;
+        top: 0;
         left: 0;
         background-color: #fcf2e5;
-        z-index: -1;
+        z-index: -2;
+    }
+
+    .button_morning::before {
+        background-color: #061F4B;
+    }
+
+    .button_morning_return {
+        box-shadow: none;
+        border: none;
+    }
+
+    .button_morning_return span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fcf2e5;
+        z-index: -2;
+    }
+
+    .button_morning_return::before {
+        background-color: #061F4B;
     }
 }
