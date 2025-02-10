@@ -149,7 +149,7 @@
     .works_sentence {
         line-height: 2;
         max-width: 370px;
-        border-top: 1px solid #83ccd4;
+        /* border-top: 1px solid #83ccd4; */
         border-bottom: 1px solid #83ccd4;
         padding: 30px 0px;
         margin: 0px;
@@ -260,7 +260,7 @@ body.night {
 
     @media screen and (max-width: 767px) {
         .works_sentence {
-            border-top: 1px solid #fcf2e5;
+            /* border-top: 1px solid #fcf2e5; */
             border-bottom: 1px solid #fcf2e5;
         }
 
