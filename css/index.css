@@ -297,7 +297,6 @@ header {
 
 .about_me_sentence {
     max-width: 1000px;
-    /* width: 50%; */
     padding-right: 5px;
 }
 
@@ -533,7 +532,8 @@ header {
 
 .about_me_sentence p {
     line-height: 2.8;
-    max-width: 630px;
+    max-width: 670px;
+    line-break: anywhere;
 }
 
 .about_me_sentence .blue_heading {
