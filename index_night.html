@@ -29,7 +29,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
         integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+        <!-- <script>
+            // 現在の時間を取得
+            function getCurrentTime() {
+                let now = new Date();
+                let hour = now.getHours();
+                return hour;
+            }
+    
+            // 時間帯によってページをリダイレクト
+            function redirectBasedOnTime() {
+                let hour = getCurrentTime();
+    
+               
+                if (hour >= 9 && hour < 18) {
+                    window.location.href = "./index.html";
+                }
+            }
+            redirectBasedOnTime();
+        </script> -->
+    </head>
 
 <body class="night">
     <div class="main_visual" id="header">
@@ -45,6 +64,7 @@
                 <img src="./image/night/photo/window_night.png" alt="window_night" class="window_morning">
                 <div class="moon_toSun">
                     <img src="./image/night/SVG/moon.svg" class="moon_sp" alt="月">
+                    <div class="scroll-down5"></div>
                 </div>
             </div>
             <img src="./image/night/photo/shadow_night.png" alt="shadow_night" class="shadow_morning">
@@ -130,7 +150,7 @@
                                 <div class="back">
                                     <picture>
                                         <source srcset="./image/night/photo/hint_back_night_sp.png" media="(max-width:767px)">
-                                        <img src="./image/night/photo/hint_night_back.png" alt="about_me_morning_2">
+                                        <img src="./image/night/photo/hint_back_night.png" alt="about_me_morning_2">
                                         </source>
                                     </picture>
                                 </div>
@@ -174,7 +194,7 @@
             </div>
         </section>
 
-        <section class="splide" aria-labelledby="carousel-heading">
+        <section class="splide js-fadeUp" aria-labelledby="carousel-heading">
             <p class="sub_title js-fadeUp">-works-</p>
             <h2 class="title js-fadeUp">制作実績</h2>
 
@@ -397,7 +417,7 @@
                 let initialSunY = centerY - radius / 2;
                 $sun.css({
                     left: (initialSunX / $(window).width()) * 100 + "%",
-                    top: (initialSunY / $(window).height()) * 100 + "%"
+                    top: "60%"
                 });
 
                 // 初期角度差を計算
@@ -415,13 +435,13 @@
                         if (angle > Math.PI / 2) angle = Math.PI / 2;
 
                         let newX = centerX + radius * Math.cos(angle) - moonWidth;
-                        let newY = centerY - radius * Math.sin(angle) - moonWidth * 0.9;
+                        let newY = centerY - radius * Math.sin(angle) - moonWidth * 0.6;
                         ui.position.left = newX;
                         ui.position.top = newY;
 
                         let sunNewAngle = angle + angleDifference;
-                        let sunX = centerX + radius * Math.cos(sunNewAngle) - sunWidth * 0.9;
-                        let sunY = centerY - radius * Math.sin(sunNewAngle) - sunWidth * 0.9;
+                        let sunX = centerX + radius * Math.cos(sunNewAngle) - sunWidth * 0.6;
+                        let sunY = centerY - radius * Math.sin(sunNewAngle) - sunWidth * 0.6;
                         $sun.css({
                             left: (sunX / $(window).width()) * 100 + "%",
                             top: (sunY / $(window).height()) * 100 + "%"
@@ -431,7 +451,7 @@
                             $moon.draggable("disable");
                             $sun.css({
                                 left: centerX - sunWidth,
-                                top: centerY - radius - sunWidth * 0.9
+                                top: centerY - radius - sunWidth * 0.6
                             });
                             window.location.href = "index.html";
                             $moon.draggable("enable");
@@ -485,7 +505,7 @@
                 if (totalMove > 70) {
                     window.location.href = "index.html";
                 } else {
-                    sun.style.transition = "transform 0.3s ease, opacity 0.3s ease"; // 戻るアニメーション
+                    sun.style.transition = "transform 0.3s ease, opacity 0.3s ease"; 
                     sun.style.transform = "translateX(0)";
                     sun.style.opacity = "1"; // 元の透明度に戻す
                 }

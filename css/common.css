@@ -470,21 +470,15 @@ footer .content {
 /* フェードイン(初期値) */
 .js-fadeUp {
     opacity: 0;
-    /* 最初は非表示 */
     transform: translateY(20px);
-    /* 下に20pxの位置から */
     transition: opacity .6s, transform .6s;
-    /* 透過率と縦方向の移動を0.8秒 */
 }
 
 /* フェードイン(スクロールした後) */
 .js-fadeUp.is-inview {
     opacity: 1;
-    /* 表示領域に入ったら表示 */
     transform: translateY(0);
-    /* 30px上に移動する */
     transition-delay: .3s;
-    /* フェード開始を0.5秒遅らせる */
 }
 
 @media screen and (max-width: 767px) {

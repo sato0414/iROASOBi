@@ -220,7 +220,6 @@ body {
 }
 
 @media screen and (max-width: 980px) {
-
     .bubble_text_back {
         width: 160px;
         bottom: 20%;
@@ -427,33 +426,59 @@ body {
 /* nightモード */
 body.night {
     .profile_sentence_detail {
-        border-top:2px solid #FCF2E5;
+        border-top: 2px solid #FCF2E5;
     }
-    .career_sentence dd , .career_sentence .career_ym{
+
+    .career_sentence dd,
+    .career_sentence .career_ym {
         color: #FCF2E5;
     }
+
     .career_sentence dt:before {
-        background:#F9F5AC;
+        background: #F9F5AC;
     }
+
     .career_sentence:before {
         background: linear-gradient(to bottom, #FCF2E5 0%, #FCF2E5 35%, #FCF2E5 60%, #FCF2E5 100%);
     }
-    .bubble_text , .bubble_text_back {
+
+    .bubble_text,
+    .bubble_text_back {
         color: #061F4B;
     }
+
     .bubble_text_back {
         bottom: 27%;
     }
-    .skill_type_coding, .skill_type_design{
+
+    .skill_type_coding,
+    .skill_type_design {
         background-color: #061F4B;
     }
+
     .skill_name {
         color: #fcf2e5;
     }
+
     .skill_level span {
         border: 1px solid #F9F5AC;
     }
+
     .skill_level span.color {
-        background-color:#F9F5AC;
+        background-color: #F9F5AC;
     }
+
+    @media screen and (max-width: 980px) {
+        .bubble_text_back {
+            bottom: 19%;
+        }
+
+        .bubble_container {
+            flex-direction: column;
+            max-width: 300px;
+            margin: 0 auto;
+            gap: 220px
+        }
+    }
+
 }
