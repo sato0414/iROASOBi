@@ -10,8 +10,6 @@ body {
     transition: 0.5s;
 }
 
-
-
 .morning {
     animation: fadein 5s forwards;
 }
