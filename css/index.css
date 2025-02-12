@@ -5,8 +5,14 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    margin: 0;
+    transition: 0.5s;
+}
+
 .main_visual {
     position: relative;
+    overflow: hidden;
 }
 
 .main_visual_morning_sp {
@@ -88,13 +94,30 @@ header {
     }
 }
 
+.line {
+    width: 90%;
+    height: 75%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50% 50% 0 0/100% 100% 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
 .sun {
     position: absolute;
     width: 18%;
-    top: 22%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 1;
+    cursor: pointer;
+}
+
+.moon {
+    position: absolute;
+    width: 20%;
+    cursor: pointer;
 }
 
 .dotted_line {
@@ -108,9 +131,9 @@ header {
 
 .cloud_left {
     position: absolute;
-    width: 40%;
-    left: -11%;
-    top: 43%;
+    width: 15%;
+    left: -1%;
+    top: 67%;
     animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
     animation-delay: 0.7s;
 }
@@ -273,6 +296,34 @@ header {
 
 .card-content {
     position: relative;
+    transform-origin: center -20px 0;
+    animation: none;
+}
+
+.is-inview .card-content {
+    animation: swing 1.5s ease-in-out;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 /* 初期状態 */
@@ -673,7 +724,6 @@ header {
 
     }
 
-
     .main_visual_message {
         top: 75%;
     }
@@ -801,33 +851,39 @@ header {
     }
 }
 
-
 /* nightモード */
 body.night {
     .night_back {
         width: 100%;
         height: auto;
+        z-index: 3;
     }
 
     .moon {
-        position: absolute;
         width: 18%;
-        top: 22%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+
+    .sun {
+        position: absolute;
+        width: 15%;
+        cursor: pointer;
+        opacity: 0.7;
         z-index: 2;
     }
 
     .dotted_line {
-        top: 60%;
+        top: 50%;
         -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        z-index: 1;
     }
 
     .scroll-down,
     .pagination {
         color: #fcf2e5;
-        top: 105%;
+        top: 100%;
+        height: 100px;
     }
 
     .wavy-text_arrow {

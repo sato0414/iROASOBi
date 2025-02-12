@@ -79,10 +79,15 @@ const addActiveClassRandomly = () => {
 addActiveClassRandomly(); // アニメーション処理の開始
 
 // スクロールして表示領域に入ったらclass付与
-  $(".js-fadeUp").on("inview", function () {
-    $(this).addClass("is-inview");
-  });
+$(".js-fadeUp").on("inview", function () {
+  $(this).addClass("is-inview");
+});
 
+$(".js-fadeUp").on("inview", function (event, isInView) {
+  if (isInView) {
+    $(this).closest(".about_me_hint").addClass("is-inview");
+  }
+});
 
 // フォトギャラリー
 $(".slider_photo_gallery").slick({

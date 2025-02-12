@@ -22,6 +22,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <!-- inview.jsの読み込み -->
     <script src="./js/jquery.inview.min.js"></script>
+    <!-- jQueryUIのCDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+        integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
+        integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -29,6 +36,8 @@
         <div class="main_visual_morning_pc">
             <img src="./image/morning/background_morning.svg" alt="昼の空">
             <img src="./image/morning/sun.svg" class="sun" alt="太陽">
+            <img src="./image/morning/moon.svg" class="moon" alt="月">
+            <div class="line"></div>
             <img src="./image/morning/tensen_morning.svg" class="dotted_line" alt="点線">
             <img src="./image/morning/cloud_left.svg" class="cloud_left" alt="雲_左">
             <img src="./image/morning/cloud_center_right.svg" class="cloud_right" alt="雲_右">
@@ -110,16 +119,9 @@
                     <div class="about_me_hint">
                         <input type="checkbox" id="flip_1" class="flip-checkbox_1" hidden>
                         <label class="card">
-                            <div class="card-content">
+                            <div class="card-content js-fadeUp">
                                 <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 36.13 53.89" class="tape">
-                                    <!-- <defs>
-                                        <style>
-                                            .cls-1 {
-                                                fill: currentColor;
-                                            }
-                                        </style>
-                                    </defs> -->
                                     <g id="PC">
                                         <polygon class="cls-3"
                                             points="36.13 52.87 9.42 53.89 0 .47 26.71 0 36.13 52.87" />
@@ -368,6 +370,105 @@
         document.getElementById("toggleTheme").addEventListener("click", function () {
             document.body.classList.toggle("night");
         });
+    </script>
+    <script>
+        $(function () {
+            let $line = $(".line")
+            let $sun = $(".sun")
+            let $moon = $(".moon")
+
+
+            function sunToMoon() {
+                let lineWidth = $line.width()
+                let lineHeight = $line.height()
+                let radius = lineWidth / 2 // 半円の半径
+                let centerX = $line.offset().left + radius // 半円の中心x座標
+                let centerY = $line.offset().top + lineHeight // 半円の中心y座標
+
+                let sunWidth = $sun.width() / 2 // sunの半径（画像の横幅の半分）
+                let moonWidth = $moon.width() / 2 // moonの半径（画像の横幅の半分）
+
+                // sunの初期位置
+                let initialSunX = centerX - sunWidth
+                let initialSunY = centerY - radius - sunWidth / 2 - 50
+                // パーセンテージで初期位置をCSSに反映
+                $sun.css({
+                    left: (initialSunX / $(window).width()) * 100 + "%",
+                    top: (initialSunY / $(window).height()) * 100 + "%"
+                })
+
+                // moonの初期位置
+                let initialMoonX = centerX - radius - moonWidth / 2
+                let initialMoonY = centerY - radius / 2 - 90
+
+                $moon.css({
+                    left: (initialMoonX / $(window).width()) * 100 + "%",
+                    top: (initialMoonY / $(window).height()) * 100 + "%"
+                })
+
+                // sunとmoonの初期位置の角度差を計算
+                let sunAngle = Math.atan2(initialSunY - centerY, initialSunX - centerX) // sunの初期角度
+                let moonAngle = Math.atan2(initialMoonY - centerY, initialMoonX - centerX) // moonの初期角度
+                let angleDifference = sunAngle - moonAngle + 0.28 // sunとmoonの初期角度差
+                $sun.draggable({
+                    drag: function (event, ui) {
+                        // sunの座標
+                        let x = ui.position.left + sunWidth - centerX
+                        let y = centerY - (ui.position.top + sunWidth)
+
+                        // 半円の範囲 (-90° ~ 90°) の角度
+                        let angle = Math.atan2(y, x)
+                        if (angle < -Math.PI / 2) angle = -Math.PI / 2
+                        if (angle > Math.PI / 2) angle = Math.PI / 2
+
+                        // sunの新しい座標
+                        let newX = centerX + radius * Math.cos(angle) - sunWidth
+                        let newY = centerY - radius * Math.sin(angle) - sunWidth * 0.9
+
+                        // sunの位置を設定
+                        ui.position.left = newX
+                        ui.position.top = newY
+
+                        // moonの角度
+                        let moonNewAngle = angle + angleDifference // sunの角度から初期角度差を引く
+
+                        // moonの新しい座標
+                        let moonX = centerX + radius * Math.cos(moonNewAngle) - moonWidth * 0.9
+                        let moonY = centerY - radius * Math.sin(moonNewAngle) - moonWidth * 0.9
+
+                        // moonの位置を設定
+                        $moon.css({
+                            left: (moonX / $(window).width()) * 100 + "%",
+                            top: (moonY / $(window).height()) * 100 + "%"
+                        })
+
+                        // 月が中央上部にきたとき
+                        if ($moon.offset().left + moonWidth > centerX) {
+                            $sun.draggable("disable")
+
+                            $moon.css({
+                                left: centerX - moonWidth,
+                                top: centerY - radius - moonWidth * 0.9
+                            })
+
+                            // index_night.html へ遷移
+                            window.location.href = "index_night.html";
+
+                            $sun.draggable('enable')
+                        }
+
+                    },
+                    containment: "parent"
+                })
+            }
+
+            sunToMoon()
+
+            // ウィンドウ幅が変更された際も正しく動くように設定
+            $(window).on('resize', function () {
+                sunToMoon()
+            })
+        })
     </script>
 </body>
 

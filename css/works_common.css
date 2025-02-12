@@ -118,6 +118,9 @@
     .works_title {
         text-align: center;
         order: -1;
+        border-bottom: 1px solid #83ccd4;
+        margin: 0;
+        padding:40px 0;
     }
 
     .works_detail_left {
@@ -132,7 +135,7 @@
         order: -1;
         margin: 0px;
         padding: 30px 10px;
-        border-top: 1px solid #83ccd4;
+        /* border-top: 1px solid #83ccd4; */
     }
 
     .works_mock_PC_SP {
@@ -260,12 +263,13 @@ body.night {
 
     @media screen and (max-width: 767px) {
         .works_sentence {
-            /* border-top: 1px solid #fcf2e5; */
             border-bottom: 1px solid #fcf2e5;
         }
 
-        .works_mock {
-            border-top: 1px solid #fcf2e5;
+        .works_title {
+            border-bottom: 1px solid #fcf2e5;
+            margin: 0;
+            padding:40px 0;
         }
         .modal-open {
             color:#fcf2e5;

@@ -21,6 +21,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <!-- inview.jsの読み込み -->
     <script src="./js/jquery.inview.min.js"></script>
+    <!-- jQueryUIのCDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+        integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
+        integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="night">
@@ -28,6 +35,8 @@
         <div class="main_visual_morning_pc">
             <img src="./image/night/photo/main_visual_night.png" class="night_back" alt="夜の空">
             <img src="./image/night/SVG/moon.svg" class="moon" alt="月">
+            <img src="./image/morning/sun.svg" class="sun" alt="太陽">
+            <div class="line"></div>
             <img src="./image/night/SVG/dotted_line.svg" class="dotted_line" alt="点線">
         </div>
         <div class="main_visual_morning_sp">
@@ -63,14 +72,13 @@
                 <div class="mail_icon">
                     <a href="./contact_night.html"><img src="./image/morning/mail_icon.svg" alt="mail"></a>
                 </div>
-                <a href="./index_night.html"><img class="header_logo_vertical"
-                        src="./image/night/logo_night_tate.png" alt="iROASOBi"></a>
+                <a href="./index_night.html"><img class="header_logo_vertical" src="./image/night/logo_night_tate.png"
+                        alt="iROASOBi"></a>
                 <a href="#header" class="page_up">
                     <span class="arrow"></span>
                 </a>
             </div>
         </header>
-
 
         <div class="container_scroll_down">
             <a href="#" class="scroll-down wavy-text">
@@ -102,16 +110,8 @@
                         <input type="checkbox" id="flip_1" class="flip-checkbox_1" hidden>
                         <label class="card">
                             <div class="card-content">
-                                <!-- <img src="./image/morning/tape.svg" alt="マスキングテープ" class="tape"> -->
                                 <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 36.13 53.89" class="tape">
-                                    <!-- <defs>
-                                        <style>
-                                            .cls-1 {
-                                                fill: currentColor;
-                                            }
-                                        </style>
-                                    </defs> -->
                                     <g id="PC">
                                         <polygon class="cls-3"
                                             points="36.13 52.87 9.42 53.89 0 .47 26.71 0 36.13 52.87" />
@@ -169,7 +169,6 @@
             <p class="sub_title js-fadeUp">-works-</p>
             <h2 class="title js-fadeUp">制作実績</h2>
 
-            <!-- 矢印を追加 -->
             <div class="splide__arrows">
                 <div>
                     <button class="splide__arrow splide__arrow--prev">
@@ -196,7 +195,6 @@
                     </button>
                 </div>
 
-                <!-- ページネーション -->
                 <div class="pagination">
                     <span id="current-slide"></span>
                     <span class="slash">|</span>
@@ -359,6 +357,87 @@
     <script>
         document.getElementById("toggleTheme").addEventListener("click", function () {
             document.body.classList.toggle("night");
+        });
+    </script>
+    <script>
+        $(function () {
+            let $line = $(".line");
+            let $sun = $(".sun");
+            let $moon = $(".moon");
+
+            function moonToSun() {
+                let lineWidth = $line.width();
+                let lineHeight = $line.height();
+                let radius = lineWidth / 2; // 半円の半径
+                let centerX = $line.offset().left + radius; // 半円の中心x座標
+                let centerY = $line.offset().top + lineHeight; // 半円の中心y座標
+
+                let sunWidth = $sun.width() / 2; // sunの半径（画像の横幅の半分）
+                let moonWidth = $moon.width() / 2; // moonの半径（画像の横幅の半分）
+
+                // moonの初期位置を下げる
+                let initialMoonX = centerX - moonWidth;
+                let initialMoonY = centerY - radius - moonWidth / 2;
+                $moon.css({
+                    left: (initialMoonX / $(window).width()) * 100 + "%",
+                    top: (initialMoonY / $(window).height()) * 100 + "%"
+                });
+
+                // sunの初期位置を下げる
+                let initialSunX = centerX - radius - sunWidth / 2;
+                let initialSunY = centerY - radius / 2;
+                $sun.css({
+                    left: (initialSunX / $(window).width()) * 100 + "%",
+                    top: (initialSunY / $(window).height()) * 100 + "%"
+                });
+
+                // 初期角度差を計算
+                let moonAngle = Math.atan2(initialMoonY - centerY, initialMoonX - centerX);
+                let sunAngle = Math.atan2(initialSunY - centerY, initialSunX - centerX);
+                let angleDifference = moonAngle - sunAngle + 0.28;
+
+                $moon.draggable({
+                    drag: function (event, ui) {
+                        let x = ui.position.left + moonWidth - centerX;
+                        let y = centerY - (ui.position.top + moonWidth);
+                        let angle = Math.atan2(y, x);
+
+                        if (angle < -Math.PI / 2) angle = -Math.PI / 2;
+                        if (angle > Math.PI / 2) angle = Math.PI / 2;
+
+                        let newX = centerX + radius * Math.cos(angle) - moonWidth;
+                        let newY = centerY - radius * Math.sin(angle) - moonWidth * 0.9;
+                        ui.position.left = newX;
+                        ui.position.top = newY;
+
+                        let sunNewAngle = angle + angleDifference;
+                        let sunX = centerX + radius * Math.cos(sunNewAngle) - sunWidth * 0.9;
+                        let sunY = centerY - radius * Math.sin(sunNewAngle) - sunWidth * 0.9;
+                        $sun.css({
+                            left: (sunX / $(window).width()) * 100 + "%",
+                            top: (sunY / $(window).height()) * 100 + "%"
+                        });
+
+                        if ($sun.offset().left + sunWidth > centerX) {
+                            $moon.draggable("disable");
+                            $sun.css({
+                                left: centerX - sunWidth,
+                                top: centerY - radius - sunWidth * 0.9
+                            });
+                            window.location.href = "index.html";
+                            $moon.draggable("enable");
+                        }
+                    },
+                    containment: "parent"
+                });
+            }
+
+            moonToSun();
+
+            // ウィンドウ幅が変更された際も正しく動くように設定
+            $(window).on("resize", function () {
+                moonToSun();
+            });
         });
     </script>
 </body>
