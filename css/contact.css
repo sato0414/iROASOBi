@@ -121,7 +121,7 @@ textarea {
 }
 
 .contact_button {
-  margin: 0 auto;
+  margin: 50px auto;
   height: 44px;
 }
 
@@ -179,6 +179,10 @@ textarea {
 .confirm_form textarea {
   resize: none;
   height: 150px;
+}
+
+.confirm_form input, .confirm_form textarea {
+  margin-top: 8px;
 }
 
 .confirm_form .button_wrap {
@@ -248,7 +252,7 @@ textarea {
   .form_group {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     max-width: 280px;
     margin: 30px auto;
   }
@@ -276,7 +280,7 @@ textarea {
   }
   .confirm_form .button_wrap {
     max-width: 280px;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 }
 
@@ -305,5 +309,6 @@ body.night {
   }
   .confirm_form input, .confirm_form textarea {
     color: #fcf2e5;
+    margin-top: 8px;
   }
 }

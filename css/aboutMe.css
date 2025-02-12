@@ -442,13 +442,16 @@ body.night {
         background: linear-gradient(to bottom, #FCF2E5 0%, #FCF2E5 35%, #FCF2E5 60%, #FCF2E5 100%);
     }
 
+    .back, .front {
+        width:105%;
+    }
     .bubble_text,
     .bubble_text_back {
         color: #061F4B;
     }
 
     .bubble_text_back {
-        bottom: 27%;
+        bottom: 30%;
     }
 
     .skill_type_coding,
@@ -470,7 +473,7 @@ body.night {
 
     @media screen and (max-width: 980px) {
         .bubble_text_back {
-            bottom: 19%;
+            bottom: 20%;
         }
 
         .bubble_container {
