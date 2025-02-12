@@ -6,6 +6,12 @@ $(document).ready(function () {
   });
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   setTimeout(() => {
+//       document.getElementById("loading").classList.add("fade-out");
+//   }, 2500);
+// });
+
 //ハンバーガーメニュー
 (function ($) {
   var $nav = $("#navArea");
@@ -87,6 +93,26 @@ $(".js-fadeUp").on("inview", function (event, isInView) {
   if (isInView) {
     $(this).closest(".about_me_hint").addClass("is-inview");
   }
+});
+
+// ヒントカード「click」→「touch」
+document.addEventListener("DOMContentLoaded", function () {
+  function updateText() {
+    const clickElement = document.querySelector(".click_area span");
+    if (clickElement) {
+      if (window.innerWidth <= 767) {
+        clickElement.textContent = "touch";
+      } else {
+        clickElement.textContent = "click";
+      }
+    }
+  }
+
+  // 初回実行
+  updateText();
+
+  // 画面リサイズ時にも更新
+  window.addEventListener("resize", updateText);
 });
 
 // フォトギャラリー

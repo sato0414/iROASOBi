@@ -10,6 +10,8 @@ body {
     transition: 0.5s;
 }
 
+
+
 .morning {
     animation: fadein 5s forwards;
 }
@@ -575,8 +577,10 @@ header {
     gap: 100px;
     transform: translateX(-50%);
     margin-top: 10px;
-    width: auto; /* 必要に応じて適切な幅を設定 */
-    justify-content: center; /* 中央配置 */
+    width: auto;
+    /* 必要に応じて適切な幅を設定 */
+    justify-content: center;
+    /* 中央配置 */
 }
 
 
@@ -1122,6 +1126,10 @@ body.night {
     .splide__arrow:hover svg .cls-2 {
         fill: #F9F5AC;
         transition: fill 0.5s ease, stroke 0.3s ease;
+    }
+
+    .splide__arrows {
+        top: 10%;
     }
 
     .works_back {
