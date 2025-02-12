@@ -29,6 +29,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
         integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        // 現在の時間を取得
+        function getCurrentTime() {
+            let now = new Date();
+            let hour = now.getHours();
+            return hour;
+        }
+
+        // 時間帯によってページをリダイレクト
+        function redirectBasedOnTime() {
+            let hour = getCurrentTime();
+
+            // 9時から18時の間は「index.html」、それ以外の時間帯は「index_night.html」にリダイレクト
+            if (hour >= 9 && hour < 18) {
+                window.location.href = "./index.html"; // 日中のページへ遷移
+            } else {
+                window.location.href = "./index_night.html"; // 夜間のページへ遷移
+            }
+        }
+
+        // ページ読み込み時に実行
+        window.onload = redirectBasedOnTime;
+    </script>
 </head>
 
 <body class="morning">
@@ -45,7 +68,12 @@
             <img src="./image/morning/cloud_center_right.svg" class="cloud_center_right" alt="雲_中央右">
         </div>
         <div class="main_visual_morning_sp">
-            <img src="./image/morning/photo/window_morning.png" alt="window_morning" class="window_morning">
+            <div class="window_sp">
+                <img src="./image/morning/photo/window_morning.png" alt="window_morning" class="window_morning">
+                <div class="sun_toMoon">
+                    <img src="./image/morning/sun.svg" class="sun_sp" alt="太陽">
+                </div>
+            </div>
             <img src="./image/morning/photo/shadow_morning.png" alt="shadow_morning" class="shadow_morning">
             <img src="./image/morning/cloud_left_sp.svg" alt="cloud_left_sp" class="cloud_left_sp">
             <img src="./image/morning/cloud_right_sp_1.svg" alt="cloud_right_sp_1" class="cloud_right_sp_1">
@@ -132,8 +160,12 @@
                                         class="about_me_morning_2">
                                 </div>
                                 <div class="back">
-                                    <img src="./image/morning/photo/hint_back.png" alt="about_me_morning_2"
-                                        class="about_me_morning_2">
+                                    <picture>
+                                        <source srcset="./image/morning/photo/hint_back_sp.png"
+                                            media="(max-width:767px)">
+                                        <img src="./image/morning/photo/hint_back.png" alt="about_me_morning_2">
+                                        </source>
+                                    </picture>
                                 </div>
                                 <div class="click_circle">
                                     <div>
@@ -469,6 +501,50 @@
                 sunToMoon()
             })
         })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sun = document.querySelector(".sun_sp");
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+
+            sun.addEventListener("touchstart", function (e) {
+                startX = e.touches[0].clientX;
+                currentX = startX;
+                isDragging = true;
+                sun.style.transition = "none"; // アニメーションをオフ
+            });
+
+            sun.addEventListener("touchmove", function (e) {
+                if (!isDragging) return;
+                let moveX = e.touches[0].clientX;
+                let deltaX = moveX - startX;
+
+                if (deltaX > 0) { // 右方向にのみ移動
+                    sun.style.transform = `translateX(${deltaX}px)`;
+
+                    // 移動距離に応じて透明度を変化 (最大150pxで透明)
+                    let opacity = Math.max(1 - deltaX / 150, 0);
+                    sun.style.opacity = opacity;
+                }
+            });
+
+            sun.addEventListener("touchend", function (e) {
+                isDragging = false;
+                let endX = e.changedTouches[0].clientX;
+                let totalMove = endX - startX;
+
+                if (totalMove > 70) {
+                    window.location.href = "index_night.html";
+                } else {
+                    sun.style.transition = "transform 0.3s ease, opacity 0.3s ease"; // 戻るアニメーション
+                    sun.style.transform = "translateX(0)";
+                    sun.style.opacity = "1"; // 元の透明度に戻す
+                }
+            });
+        });
+
     </script>
 </body>
 

@@ -41,7 +41,12 @@
             <img src="./image/night/SVG/dotted_line.svg" class="dotted_line" alt="点線">
         </div>
         <div class="main_visual_morning_sp">
-            <img src="./image/night/photo/window_night.png" alt="window_night" class="window_morning">
+            <div class="window_sp">
+                <img src="./image/night/photo/window_night.png" alt="window_night" class="window_morning">
+                <div class="moon_toSun">
+                    <img src="./image/night/SVG/moon.svg" class="moon_sp" alt="月">
+                </div>
+            </div>
             <img src="./image/night/photo/shadow_night.png" alt="shadow_night" class="shadow_morning">
         </div>
 
@@ -123,8 +128,11 @@
                                         class="about_me_morning_2">
                                 </div>
                                 <div class="back">
-                                    <img src="./image/night/photo/hint_back_night.png" alt="hint_back_night"
-                                        class="about_me_morning_2">
+                                    <picture>
+                                        <source srcset="./image/night/photo/hint_back_night_sp.png" media="(max-width:767px)">
+                                        <img src="./image/night/photo/hint_night_back.png" alt="about_me_morning_2">
+                                        </source>
+                                    </picture>
                                 </div>
                                 <div class="click_circle">
                                     <div>
@@ -440,6 +448,50 @@
                 moonToSun();
             });
         });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sun = document.querySelector(".moon_sp");
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+
+            sun.addEventListener("touchstart", function (e) {
+                startX = e.touches[0].clientX;
+                currentX = startX;
+                isDragging = true;
+                sun.style.transition = "none"; // アニメーションをオフ
+            });
+
+            sun.addEventListener("touchmove", function (e) {
+                if (!isDragging) return;
+                let moveX = e.touches[0].clientX;
+                let deltaX = moveX - startX;
+
+                if (deltaX > 0) { // 右方向にのみ移動
+                    sun.style.transform = `translateX(${deltaX}px)`;
+
+                    // 移動距離に応じて透明度を変化 (最大150pxで透明)
+                    let opacity = Math.max(1 - deltaX / 150, 0);
+                    sun.style.opacity = opacity;
+                }
+            });
+
+            sun.addEventListener("touchend", function (e) {
+                isDragging = false;
+                let endX = e.changedTouches[0].clientX;
+                let totalMove = endX - startX;
+
+                if (totalMove > 70) {
+                    window.location.href = "index.html";
+                } else {
+                    sun.style.transition = "transform 0.3s ease, opacity 0.3s ease"; // 戻るアニメーション
+                    sun.style.transform = "translateX(0)";
+                    sun.style.opacity = "1"; // 元の透明度に戻す
+                }
+            });
+        });
+
     </script>
 </body>
 
