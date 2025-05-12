@@ -1,9 +1,3 @@
-$(window).on('load', function() {
-  $('.slider_photo_gallery').slick({
-    // オプション設定
-  });
-});
-
 $(document).ready(function () {
   // 初期化時にセンターモードを有効に
   $(".slider").slick({
@@ -122,60 +116,62 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // フォトギャラリー
-$(".slider_photo_gallery").slick({
-  autoplay: true,
-  autoplaySpeed: 0,
-  speed: 8000,
-  cssEase: "linear",
-  slidesToShow: 4.3,
-  swipe: false,
-  arrows: false,
-  pauseOnFocus: false,
-  pauseOnHover: false,
-  responsive: [
-    {
-      breakpoint: 1400,
-      settings: {
-        slidesToShow: 3.5,
+$(window).on("load", function () {
+  $(".slider_photo_gallery").slick({
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 8000,
+    cssEase: "linear",
+    slidesToShow: 4.3,
+    swipe: false,
+    arrows: false,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3.5,
+        },
       },
-    },
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
       },
-    },
-    {
-      breakpoint: 1000,
-      settings: {
-        slidesToShow: 2.4,
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2.4,
+        },
       },
-    },
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1.6,
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1.6,
+        },
       },
-    },
-    {
-      breakpoint: 550,
-      settings: {
-        slidesToShow: 1.3,
+      {
+        breakpoint: 550,
+        settings: {
+          slidesToShow: 1.3,
+        },
       },
-    },
-    {
-      breakpoint: 420,
-      settings: {
-        slidesToShow: 1.1,
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 1.1,
+        },
       },
-    },
-    {
-      breakpoint: 370,
-      settings: {
-        slidesToShow: 1,
+      {
+        breakpoint: 370,
+        settings: {
+          slidesToShow: 1,
+        },
       },
-    },
-  ],
+    ],
+  });
 });
 // 制作実績一覧の絞り込み機能
 $(function () {
