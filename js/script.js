@@ -171,6 +171,7 @@ $(".slider_photo_gallery").slick({
     },
   ],
 });
+
 // 制作実績一覧の絞り込み機能
 $(function () {
   // 変数に要素をセット
