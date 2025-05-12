@@ -1,3 +1,9 @@
+$(window).on('load', function() {
+  $('.slider_photo_gallery').slick({
+    // オプション設定
+  });
+});
+
 $(document).ready(function () {
   // 初期化時にセンターモードを有効に
   $(".slider").slick({
