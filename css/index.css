@@ -43,6 +43,10 @@ body {
     overflow: hidden;
 }
 
+.background_morning {
+    width: 100%;
+}
+
 .main_visual_morning_sp {
     display: none;
 }
