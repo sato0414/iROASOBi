@@ -166,8 +166,8 @@ header {
 
 .moon {
     position: absolute;
-    width: 20%;
     cursor: pointer;
+    max-width: 11%;
 }
 
 .dotted_line {
