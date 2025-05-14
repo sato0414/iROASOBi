@@ -925,7 +925,7 @@ header {
 
     .contact_photo {
         padding-right: 20px;
-        max-width: 375px;
+        max-width: 80%;
         height: auto;
     }
 
