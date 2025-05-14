@@ -23,8 +23,9 @@ li {
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; */
     font-family: "Zen Kaku Gothic Antique", "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ ProN",
     "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
-    letter-spacing:0.1em;
+    letter-spacing:0.03em;
     font-size: 14px;
+    font-feature-settings: "palt";
 }
 
 a {
