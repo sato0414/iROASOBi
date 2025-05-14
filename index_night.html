@@ -416,7 +416,10 @@
         });
     </script>
     <script>
-        $(function () {
+        $(window).on("load", function () {
+            $(".moon").show(); // または .css("display", "block")
+
+            // $(function () {
             let $line = $(".line");
             let $sun = $(".sun");
             let $moon = $(".moon");
@@ -539,15 +542,7 @@
             });
         });
     </script>
-    <script>
-        function switchToNightMode() {
-            $("body").addClass("night");
-            $(".moon").css({
-                display: "block",
-                opacity: 1
-            });
-        }
-    </script>
+
 </body>
 
 </html>
