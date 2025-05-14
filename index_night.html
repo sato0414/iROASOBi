@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
         integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- <script>
+    <!-- <script>
             // 現在の時間を取得
             function getCurrentTime() {
                 let now = new Date();
@@ -49,7 +49,7 @@
             }
             redirectBasedOnTime();
         </script> -->
-    </head>
+</head>
 
 <body class="night">
     <div class="main_visual">
@@ -150,7 +150,8 @@
                                 </div>
                                 <div class="back">
                                     <picture>
-                                        <source srcset="./image/night/photo/hint_back_night_sp.png" media="(max-width:767px)">
+                                        <source srcset="./image/night/photo/hint_back_night_sp.png"
+                                            media="(max-width:767px)">
                                         <img src="./image/night/photo/hint_back_night.png" alt="about_me_morning_2">
                                         </source>
                                     </picture>
@@ -261,6 +262,22 @@
 
             <div class="splide__track js-fadeUp">
                 <ul class="splide__list">
+                    <li class="splide__slide">
+                        <a href="./works_mistral_night.html">
+                            <div class="works_back">
+                                <img src="./image/morning/works/mistral.png" alt="mistral_mainvisual">
+                            </div>
+                            <p class="works_title">ミストラルテック株式会社様</p>
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="./works_ftsSchool_night.html">
+                            <div class="works_back">
+                                <img src="./image/morning/works/ftsschool.png" alt="ftsSchool_mainvisul">
+                            </div>
+                            <p class="works_title">FTSスクール</p>
+                        </a>
+                    </li>
                     <li class="splide__slide">
                         <a href="./works_designCafe_night.html">
                             <div class="works_back">
@@ -506,7 +523,7 @@
                 if (totalMove > 70) {
                     window.location.href = "index.html";
                 } else {
-                    sun.style.transition = "transform 0.3s ease, opacity 0.3s ease"; 
+                    sun.style.transition = "transform 0.3s ease, opacity 0.3s ease";
                     sun.style.transform = "translateX(0)";
                     sun.style.opacity = "1"; // 元の透明度に戻す
                 }
