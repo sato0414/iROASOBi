@@ -65,7 +65,7 @@
             <div class="window_sp">
                 <img src="./image/night/photo/window_night.png" alt="window_night" class="window_morning">
                 <div class="moon_toSun">
-                    <img src="./image/morning/moon.png" class="moon_sp" alt="月">
+                    <img src="./image/morning/moon.png" class="moon_sp" loading="eager" alt="月">
                     <div class="scroll-down5"></div>
                 </div>
             </div>
@@ -538,7 +538,15 @@
                 }
             });
         });
-
+    </script>
+    <script>
+        function switchToNightMode() {
+            $("body").addClass("night");
+            $(".moon").css({
+                display: "block",
+                opacity: 1
+            });
+        }
     </script>
 </body>
 
