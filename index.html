@@ -395,7 +395,7 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
-    <!-- <script>
+    <script>
         var splide = new Splide('.splide', {
             type: 'loop',
             perPage: 3,
@@ -580,98 +580,7 @@
                 }
             });
         });
-    </script> -->
-    <script>
-        $(function () {
-    let $line = $(".line");
-    let $sun = $(".sun");
-    let $moon = $(".moon");
-
-    // sunToMoon 関数は画像ロード後に初回実行する
-    function sunToMoon() {
-        let lineWidth = $line.width();
-        let lineHeight = $line.height();
-        let radius = lineWidth / 2;
-        let centerX = $line.offset().left + radius;
-        let centerY = $line.offset().top + lineHeight;
-
-        let sunWidth = $sun.width() / 2;
-        let moonWidth = $moon.width() / 2;
-
-        let initialSunX = centerX - sunWidth;
-        let initialSunY = centerY - radius - sunWidth / 2 - 50;
-
-        $sun.css({
-            left: (initialSunX / $(window).width()) * 100 + "%",
-            top: (initialSunY / $(window).height()) * 100 + "%"
-        });
-
-        let initialMoonX = centerX - radius - moonWidth / 2;
-        let initialMoonY = centerY - radius / 2 - 90;
-
-        $moon.css({
-            left: (initialMoonX / $(window).width()) * 100 + "%",
-            top: "50%"
-        });
-
-        let sunAngle = Math.atan2(initialSunY - centerY, initialSunX - centerX);
-        let moonAngle = Math.atan2(initialMoonY - centerY, initialMoonX - centerX);
-        let angleDifference = sunAngle - moonAngle + 0.28;
-
-        $sun.draggable({
-            drag: function (event, ui) {
-                let x = ui.position.left + sunWidth - centerX;
-                let y = centerY - (ui.position.top + sunWidth);
-                let angle = Math.atan2(y, x);
-
-                if (angle < -Math.PI / 2) angle = -Math.PI / 2;
-                if (angle > Math.PI / 2) angle = Math.PI / 2;
-
-                let newX = centerX + radius * Math.cos(angle) - sunWidth;
-                let newY = centerY - radius * Math.sin(angle) - sunWidth * 0.9;
-
-                ui.position.left = newX;
-                ui.position.top = newY;
-
-                let moonNewAngle = angle + angleDifference;
-                let moonX = centerX + radius * Math.cos(moonNewAngle) - moonWidth * 0.9;
-                let moonY = centerY - radius * Math.sin(moonNewAngle) - moonWidth * 0.9;
-
-                $moon.css({
-                    left: (moonX / $(window).width()) * 100 + "%",
-                    top: (moonY / $(window).height()) * 100 + "%"
-                });
-
-                if ($moon.offset().left + moonWidth > centerX) {
-                    $sun.draggable("disable");
-
-                    $moon.css({
-                        left: centerX - moonWidth,
-                        top: centerY - radius - moonWidth * 0.9
-                    });
-
-                    window.location.href = "index_night.html";
-
-                    $sun.draggable("enable");
-                }
-            },
-            containment: "parent"
-        });
-    }
-
-    // 初回ロード時は画像読み込み後にsunToMoon()を呼ぶ
-    $(window).on("load", function () {
-        sunToMoon();
-    });
-
-    // リサイズ時も再計算
-    $(window).on("resize", function () {
-        sunToMoon();
-    });
-});
-
     </script>
-    
 </body>
 
 </html>
