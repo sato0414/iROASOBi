@@ -288,8 +288,7 @@
                     <li class="splide__slide">
                         <a href="./works_fconne.html">
                             <div class="works_back">
-                                <img src="./image/morning/works/fconne_banner.png"
-                                    alt="fconne_mainvisual">
+                                <img src="./image/morning/works/fconne_banner.png" alt="fconne_mainvisual">
                             </div>
                             <p class="works_title">Fconne</p>
                         </a>
@@ -297,8 +296,7 @@
                     <li class="splide__slide">
                         <a href="./works_mistral.html">
                             <div class="works_back">
-                                <img src="./image/morning/works/mistral.png"
-                                    alt="mistral_mainvisual">
+                                <img src="./image/morning/works/mistral.png" alt="mistral_mainvisual">
                             </div>
                             <p class="works_title">ミストラルテック株式会社様</p>
                         </a>
@@ -306,8 +304,7 @@
                     <li class="splide__slide">
                         <a href="./works_ftsSchool.html">
                             <div class="works_back">
-                                <img src="./image/morning/works/ftsschool.png"
-                                    alt="ftsSchool_mainvisul">
+                                <img src="./image/morning/works/ftsschool.png" alt="ftsSchool_mainvisul">
                             </div>
                             <p class="works_title">FTSスクール</p>
                         </a>
@@ -396,6 +393,23 @@
     </footer>
     <script src="js/script.js"></script>
     <script>
+        $(function () {
+            let $moon = $(".moon");
+
+            // 月画像の読み込みを待つ
+            $moon.on("load", function () {
+                sunToMoon(); // 画像がロードされたら実行
+            }).each(function () {
+                if (this.complete) $(this).trigger("load"); // キャッシュ済み対応
+            });
+
+            // ウィンドウリサイズでも再計算
+            $(window).on('resize', function () {
+                sunToMoon();
+            });
+        });
+    </script>
+    <script>
         var splide = new Splide('.splide', {
             type: 'loop',
             perPage: 3,
@@ -445,7 +459,6 @@
             let $line = $(".line")
             let $sun = $(".sun")
             let $moon = $(".moon")
-
 
             function sunToMoon() {
                 let lineWidth = $line.width()
