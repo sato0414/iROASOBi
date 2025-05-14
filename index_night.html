@@ -397,7 +397,6 @@
             }
         }).mount();
 
-
         // 次のスライドが表示されるタイミングで発生
         splide.on("active", function () {
             slideIndex();
@@ -417,9 +416,8 @@
     </script>
     <script>
         $(window).on("load", function () {
-            $(".moon").show(); // または .css("display", "block")
+            $(".moon").show();
 
-            // $(function () {
             let $line = $(".line");
             let $sun = $(".sun");
             let $moon = $(".moon");
@@ -542,7 +540,5 @@
             });
         });
     </script>
-
 </body>
-
 </html>
