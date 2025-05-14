@@ -75,7 +75,7 @@
     display: flex;
     gap: 15px;
     align-items: flex-start;
-    margin: 80px auto;
+    margin: 10px auto;
 }
 
 .works_mock_PC {
@@ -146,7 +146,7 @@
     }
 
     .works_mock_PC {
-        max-width: 100%;
+        max-width: 90%;
         height: auto;
         margin-top: 10px;
     }
@@ -167,11 +167,12 @@
     /*モーダルを開くボタン*/
     .modal-open {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         font-weight: bold;
         color: #545454;
         cursor: pointer;
         transition: color 0.2s ease-in-out;
+        margin-top: 20px;
     }
 
     .modal-open:hover {
