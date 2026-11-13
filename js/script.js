@@ -182,7 +182,8 @@ $(function () {
     allWorks = $(".works_wrapper.all"),
     lpWorks = $(".works_wrapper.lp"),
     webWorks = $(".works_wrapper.web"),
-    bannerWorks = $(".works_wrapper.banner");
+    bannerWorks = $(".works_wrapper.banner"),
+    graphicWorks = $(".works_wrapper.graphic");
 
   // 最初の要素のみを表示させる
   $(".works_wrapper").hide(); // すべて隠す
@@ -206,6 +207,8 @@ $(function () {
       webWorks.show(); // WEBサイトを表示
     } else if (index === 3) {
       bannerWorks.show(); // バナーを表示
+    } else if (index === 4) {
+      graphicWorks.show(); // グラフィックを表示
     }
 
     // 時間差で表示する処理

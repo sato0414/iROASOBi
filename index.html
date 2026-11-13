@@ -31,26 +31,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
         integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script>
-        // 現在の時間を取得
-        function getCurrentTime() {
-            let now = new Date();
-            let hour = now.getHours();
-            return hour;
-        }
-
-        // 時間帯によってページをリダイレクト
+    <script>
+        // 時間帯によってページを自動切り替え（朝9時〜18時前は昼、18時〜翌朝9時前は夜）
         function redirectBasedOnTime() {
-            let hour = getCurrentTime();
-
-            // 9時から18時の間は「index.html」、それ以外の時間帯は「index_night.html」にリダイレクト
+            // ユーザーが手動で切り替えた場合は自動リダイレクトしない
+            if (sessionStorage.getItem("theme_manual_switched") === "true") {
+                return;
+            }
+            let hour = new Date().getHours();
+            // 18時以降または朝9時前はナイトモードへ
             if (hour >= 18 || hour < 9) {
-                window.location.href = "./index_night.html"; // 日中のページへ遷移
+                window.location.href = "./index_night.html";
             }
         }
-
         redirectBasedOnTime();
-    </script> -->
+    </script>
 </head>
 
 <body class="morning">
@@ -70,6 +65,9 @@
             <img src="./image/morning/background_morning.png" class="background_morning" alt="昼の空">
             <img src="./image/morning/sun.svg" class="sun" alt="太陽">
             <img src="./image/morning/moon.png" class="moon" loading="eager" alt="月">
+            <div class="drag_hint drag_hint_morning">
+                <span class="hint_text">Drag me!</span>
+            </div>
             <div class="line"></div>
             <img src="./image/morning/tensen_morning.svg" class="dotted_line" alt="点線">
             <img src="./image/morning/cloud_left.png" class="cloud_left" alt="雲_左">
@@ -179,10 +177,10 @@
                                     </picture>
                                 </div>
                                 <div class="click_circle">
-                                    <div>
-                                        <label for="flip_1" class="click_area">
+                                    <label for="flip_1">
+                                        <div class="click_area">
                                             <span>click</span>
-                                        </label>
+                                        </div>
                                         <svg class="circleText" viewBox="0 0 100 100">
                                             <path id="circle" class="circleText__circle"
                                                 d="M 0 50 A 50 50 0 1 1 0 51 z" />
@@ -192,7 +190,7 @@
                                                 </textPath>
                                             </text>
                                         </svg>
-                                    </div>
+                                    </label>
                                 </div>
                             </div>
                         </label>
@@ -286,6 +284,38 @@
             <div class="splide__track js-fadeUp">
                 <ul class="splide__list">
                     <li class="splide__slide">
+                        <a href="./works_HBB_6th.html">
+                            <div class="works_back">
+                                <img src="./image/morning/works/HBB_6th_poster_thumb.png" alt="HBB 6th Concert" class="works_poster_img">
+                            </div>
+                            <p class="works_title">HBB 6th Concert</p>
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="./works_mistral_businessCard.html">
+                            <div class="works_back">
+                                <img src="./image/morning/works/mistralTech_businessCard_ol-01.png" alt="ミストラルテック株式会社様 名刺" class="works_card_img">
+                            </div>
+                            <p class="works_title">ミストラルテック株式会社様 名刺</p>
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="./works_mistral_stampcard.html">
+                            <div class="works_back">
+                                <img src="./image/morning/works/mistral_stampcard_01_ol_back_front.png" alt="ミストラルこどもの国店様 スタンプカード">
+                            </div>
+                            <p class="works_title">ミストラルこどもの国店様 スタンプカード</p>
+                        </a>
+                    </li>
+                    <li class="splide__slide">
+                        <a href="./works_HBB.html">
+                            <div class="works_back">
+                                <img src="./image/morning/works/HBB_poster_thumb.png" alt="HBB 5th concert" class="works_poster_img">
+                            </div>
+                            <p class="works_title">HBB 5th concert</p>
+                        </a>
+                    </li>
+                    <li class="splide__slide">
                         <a href="./works_fconne.html">
                             <div class="works_back">
                                 <img src="./image/morning/works/fconne_banner.png" alt="fconne_mainvisual">
@@ -298,7 +328,7 @@
                             <div class="works_back">
                                 <img src="./image/morning/works/mistral.png" alt="mistral_mainvisual">
                             </div>
-                            <p class="works_title">ミストラルテック株式会社様</p>
+                            <p class="works_title">ミストラルテック株式会社</p>
                         </a>
                     </li>
                     <li class="splide__slide">
@@ -396,7 +426,7 @@
         var splide = new Splide('.splide', {
             type: 'loop',
             perPage: 3,
-            focus: 'center',
+            focus: 0,
             pagination: false,
             trimSpace: false,
             autoWidth: true,
@@ -439,100 +469,207 @@
     </script>
     <script>
         $(function () {
-            let $line = $(".line")
-            let $sun = $(".sun")
-            let $moon = $(".moon")
+            let $line = $(".line");
+            let $sun = $(".sun");
+            let $moon = $(".moon");
 
             function sunToMoon() {
-                let lineWidth = $line.width()
-                let lineHeight = $line.height()
-                let radius = lineWidth / 2 // 半円の半径
-                let centerX = $line.offset().left + radius // 半円の中心x座標
-                let centerY = $line.offset().top + lineHeight // 半円の中心y座標
+                let lineWidth = $line.width();
+                let lineHeight = $line.height();
+                let radius = lineWidth / 2; // 半円の半径
+                let centerX = $line.offset().left + radius; // 半円の中心X座標
+                let centerY = $line.offset().top + lineHeight; // 半円の中心Y座標
 
-                let sunWidth = $sun.width() / 2 // sunの半径（画像の横幅の半分）
-                let moonWidth = $moon.width() / 2 // moonの半径（画像の横幅の半分）
+                let sunWidth = $sun.outerWidth() / 2;
+                let sunHeight = $sun.outerHeight() / 2;
+                let moonWidth = $moon.outerWidth() / 2;
+                let moonHeight = $moon.outerHeight() / 2;
 
-                // sunの初期位置
-                let initialSunX = centerX - sunWidth
-                let initialSunY = centerY - radius - sunWidth / 2 - 50
-                // パーセンテージで初期位置をCSSに反映
+                // 天頂の高さ（画面の約22%〜25%付近、自然な美しい高さ）
+                let zenithY = Math.max(centerY - radius + 35, $(window).height() * 0.22);
+
+                // 軌道半径（天頂の高さに完全に一致させる）
+                let R = centerY - zenithY;
+
+                // 太陽の初期位置（真上・中央）
+                let initialSunX = centerX - sunWidth;
+                let initialSunY = zenithY - sunHeight;
                 $sun.css({
                     left: (initialSunX / $(window).width()) * 100 + "%",
                     top: (initialSunY / $(window).height()) * 100 + "%"
-                })
+                });
 
-                // moonの初期位置
-                let initialMoonX = centerX - radius - moonWidth / 2
-                let initialMoonY = centerY - radius / 2 - 90
+                // マウス追従型ヒントバッジ (Drag me!)
+                let $hint = $(".drag_hint");
+                $sun.on("mouseenter", function (e) {
+                    $hint.css({
+                        left: (e.clientX + 14) + "px",
+                        top: (e.clientY - 26) + "px"
+                    }).addClass("is-visible");
+                });
+                $sun.on("mousemove", function (e) {
+                    $hint.css({
+                        left: (e.clientX + 14) + "px",
+                        top: (e.clientY - 26) + "px"
+                    });
+                });
+                $sun.on("mouseleave", function () {
+                    $hint.removeClass("is-visible");
+                });
 
+                // 左側の待機位置（昼の月・夜の太陽で完全一致）
+                let waitingLeft = centerX - R - 20;
+                let initialMoonX = waitingLeft - moonWidth;
                 $moon.css({
                     left: (initialMoonX / $(window).width()) * 100 + "%",
                     top: "50%"
-                })
+                });
 
-                // sunとmoonの初期位置の角度差を計算
-                let sunAngle = Math.atan2(initialSunY - centerY, initialSunX - centerX) // sunの初期角度
-                let moonAngle = Math.atan2(initialMoonY - centerY, initialMoonX - centerX) // moonの初期角度
-                let angleDifference = sunAngle - moonAngle + 0.28 // sunとmoonの初期角度差
+                // 実際にレンダリングされた月の初期ピクセル座標を取得（誤差ゼロ化）
+                let startMoonLeft = $moon.position().left || initialMoonX;
+                let startMoonTop = $moon.position().top || ($(window).height() * 0.5 - moonHeight);
+
+                // 月の目標位置（真上・中央：夜の月の初期位置と完全一致）
+                let targetMoonLeft = centerX - moonWidth;
+                let targetMoonTop = zenithY - moonHeight;
+
+                // 月の初期位置から中心へのベクトルと角度・半径を厳密に計算
+                let startMoonDx = startMoonLeft + moonWidth - centerX;
+                let startMoonDy = centerY - (startMoonTop + moonHeight);
+                let startMoonAngle = Math.atan2(startMoonDy, startMoonDx);
+                if (startMoonAngle < 0) startMoonAngle = Math.PI;
+
+                let targetMoonAngle = Math.PI / 2; // 目標の中央真上（90°）
+                let startMoonR = Math.sqrt(startMoonDx * startMoonDx + startMoonDy * startMoonDy);
+                let targetMoonR = R;
+
+                let isTransitioning = false;
+
+                // 太陽の角度範囲: 90°(Math.PI/2) 〜 約28°(0.48) の移動で月が初期位置から中央真上まで昇りきる
+                let sunStartAngle = Math.PI / 2;
+                let sunEndAngle = 0.48;
+
+                // 太陽ドラッグ処理（昼→夜）
                 $sun.draggable({
+                    start: function () {
+                        $hint.removeClass("is-visible");
+                    },
                     drag: function (event, ui) {
-                        // sunの座標
-                        let x = ui.position.left + sunWidth - centerX
-                        let y = centerY - (ui.position.top + sunWidth)
+                        if (isTransitioning) return;
 
-                        // 半円の範囲 (-90° ~ 90°) の角度
-                        let angle = Math.atan2(y, x)
-                        if (angle < -Math.PI / 2) angle = -Math.PI / 2
-                        if (angle > Math.PI / 2) angle = Math.PI / 2
+                        let curX = ui.position.left + sunWidth;
+                        let curY = ui.position.top + sunHeight;
+                        let dx = curX - centerX;
+                        let dy = centerY - curY;
 
-                        // sunの新しい座標
-                        let newX = centerX + radius * Math.cos(angle) - sunWidth
-                        let newY = centerY - radius * Math.sin(angle) - sunWidth * 0.9
+                        let theta = Math.atan2(dy, dx);
+                        if (theta > Math.PI / 2 || theta < -Math.PI / 2) theta = Math.PI / 2;
+                        if (theta < sunEndAngle) theta = sunEndAngle;
 
-                        // sunの位置を設定
-                        ui.position.left = newX
-                        ui.position.top = newY
+                        // 太陽を軌道上にスナップ
+                        ui.position.left = centerX + R * Math.cos(theta) - sunWidth;
+                        ui.position.top = centerY - R * Math.sin(theta) - sunHeight;
 
-                        // moonの角度
-                        let moonNewAngle = angle + angleDifference // sunの角度から初期角度差を引く
+                        // 進行度 (0.0: 真上 -> 1.0: 右下)
+                        let progress = (sunStartAngle - theta) / (sunStartAngle - sunEndAngle);
+                        if (progress < 0) progress = 0;
+                        if (progress > 1) progress = 1;
 
-                        // moonの新しい座標
-                        let moonX = centerX + radius * Math.cos(moonNewAngle) - moonWidth * 0.9
-                        let moonY = centerY - radius * Math.sin(moonNewAngle) - moonWidth * 0.9
-
-                        // moonの位置を設定
-                        $moon.css({
-                            left: (moonX / $(window).width()) * 100 + "%",
-                            top: (moonY / $(window).height()) * 100 + "%"
-                        })
-
-                        // 月が中央上部にきたとき
-                        if ($moon.offset().left + moonWidth > centerX) {
-                            $sun.draggable("disable")
-
+                        // 太陽をつかんだ直後の微小な動きでは、月を動かさない（完全な位置保持）
+                        if (progress <= 0.005) {
                             $moon.css({
-                                left: centerX - moonWidth,
-                                top: centerY - radius - moonWidth * 0.9
-                            })
+                                left: (initialMoonX / $(window).width()) * 100 + "%",
+                                top: "50%"
+                            });
+                            return;
+                        }
 
-                            // index_night.html へ遷移
+                        // 進行度に応じて、初期位置から中央真上へ滑らかに円弧移動
+                        let currentAngle = startMoonAngle - progress * (startMoonAngle - targetMoonAngle);
+                        let currentR = startMoonR + progress * (targetMoonR - startMoonR);
+
+                        let moonX = centerX + currentR * Math.cos(currentAngle) - moonWidth;
+                        let moonY = centerY - currentR * Math.sin(currentAngle) - moonHeight;
+
+                        $moon.css({
+                            left: moonX + "px",
+                            top: moonY + "px"
+                        });
+
+                        // 太陽が右下に到達するか、月が中央に到達したら夜へ切り替え
+                        if (progress >= 0.95 || moonX + moonWidth >= centerX) {
+                            isTransitioning = true;
+                            $sun.draggable("disable");
+                            $moon.draggable("disable");
+                            sessionStorage.setItem("theme_manual_switched", "true");
                             window.location.href = "index_night.html";
-
-                            $sun.draggable('enable')
                         }
                     },
+                    stop: function () {
+                        $(".drag_hint").removeClass("is-dragging");
+                    },
                     containment: "parent"
-                })
+                });
+
+                // 月ドラッグ処理（昼→夜）
+                $moon.draggable({
+                    start: function () {
+                        $hint.removeClass("is-visible");
+                    },
+                    drag: function (event, ui) {
+                        if (isTransitioning) return;
+
+                        let curX = ui.position.left + moonWidth;
+                        let curY = ui.position.top + moonHeight;
+                        let dx = curX - centerX;
+                        let dy = centerY - curY;
+
+                        let theta = Math.atan2(dy, dx);
+                        if (theta > startMoonAngle || theta < 0) theta = startMoonAngle;
+                        if (theta < targetMoonAngle) theta = targetMoonAngle;
+
+                        // 進行度 (0.0: 初期位置 -> 1.0: 中央真上)
+                        let progress = (startMoonAngle - theta) / (startMoonAngle - targetMoonAngle);
+                        if (progress < 0) progress = 0;
+                        if (progress > 1) progress = 1;
+
+                        let currentR = startMoonR + progress * (targetMoonR - startMoonR);
+                        ui.position.left = centerX + currentR * Math.cos(theta) - moonWidth;
+                        ui.position.top = centerY - currentR * Math.sin(theta) - moonHeight;
+
+                        // 連動する太陽の角度: progressが0で真上、1で右下
+                        let sunTheta = sunStartAngle - progress * (sunStartAngle - sunEndAngle);
+                        let sunX = centerX + R * Math.cos(sunTheta) - sunWidth;
+                        let sunY = centerY - R * Math.sin(sunTheta) - sunHeight;
+
+                        $sun.css({
+                            left: sunX + "px",
+                            top: sunY + "px"
+                        });
+
+                        // 月が中央に到達したら夜へ切り替え
+                        if (progress >= 0.95 || ui.position.left + moonWidth >= centerX) {
+                            isTransitioning = true;
+                            $sun.draggable("disable");
+                            $moon.draggable("disable");
+                            sessionStorage.setItem("theme_manual_switched", "true");
+                            window.location.href = "index_night.html";
+                        }
+                    },
+                    stop: function () {
+                        $(".drag_hint").removeClass("is-dragging");
+                    },
+                    containment: "parent"
+                });
             }
 
-            sunToMoon()
+            sunToMoon();
 
             // ウィンドウ幅が変更された際も正しく動くように設定
             $(window).on('resize', function () {
-                sunToMoon()
-            })
-        })
+                sunToMoon();
+            });
+        });
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {

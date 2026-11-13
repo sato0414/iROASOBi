@@ -117,6 +117,7 @@ header {
     font-weight: bold;
     text-align: center;
     line-height: 1.4;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 1000px) {
@@ -142,7 +143,7 @@ header {
     width: 18%;
     top: 25%;
     left: 50%;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     animation: glow 3s infinite alternate ease-in-out;
 }
@@ -164,10 +165,13 @@ header {
     }
 }
 
+
 .moon {
     position: absolute;
     cursor: pointer;
-    max-width: 11%;
+    width: 15%;
+    max-width: 15%;
+    z-index: 2;
     display: block;  /* 初期状態で表示 */
 }
 
@@ -398,8 +402,11 @@ header {
     right: 0;
 }
 
-.click_circle>div {
+.click_circle>div,
+.click_circle>label {
     position: relative;
+    display: block;
+    cursor: pointer;
 }
 
 .click_area {
@@ -442,6 +449,7 @@ header {
 /* 回転するテキスト */
 .circleText {
     overflow: visible;
+    pointer-events: none;
     position: absolute;
     top: -10%;
     left: -10%;
@@ -623,8 +631,30 @@ header {
     width: 300px;
     aspect-ratio: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+.works_back img {
+    width: 100%;
+    height: auto;
+    transition: transform .5s ease;
+}
+
+.works_back:hover img {
+    transform: scale(1.03);
+}
+
+.works_back img.works_card_img,
+.works_back img.works_poster_img,
+.works_back img.works_contain_img {
+    width: auto;
+    height: 85%;
+    max-height: 85%;
+    max-width: 85%;
+    object-fit: contain;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 .works_title {
@@ -963,21 +993,42 @@ body.night {
         overflow: visible;
     }
 
+    .main_visual_morning_pc {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1367 / 744;
+    }
+
     .night_back {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 1;
+    }
+
+    .night_front_house {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         z-index: 3;
+        pointer-events: none;
     }
 
     .line {
-        width: 80%;
-        height: 83%;
-        bottom: -70px;
+        width: 90%;
+        height: 75%;
+        bottom: 0;
     }
 
     .moon {
         width: 18%;
+        max-width: 15%;
         cursor: pointer;
+        opacity: 1;
         animation: glow 3s infinite alternate ease-in-out;
     }
 
@@ -1002,13 +1053,16 @@ body.night {
         position: absolute;
         width: 15%;
         cursor: pointer;
-        opacity: 0.4;
+        opacity: 1;
         z-index: 2;
         animation: none;
     }
 
     .dotted_line {
-        top: 60%;
+        width: 84%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         z-index: 1;
@@ -1138,4 +1192,51 @@ body.night {
     .works_back {
         background-color: rgba(97, 123, 145, 0.5);
     }
+}
+
+/* ドラッグ誘導ヒントバッジ (マウスの手の隣に追従) */
+.drag_hint {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.14);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    z-index: 1000;
+    pointer-events: none;
+    white-space: nowrap;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.drag_hint.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.drag_hint_morning {
+    color: #3b7b8b;
+    border: 1px solid rgba(131, 204, 212, 0.6);
+}
+
+.drag_hint_night {
+    color: #2b3044;
+    background: rgba(249, 245, 172, 0.95);
+    border: 1px solid rgba(249, 245, 172, 0.8);
+    box-shadow: 0 4px 16px rgba(249, 245, 172, 0.35);
+}
+
+.sun, .moon {
+    cursor: grab !important;
+}
+
+.sun:active, .moon:active,
+.ui-draggable-dragging {
+    cursor: grabbing !important;
 }

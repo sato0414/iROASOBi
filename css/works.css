@@ -89,6 +89,17 @@ body {
     transform: scale(1.03);
 }
 
+.works_box img.works_card_img,
+.works_box img.works_poster_img,
+.works_box img.works_contain_img {
+    width: auto;
+    height: 85%;
+    max-height: 85%;
+    max-width: 85%;
+    object-fit: contain;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
 /* タイトル */
 .works_title {
     font-size: 16px;
