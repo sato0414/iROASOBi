@@ -761,6 +761,8 @@ header {
     .sun_sp {
         width: 100px;
         height: auto;
+        touch-action: none;
+        cursor: pointer;
     }
 
     .scroll-down5 {
@@ -1102,6 +1104,8 @@ body.night {
         .moon_sp {
             width: 100px;
             height: auto;
+            touch-action: none;
+            cursor: pointer;
         }
 
         .scroll-down5 {

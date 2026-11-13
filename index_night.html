@@ -656,44 +656,45 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const sun = document.querySelector(".moon_sp");
+            const moon = document.querySelector(".moon_sp");
+            if (!moon) return;
             let startX = 0;
-            let currentX = 0;
             let isDragging = false;
 
-            sun.addEventListener("touchstart", function (e) {
+            moon.addEventListener("touchstart", function (e) {
                 startX = e.touches[0].clientX;
-                currentX = startX;
                 isDragging = true;
-                sun.style.transition = "none"; // アニメーションをオフ
-            });
+                moon.style.transition = "none";
+            }, { passive: false });
 
-            sun.addEventListener("touchmove", function (e) {
+            moon.addEventListener("touchmove", function (e) {
                 if (!isDragging) return;
-                let moveX = e.touches[0].clientX;
-                let deltaX = moveX - startX;
-
-                if (deltaX > 0) { // 右方向にのみ移動
-                    sun.style.transform = `translateX(${deltaX}px)`;
-
-                    // 移動距離に応じて透明度を変化 (最大150pxで透明)
-                    let opacity = Math.max(1 - deltaX / 150, 0);
-                    sun.style.opacity = opacity;
+                let deltaX = e.touches[0].clientX - startX;
+                if (deltaX > 0) {
+                    e.preventDefault();
+                    moon.style.transform = "translateX(" + deltaX + "px)";
+                    let opacity = Math.max(1 - deltaX / 120, 0.2);
+                    moon.style.opacity = opacity;
                 }
-            });
+            }, { passive: false });
 
-            sun.addEventListener("touchend", function (e) {
+            moon.addEventListener("touchend", function (e) {
+                if (!isDragging) return;
                 isDragging = false;
-                let endX = e.changedTouches[0].clientX;
-                let totalMove = endX - startX;
-
-                if (totalMove > 70) {
+                let totalMove = e.changedTouches[0].clientX - startX;
+                if (totalMove > 40) {
+                    sessionStorage.setItem("theme_manual_switched", "true");
                     window.location.href = "index.html";
                 } else {
-                    sun.style.transition = "transform 0.3s ease, opacity 0.3s ease";
-                    sun.style.transform = "translateX(0)";
-                    sun.style.opacity = "1"; // 元の透明度に戻す
+                    moon.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+                    moon.style.transform = "translateX(0)";
+                    moon.style.opacity = "1";
                 }
+            });
+
+            moon.addEventListener("click", function () {
+                sessionStorage.setItem("theme_manual_switched", "true");
+                window.location.href = "index.html";
             });
         });
     </script>
