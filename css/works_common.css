@@ -334,8 +334,10 @@ body.night .multi_item_label {
 @media screen and (max-width: 767px) {
     .hbb_detail_right,
     .multi_item_right {
+        border-left: none !important;
         gap: 30px;
         padding: 20px 0 40px;
+        height: auto;
     }
     .hbb_item,
     .multi_item {
@@ -345,5 +347,14 @@ body.night .multi_item_label {
     .multi_item_label {
         font-size: 13px;
         margin-bottom: 8px;
+    }
+}
+
+body.night {
+    @media screen and (max-width: 767px) {
+        .hbb_detail_right,
+        .multi_item_right {
+            border-left: none !important;
+        }
     }
 }
